@@ -1,0 +1,14 @@
+{
+  "name": "prettier-plugin-toml",
+  "version": "0.1.0",
+  "description": "TOML Parser Implemented in JavaScript",
+  "main": "lib/api.js",
+  "repository": "https://github.com/bd82/toml-tools/packages/prettier-plugin-toml",
+  "license": "MIT",
+  "dependencies": {
+    "@toml-tools/parser": "4.1.1"
+  },
+  "scripts": {
+    "test": "echo TBD"
+  }
+}
