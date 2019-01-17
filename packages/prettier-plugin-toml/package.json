@@ -6,7 +6,7 @@
   "repository": "https://github.com/bd82/toml-tools/packages/prettier-plugin-toml",
   "license": "MIT",
   "dependencies": {
-    "@toml-tools/parser": "4.1.1"
+    "@toml-tools/parser": "0.1.0"
   },
   "scripts": {
     "test": "echo TBD"
