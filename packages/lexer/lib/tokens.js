@@ -15,9 +15,16 @@ function makePattern(strings, ...args) {
   for (let i = 0; i < strings.length; i++) {
     combined += strings[i];
     if (i < args.length) {
+      let pattern = args[i];
+      // if a TokenType was passed
+      if (args[i].PATTERN) {
+        pattern = args[i].PATTERN;
+      }
+      const patternSource =
+        typeof pattern === "string" ? pattern : pattern.source;
       // By wrapping in a RegExp (none) capturing group
       // We enabled the safe usage of qualifiers and assertions.
-      combined += `(?:${args[i]})`;
+      combined += `(?:${patternSource})`;
     }
   }
   return new RegExp(combined);
@@ -32,9 +39,8 @@ function createToken(options) {
   tokensDictionary[options.name] = newTokenType;
   return newTokenType;
 }
-
-createToken({ name: "Newline", pattern: /\r\n/ });
-createToken({ name: "Whitespace", pattern: / \t/ });
+const Newline = createToken({ name: "Newline", pattern: /|\n|\r\n/ });
+const Whitespace = createToken({ name: "Whitespace", pattern: /[ \t]+/ });
 createToken({
   name: "Comment",
   pattern: /#(?:[^\n\r]|\r(?!\n))*/,
@@ -44,23 +50,32 @@ createToken({ name: "KeyValSep", pattern: "=" });
 createToken({ name: "Dot", pattern: "." });
 const IQuotedKey = createToken({ name: "IQuotedKey", pattern: Lexer.NA });
 const IUnquotedKey = createToken({ name: "IUnquotedKey", pattern: Lexer.NA });
-
-// TODO: fragments for string literals refactoring
-// FRAGMENT("time_secfrac", /"."\d+/);
-// FRAGMENT("time_numoffset ", makePattern`[+-]${f.time_hour}${f.time_minute}`);
-
 const IString = createToken({ name: "IString", pattern: Lexer.NA });
+
+// TODO: comment on unicode complements and \uFFFF range
+FRAGMENT(
+  "basic_unescaped",
+  /[\u0020-\u0021]|[\u0023-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/
+);
+FRAGMENT("escaped", /\\(?:[btnfr"\\]|u[0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})?)/);
+FRAGMENT("basic_char", makePattern`${f.basic_unescaped}|${f.escaped}`);
 createToken({
   name: "BasicString",
-  // TODO: use regExp composition for better readability?
-  // TODO: '\r' by itself is not a newline in toml so should we allow "\r" NOT followed by \n
-  pattern: /"(?:[^\\"\n\r]|\\(?:[btnfr"\\]|u[0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})?))*"/,
+  pattern: makePattern`"${f.basic_char}*"`,
   categories: [IString, IQuotedKey]
 });
+FRAGMENT(
+  "ML_BASIC_UNESCAPED",
+  /[\u0020-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/
+);
+FRAGMENT("ML_BASIC_CHAR", makePattern`${f.ML_BASIC_UNESCAPED}|${f.escaped}`);
+FRAGMENT(
+  "ML_BASIC_BODY",
+  makePattern`(?:${f.ML_BASIC_CHAR}|${Newline}|\\\\${Whitespace}?${Newline})*`
+);
 createToken({
   name: "BasicMultiLineString",
-  // TODO: use regExp composition for better readability?
-  pattern: /"""(?:[^\\\r"]|\r\n|\\(?:[btnfr"\\]|u[0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})?))*"""/,
+  pattern: makePattern`"""${f.ML_BASIC_CHAR}*"""`,
   categories: [IString]
 });
 createToken({
@@ -102,19 +117,19 @@ FRAGMENT("time_hour", /\d{2}/);
 FRAGMENT("time_minute", /\d{2}/);
 FRAGMENT("time_second", /\d{2}/);
 FRAGMENT("time_secfrac", /"."\d+/);
-FRAGMENT("time_numoffset ", makePattern`[+-]${f.time_hour}${f.time_minute}`);
-FRAGMENT("time_offset ", makePattern`z|${f.time_numoffset}`);
+FRAGMENT("time_numoffset", makePattern`[+-]${f.time_hour}${f.time_minute}`);
+FRAGMENT("time_offset", makePattern`z|${f.time_numoffset}`);
 FRAGMENT(
-  "partial_time ",
+  "partial_time",
   makePattern`${f.time_hour}:${f.time_minute}:${f.time_second}${
     f.time_secfrac
   }?`
 );
 FRAGMENT(
-  "full_date ",
+  "full_date",
   makePattern`${f.time_hour}-${f.date_month}-${f.date_mday}`
 );
-FRAGMENT("full_time ", makePattern`${f.partial_time}${f.time_offset}`);
+FRAGMENT("full_time", makePattern`${f.partial_time}${f.time_offset}`);
 createToken({
   name: "OffsetDateTime",
   pattern: makePattern`${f.full_date}${f.time_delim}${f.full_time}`,
