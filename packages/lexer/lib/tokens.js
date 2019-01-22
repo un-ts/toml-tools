@@ -78,16 +78,18 @@ createToken({
   pattern: makePattern`"""${f.ML_BASIC_CHAR}*"""`,
   categories: [IString]
 });
+FRAGMENT(
+  "LITERAL_CHAR",
+  /[\u0009]|[\u0020-\u0026]|[\u0028-\u007E][\u0080-\uFFFF]/
+);
 createToken({
   name: "LiteralString",
-  // TODO: probably better to avoid using NOT to define the strings
-  //  and align with the semi official spec
-  pattern: /'(?:[^'\r\n])*'/,
+  pattern: makePattern`"${f.LITERAL_CHAR}*"`,
   categories: [IString, IQuotedKey]
 });
 createToken({
   name: "LiteralMultiLineString",
-  pattern: /'''(?:[^'\r]|\r\n)*'''/,
+  pattern: makePattern`"(?:${f.LITERAL_CHAR}|${Newline})*"`,
   categories: [IString]
 });
 const IBoolean = createToken({
@@ -182,6 +184,7 @@ const IFloat = createToken({
 FRAGMENT("float_int_part", DecimalInt.PATTERN);
 FRAGMENT("decimal_point", /\./);
 FRAGMENT("zero_prefixable_int", /\d(?:_\d)*/);
+FRAGMENT("exp", makePattern`[eE]${f.float_int_part}`);
 FRAGMENT("frac", makePattern`${f.decimal_point}${f.zero_prefixable_int}`);
 createToken({
   name: "Float",
