@@ -39,17 +39,23 @@ function createToken(options) {
   tokensDictionary[options.name] = newTokenType;
   return newTokenType;
 }
-const Newline = createToken({ name: "Newline", pattern: /|\n|\r\n/ });
-const Whitespace = createToken({ name: "Whitespace", pattern: /[ \t]+/ });
+// TODO: would there be perf benefits to add repetition (+) to newline def?
+const Newline = createToken({ name: "Newline", pattern: /\n|\r\n/ });
+const Whitespace = createToken({
+  name: "Whitespace",
+  pattern: /[ \t]+/,
+  group: Lexer.SKIPPED
+});
 createToken({
   name: "Comment",
-  pattern: /#(?:[^\n\r]|\r(?!\n))*/,
-  group: "comments"
+  pattern: /#(?:[^\n\r]|\r(?!\n))*/
 });
 createToken({ name: "KeyValSep", pattern: "=" });
 createToken({ name: "Dot", pattern: "." });
-const IQuotedKey = createToken({ name: "IQuotedKey", pattern: Lexer.NA });
-const IUnquotedKey = createToken({ name: "IUnquotedKey", pattern: Lexer.NA });
+
+const IKey = createToken({ name: "IKey", pattern: Lexer.NA });
+const IQuotedKey = createToken({ name: "IQuotedKey", pattern: Lexer.NA, categories: [IKey] });
+const IUnquotedKey = createToken({ name: "IUnquotedKey", pattern: Lexer.NA, categories: [IKey] });
 const IString = createToken({ name: "IString", pattern: Lexer.NA });
 
 // TODO: comment on unicode complements and \uFFFF range
@@ -93,7 +99,7 @@ createToken({
   categories: [IString]
 });
 const IBoolean = createToken({
-  name: "Boolean",
+  name: "IBoolean",
   pattern: Lexer.NA,
   categories: [IUnquotedKey]
 });
@@ -107,8 +113,8 @@ const False = createToken({
   pattern: /false/,
   categories: [IBoolean]
 });
-const DateTime = createToken({
-  name: "DateTime",
+const IDateTime = createToken({
+  name: "IDateTime",
   pattern: Lexer.NA
 });
 FRAGMENT("date_fullyear", /\d{4}/);
@@ -135,22 +141,22 @@ FRAGMENT("full_time", makePattern`${f.partial_time}${f.time_offset}`);
 createToken({
   name: "OffsetDateTime",
   pattern: makePattern`${f.full_date}${f.time_delim}${f.full_time}`,
-  categories: [DateTime]
+  categories: [IDateTime]
 });
 createToken({
   name: "LocalDateTime",
   pattern: makePattern`${f.full_date}${f.time_delim}${f.partial_time}`,
-  categories: [DateTime]
+  categories: [IDateTime]
 });
 createToken({
   name: "LocalDate",
   pattern: makePattern`${f.full_date}`,
-  categories: [DateTime]
+  categories: [IDateTime]
 });
 createToken({
   name: "LocalTime",
   pattern: makePattern`${f.partial_time}`,
-  categories: [DateTime]
+  categories: [IDateTime]
 });
 const IInteger = createToken({
   name: "IInteger",
