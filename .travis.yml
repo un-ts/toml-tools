@@ -1,0 +1,31 @@
+language: node_js
+env:
+  global:
+    - CXX=g++-4.8
+cache: yarn
+matrix:
+  include:
+    - node_js: "11"
+    - node_js: "10"
+      env: PUBLISH=true
+    - node_js: "8"
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+install:
+  - yarn
+script:
+  - yarn run ci
+deploy:
+  - provider: script
+    script: bash scripts/deploy.sh
+    on:
+      tags: true
+      all_branches: true
+      condition: $PUBLISH = true
+    skip_cleanup: true
+notifications:
+  email: false
