@@ -54,8 +54,16 @@ createToken({ name: "KeyValSep", pattern: "=" });
 createToken({ name: "Dot", pattern: "." });
 
 const IKey = createToken({ name: "IKey", pattern: Lexer.NA });
-const IQuotedKey = createToken({ name: "IQuotedKey", pattern: Lexer.NA, categories: [IKey] });
-const IUnquotedKey = createToken({ name: "IUnquotedKey", pattern: Lexer.NA, categories: [IKey] });
+const IQuotedKey = createToken({
+  name: "IQuotedKey",
+  pattern: Lexer.NA,
+  categories: [IKey]
+});
+const IUnquotedKey = createToken({
+  name: "IUnquotedKey",
+  pattern: Lexer.NA,
+  categories: [IKey]
+});
 const IString = createToken({ name: "IString", pattern: Lexer.NA });
 
 // TODO: comment on unicode complements and \uFFFF range

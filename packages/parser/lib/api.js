@@ -1,5 +1,5 @@
-const {tokenize} = require("@toml-tools/lexer");
-const {TomlParser} = require("./parser");
+const { tokenize } = require("@toml-tools/lexer");
+const { TomlParser } = require("./parser");
 
 const parser = new TomlParser();
 
