@@ -133,7 +133,7 @@ FRAGMENT("time_hour", /\d{2}/);
 FRAGMENT("time_minute", /\d{2}/);
 FRAGMENT("time_second", /\d{2}/);
 FRAGMENT("time_secfrac", /"."\d+/);
-FRAGMENT("time_numoffset", makePattern`[+-]${f.time_hour}${f.time_minute}`);
+FRAGMENT("time_numoffset", makePattern`[+-]${f.time_hour}:${f.time_minute}`);
 FRAGMENT("time_offset", makePattern`z|${f.time_numoffset}`);
 FRAGMENT(
   "partial_time",
@@ -143,7 +143,7 @@ FRAGMENT(
 );
 FRAGMENT(
   "full_date",
-  makePattern`${f.time_hour}-${f.date_month}-${f.date_mday}`
+  makePattern`${f.date_fullyear}-${f.date_month}-${f.date_mday}`
 );
 FRAGMENT("full_time", makePattern`${f.partial_time}${f.time_offset}`);
 createToken({

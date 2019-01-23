@@ -34,6 +34,9 @@ class TomlParser extends Parser {
         { ALT: () => $.SUBRULE($.table) },
         { ALT: () => $.CONSUME(t.Comment) }
       ]);
+      $.OPTION(() => {
+        $.CONSUME2(t.Comment);
+      });
     });
 
     $.RULE("keyval", () => {
@@ -74,8 +77,9 @@ class TomlParser extends Parser {
     $.RULE("arrayValues", () => {
       $.SUBRULE($.commentNewline);
       $.SUBRULE($.val);
-      $.OPTION(() => {
+      $.MANY(() => {
         $.CONSUME(t.Comma);
+        $.SUBRULE2($.commentNewline);
         $.SUBRULE2($.val);
       });
       // Dangling Comma
