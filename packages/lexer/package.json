@@ -10,5 +10,8 @@
   },
   "scripts": {
     "test": "echo TBD"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
