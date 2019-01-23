@@ -1,6 +1,6 @@
 {
   "name": "@toml-tools/lexer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "TOML Lexer Implemented in JavaScript",
   "main": "lib/api.js",
   "repository": "https://github.com/bd82/toml-tools/packages/lexer",
