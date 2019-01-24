@@ -47,7 +47,7 @@ class TomlParser extends Parser {
 
     $.RULE("key", () => {
       $.CONSUME(t.IKey);
-      $.OPTION(() => {
+      $.MANY(() => {
         $.CONSUME(t.Dot);
         $.CONSUME2(t.IKey);
       });
@@ -77,14 +77,20 @@ class TomlParser extends Parser {
     $.RULE("arrayValues", () => {
       $.SUBRULE($.commentNewline);
       $.SUBRULE($.val);
-      $.MANY(() => {
-        $.CONSUME(t.Comma);
-        $.SUBRULE2($.commentNewline);
-        $.SUBRULE2($.val);
-      });
-      // Dangling Comma
-      $.OPTION2(() => {
-        $.CONSUME2(t.Comma);
+      let notDangling = true;
+      $.MANY({
+        GATE: () => notDangling,
+        DEF: () => {
+          $.CONSUME(t.Comma);
+          $.SUBRULE2($.commentNewline);
+          const foundVal = $.OPTION2(() => {
+            $.SUBRULE2($.val);
+          });
+
+          if (foundVal === false) {
+            notDangling = false;
+          }
+        }
       });
     });
 
@@ -98,7 +104,7 @@ class TomlParser extends Parser {
 
     $.RULE("inlineTableKeyVals", () => {
       $.SUBRULE($.keyval);
-      $.OPTION(() => {
+      $.MANY(() => {
         $.CONSUME(t.Comma);
         $.SUBRULE2($.keyval);
       });

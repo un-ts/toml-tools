@@ -52,7 +52,6 @@ createToken({
 });
 createToken({ name: "KeyValSep", pattern: "=" });
 createToken({ name: "Dot", pattern: "." });
-
 const IKey = createToken({ name: "IKey", pattern: Lexer.NA });
 const IQuotedKey = createToken({
   name: "IQuotedKey",
@@ -65,7 +64,6 @@ const IUnquotedKey = createToken({
   categories: [IKey]
 });
 const IString = createToken({ name: "IString", pattern: Lexer.NA });
-
 // TODO: comment on unicode complements and \uFFFF range
 FRAGMENT(
   "basic_unescaped",
@@ -73,13 +71,11 @@ FRAGMENT(
 );
 FRAGMENT("escaped", /\\(?:[btnfr"\\]|u[0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})?)/);
 FRAGMENT("basic_char", makePattern`${f.basic_unescaped}|${f.escaped}`);
-createToken({
-  name: "BasicString",
-  pattern: makePattern`"${f.basic_char}*"`,
-  categories: [IString, IQuotedKey]
-});
 FRAGMENT(
   "ML_BASIC_UNESCAPED",
+  // TODO: comment on unicode complements and \uFFFF range
+  // SPEC Deviation: included backslash (5C)
+  //      See: https://github.com/toml-lang/toml/pull/590
   /[\u0020-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/
 );
 FRAGMENT("ML_BASIC_CHAR", makePattern`${f.ML_BASIC_UNESCAPED}|${f.escaped}`);
@@ -89,22 +85,28 @@ FRAGMENT(
 );
 createToken({
   name: "BasicMultiLineString",
-  pattern: makePattern`"""${f.ML_BASIC_CHAR}*"""`,
+  pattern: makePattern`"""${f.ML_BASIC_BODY}"""`,
   categories: [IString]
+});
+createToken({
+  name: "BasicString",
+  pattern: makePattern`"${f.basic_char}*"`,
+  categories: [IString, IQuotedKey]
 });
 FRAGMENT(
   "LITERAL_CHAR",
-  /[\u0009]|[\u0020-\u0026]|[\u0028-\u007E][\u0080-\uFFFF]/
+  /[\u0009]|[\u0020-\u0026]|[\u0028-\u007E]|[\u0080-\uFFFF]/
 );
-createToken({
-  name: "LiteralString",
-  pattern: makePattern`"${f.LITERAL_CHAR}*"`,
-  categories: [IString, IQuotedKey]
-});
+FRAGMENT("ML_LITERAL_CHAR", /[\u0009]|[\u0020-\u007E]|[\u0080-\uFFFF]/);
 createToken({
   name: "LiteralMultiLineString",
-  pattern: makePattern`"(?:${f.LITERAL_CHAR}|${Newline})*"`,
+  pattern: makePattern`'''(?:${f.ML_LITERAL_CHAR}|${Newline})*'''`,
   categories: [IString]
+});
+createToken({
+  name: "LiteralString",
+  pattern: makePattern`'${f.LITERAL_CHAR}*'`,
+  categories: [IString, IQuotedKey]
 });
 const IBoolean = createToken({
   name: "IBoolean",
@@ -132,9 +134,9 @@ FRAGMENT("time_delim", /[tT ]/);
 FRAGMENT("time_hour", /\d{2}/);
 FRAGMENT("time_minute", /\d{2}/);
 FRAGMENT("time_second", /\d{2}/);
-FRAGMENT("time_secfrac", /"."\d+/);
+FRAGMENT("time_secfrac", /.\d+/);
 FRAGMENT("time_numoffset", makePattern`[+-]${f.time_hour}:${f.time_minute}`);
-FRAGMENT("time_offset", makePattern`z|${f.time_numoffset}`);
+FRAGMENT("time_offset", makePattern`[zZ]|${f.time_numoffset}`);
 FRAGMENT(
   "partial_time",
   makePattern`${f.time_hour}:${f.time_minute}:${f.time_second}${
@@ -166,13 +168,34 @@ createToken({
   pattern: makePattern`${f.partial_time}`,
   categories: [IDateTime]
 });
+const IFloat = createToken({
+  name: "IFloat",
+  pattern: Lexer.NA
+});
+
+const decimalIntPatern = /[+-]?(?:0|[1-9](?:_?\d)*)/;
+FRAGMENT("float_int_part", decimalIntPatern);
+FRAGMENT("decimal_point", /\./);
+FRAGMENT("zero_prefixable_int", /\d(?:_?\d)*/);
+FRAGMENT("exp", makePattern`[eE]${f.float_int_part}`);
+FRAGMENT("frac", makePattern`${f.decimal_point}${f.zero_prefixable_int}`);
+createToken({
+  name: "Float",
+  pattern: makePattern`${f.float_int_part}(?:${f.exp}|${f.frac}${f.exp}?)`,
+  categories: [IFloat]
+});
+createToken({
+  name: "SpecialFloat",
+  pattern: /[+-](?:inf|nan)/,
+  categories: [IFloat]
+});
 const IInteger = createToken({
   name: "IInteger",
   pattern: Lexer.NA
 });
 const DecimalInt = createToken({
   name: "DecimalInt",
-  pattern: /[+-]?(?:0|[1-9](?:_?\d)*)/,
+  pattern: decimalIntPatern,
   // Not that DecimalInt is both an IInteger **and** an IUnquotedKey
   categories: [IInteger, IUnquotedKey]
 });
@@ -190,25 +213,6 @@ createToken({
   name: "BinInt",
   pattern: /0b[0-1](?:_?[0-1])*/,
   categories: [IInteger]
-});
-const IFloat = createToken({
-  name: "IFloat",
-  pattern: Lexer.NA
-});
-FRAGMENT("float_int_part", DecimalInt.PATTERN);
-FRAGMENT("decimal_point", /\./);
-FRAGMENT("zero_prefixable_int", /\d(?:_\d)*/);
-FRAGMENT("exp", makePattern`[eE]${f.float_int_part}`);
-FRAGMENT("frac", makePattern`${f.decimal_point}${f.zero_prefixable_int}`);
-createToken({
-  name: "Float",
-  pattern: makePattern`${f.float_int_part}(?:${f.exp}|${f.frac}${f.exp})`,
-  categories: [IFloat]
-});
-createToken({
-  name: "SpecialFloat",
-  pattern: /[+-](?:inf|nan)/,
-  categories: [IFloat]
 });
 createToken({
   name: "LSquare",
