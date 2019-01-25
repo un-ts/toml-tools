@@ -5,6 +5,15 @@ const path = require("path");
 const klawSync = require("klaw-sync");
 const tomlToolsParse = require("../").parse;
 const iarnaTomlParse = require("@iarna/toml").parse;
+const tomlNode = require("toml").parse;
+const tomlj4Parse = require("toml-j0.4").parse;
+
+const bombadil = require("@sgarciac/bombadil");
+
+function parseBombadil(input) {
+  var reader = new bombadil.TomlReader();
+  return reader.readToml(input);
+}
 
 // Processing the input samples **before** the benchmark
 const samplesDir = path.join(__dirname, "./samples/");
@@ -50,10 +59,17 @@ function bench(parseFunc) {
 //
 // So it is hard to compare...
 // Normally building an AST from a Chevrotain CST is a minor thing performance wise
-// So
+// So I estimate a full TOML Compiler using TOML-Tools(with Chevrotain) would provide 80-90% of the
+// performance Measured here.
+//
+// Higher performance numbers could be gained with toml-tools if we avoid CST
+// creation +60-70%, but that would reduce the potential for code re-use.
 newSuite("Real World TOML samples Benchmark")
   .add("Toml-Tools", () => bench(tomlToolsParse))
   .add("@iarna/toml", () => bench(iarnaTomlParse))
+  .add("BinaryMuse/toml-node", () => bench(tomlNode))
+  .add("Bombadil", () => bench(parseBombadil))
+  .add("toml-j4.0", () => bench(tomlj4Parse))
   .run({
     async: false,
     minSamples: 200

@@ -16,6 +16,9 @@
     "access": "public"
   },
   "devDependencies": {
-    "@iarna/toml": "^2.2.1"
+    "@iarna/toml": "^2.2.1",
+    "@sgarciac/bombadil": "^2.0.1",
+    "toml": "^2.3.5",
+    "toml-j0.4": "^1.1.1"
   }
 }
