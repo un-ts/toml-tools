@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const klawSync = require("klaw-sync");
 const tomlToolsParse = require("../").parse;
+const iarnaTomlParse = require("@iarna/toml").parse;
 
 // Processing the input samples **before** the benchmark
 const samplesDir = path.join(__dirname, "./samples/");
@@ -38,8 +39,22 @@ function bench(parseFunc) {
   });
 }
 
+// This is not a very meaningful benchmark
+// There are different data structures being outputted here.
+// - The Chevrotain based "@toml-tools/parser" output a Concrete Syntax Tree
+//   - This is a large data structure with many arrays and maps that represents the actual Syntax.
+// - Other Toml parsers used here will output an AST (JS/JSON object) that would include transformations on the data
+//   - Date JS objects from Toml Date literals.
+//   - Trimming whitespace in multiline strings.
+//   - Converting binary/Hex decimals to JS numbers
+//
+// So it is hard to compare...
+// Normally building an AST from a Chevrotain CST is a minor thing performance wise
+// So
 newSuite("Real World TOML samples Benchmark")
   .add("Toml-Tools", () => bench(tomlToolsParse))
+  .add("@iarna/toml", () => bench(iarnaTomlParse))
   .run({
-    async: false
+    async: false,
+    minSamples: 200
   });

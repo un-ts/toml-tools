@@ -14,5 +14,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "@iarna/toml": "^2.2.1"
   }
 }

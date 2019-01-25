@@ -4,16 +4,27 @@ const { tokensDictionary: t } = require("@toml-tools/lexer");
 class TomlParser extends Parser {
   constructor() {
     super(t, {
-      // TODO: Is one Token Lookahead sufficient?
       maxLookahead: 1,
       ignoredIssues: {
         table: {
           OR: true
         }
-      }
+      },
+      // Performance: Disabling the CST creation
+      //              Leads to a 60-70% performance boost.
+      //              This could be relevant to implement a faster
+      //              variant of a compiler to JSON
+      //              e.g: @toml-tools/tomlToJsonFast
+      //              Although I am uncertain if it matters for most scenarios
+      //              If we are running at 750K lines per second or 1.2M lines per second,
+      //              Meaning the parsing is very fast either way.
+      outputCst: true
     });
 
     const $ = this;
+
+    $.C1 = null;
+    $.C2 = null;
 
     $.RULE("toml", () => {
       $.OPTION(() => {
@@ -29,11 +40,15 @@ class TomlParser extends Parser {
     });
 
     $.RULE("expression", () => {
-      $.OR([
-        { ALT: () => $.SUBRULE($.keyval) },
-        { ALT: () => $.SUBRULE($.table) },
-        { ALT: () => $.CONSUME(t.Comment) }
-      ]);
+      $.OR(
+        // https://sap.github.io/chevrotain/docs/guide/performance.html#arrays-of-alternatives
+        $.C2 ||
+          ($.C2 = [
+            { ALT: () => $.SUBRULE($.keyval) },
+            { ALT: () => $.SUBRULE($.table) },
+            { ALT: () => $.CONSUME(t.Comment) }
+          ])
+      );
       $.OPTION(() => {
         $.CONSUME2(t.Comment);
       });
@@ -54,15 +69,19 @@ class TomlParser extends Parser {
     });
 
     $.RULE("val", () => {
-      $.OR([
-        { ALT: () => $.CONSUME(t.IString) },
-        { ALT: () => $.CONSUME(t.IBoolean) },
-        { ALT: () => $.SUBRULE($.array) },
-        { ALT: () => $.SUBRULE($.inlineTable) },
-        { ALT: () => $.CONSUME(t.IDateTime) },
-        { ALT: () => $.CONSUME(t.IFloat) },
-        { ALT: () => $.CONSUME(t.IInteger) }
-      ]);
+      // https://sap.github.io/chevrotain/docs/guide/performance.html#arrays-of-alternatives
+      $.OR(
+        $.C1 ||
+          ($.C1 = [
+            { ALT: () => $.CONSUME(t.IString) },
+            { ALT: () => $.CONSUME(t.IBoolean) },
+            { ALT: () => $.SUBRULE($.array) },
+            { ALT: () => $.SUBRULE($.inlineTable) },
+            { ALT: () => $.CONSUME(t.IDateTime) },
+            { ALT: () => $.CONSUME(t.IFloat) },
+            { ALT: () => $.CONSUME(t.IInteger) }
+          ])
+      );
     });
 
     $.RULE("array", () => {

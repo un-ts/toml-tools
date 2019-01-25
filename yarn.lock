@@ -16,6 +16,11 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
+"@iarna/toml@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.1.tgz#82d0993d8882bb05e0645fbb4731d9e939e895b3"
+  integrity sha512-I2EjI9TbEFJNLziNPFfpo64PNanOaK17iL2kTW/jGlGOa4bvHw4VEied83kOEB7NJjXf1KfvmsQ2aEjy3xjiGg==
+
 "@lerna/add@^3.4.1":
   version "3.10.5"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.10.5.tgz#10dcd1069eee18a84432f826a38d6791af8a2fef"
