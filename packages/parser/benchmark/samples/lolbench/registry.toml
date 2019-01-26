@@ -1,0 +1,3937 @@
+workers = [
+    'molly',
+    'sally',
+    'wilhelm',
+]
+[benchmarks."brotli_1_1_3::bench_e2e_decode_q5_1024k"]
+runner = 'sally'
+name = 'bench_e2e_decode_q5_1024k'
+crate = 'brotli_1_1_3'
+entrypoint_path = 'benches/brotli_1_1_3/src/bin/bench-e2e-decode-q5-1024k.rs'
+
+[benchmarks."brotli_1_1_3::bench_e2e_decode_q9_5_1024k"]
+runner = 'wilhelm'
+name = 'bench_e2e_decode_q9_5_1024k'
+crate = 'brotli_1_1_3'
+entrypoint_path = 'benches/brotli_1_1_3/src/bin/bench-e2e-decode-q9-5-1024k.rs'
+
+[benchmarks."brotli_1_1_3::bench_e2e_rt_q5_1024k"]
+runner = 'sally'
+name = 'bench_e2e_rt_q5_1024k'
+crate = 'brotli_1_1_3'
+entrypoint_path = 'benches/brotli_1_1_3/src/bin/bench-e2e-rt-q5-1024k.rs'
+
+[benchmarks."brotli_1_1_3::bench_e2e_rt_q9_1024k"]
+runner = 'molly'
+name = 'bench_e2e_rt_q9_1024k'
+crate = 'brotli_1_1_3'
+entrypoint_path = 'benches/brotli_1_1_3/src/bin/bench-e2e-rt-q9-1024k.rs'
+
+[benchmarks."brotli_1_1_3::bench_e2e_rt_q9_5_1024k"]
+runner = 'wilhelm'
+name = 'bench_e2e_rt_q9_5_1024k'
+crate = 'brotli_1_1_3'
+entrypoint_path = 'benches/brotli_1_1_3/src/bin/bench-e2e-rt-q9-5-1024k.rs'
+
+[benchmarks."byteorder_1_2_6::f32::read_big_endian"]
+runner = 'sally'
+name = 'f32::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f32-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f32::read_little_endian"]
+runner = 'molly'
+name = 'f32::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f32-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f32::read_native_endian"]
+runner = 'wilhelm'
+name = 'f32::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f32-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f32::write_big_endian"]
+name = 'f32::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f32-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f32::write_little_endian"]
+name = 'f32::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f32-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f32::write_native_endian"]
+name = 'f32::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f32-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f64::read_big_endian"]
+runner = 'sally'
+name = 'f64::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f64-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f64::read_little_endian"]
+runner = 'sally'
+name = 'f64::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f64-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f64::read_native_endian"]
+runner = 'wilhelm'
+name = 'f64::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f64-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f64::write_big_endian"]
+name = 'f64::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f64-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f64::write_little_endian"]
+name = 'f64::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f64-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::f64::write_native_endian"]
+name = 'f64::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/f64-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i128::read_big_endian"]
+runner = 'sally'
+name = 'i128::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i128-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i128::read_little_endian"]
+runner = 'wilhelm'
+name = 'i128::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i128-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i128::read_native_endian"]
+runner = 'wilhelm'
+name = 'i128::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i128-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i128::write_big_endian"]
+name = 'i128::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i128-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i128::write_little_endian"]
+name = 'i128::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i128-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i128::write_native_endian"]
+name = 'i128::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i128-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i16::read_big_endian"]
+runner = 'sally'
+name = 'i16::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i16-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i16::read_little_endian"]
+runner = 'wilhelm'
+name = 'i16::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i16-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i16::read_native_endian"]
+runner = 'molly'
+name = 'i16::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i16-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i16::write_big_endian"]
+name = 'i16::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i16-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i16::write_little_endian"]
+name = 'i16::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i16-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i16::write_native_endian"]
+name = 'i16::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i16-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i32::read_big_endian"]
+runner = 'sally'
+name = 'i32::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i32-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i32::read_little_endian"]
+runner = 'molly'
+name = 'i32::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i32-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i32::read_native_endian"]
+runner = 'wilhelm'
+name = 'i32::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i32-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i32::write_big_endian"]
+name = 'i32::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i32-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i32::write_little_endian"]
+name = 'i32::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i32-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i32::write_native_endian"]
+name = 'i32::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i32-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i64::read_big_endian"]
+runner = 'molly'
+name = 'i64::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i64-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i64::read_little_endian"]
+runner = 'molly'
+name = 'i64::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i64-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i64::read_native_endian"]
+runner = 'sally'
+name = 'i64::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i64-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i64::write_big_endian"]
+name = 'i64::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i64-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i64::write_little_endian"]
+name = 'i64::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i64-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::i64::write_native_endian"]
+name = 'i64::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/i64-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_10::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_10::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-10-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_10::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_10::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-10-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_10::read_native_endian"]
+runner = 'wilhelm'
+name = 'int128_10::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-10-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_11::read_big_endian"]
+runner = 'sally'
+name = 'int128_11::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-11-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_11::read_little_endian"]
+runner = 'sally'
+name = 'int128_11::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-11-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_11::read_native_endian"]
+runner = 'molly'
+name = 'int128_11::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-11-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_12::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_12::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-12-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_12::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_12::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-12-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_12::read_native_endian"]
+runner = 'sally'
+name = 'int128_12::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-12-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_13::read_big_endian"]
+runner = 'sally'
+name = 'int128_13::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-13-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_13::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_13::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-13-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_13::read_native_endian"]
+runner = 'molly'
+name = 'int128_13::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-13-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_14::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_14::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-14-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_14::read_little_endian"]
+runner = 'sally'
+name = 'int128_14::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-14-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_14::read_native_endian"]
+runner = 'wilhelm'
+name = 'int128_14::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-14-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_15::read_big_endian"]
+runner = 'molly'
+name = 'int128_15::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-15-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_15::read_little_endian"]
+runner = 'sally'
+name = 'int128_15::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-15-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_15::read_native_endian"]
+runner = 'molly'
+name = 'int128_15::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-15-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_16::read_big_endian"]
+runner = 'sally'
+name = 'int128_16::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-16-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_16::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_16::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-16-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_16::read_native_endian"]
+runner = 'sally'
+name = 'int128_16::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-16-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_1::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_1::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-1-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_1::read_little_endian"]
+runner = 'molly'
+name = 'int128_1::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-1-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_1::read_native_endian"]
+runner = 'sally'
+name = 'int128_1::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-1-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_2::read_big_endian"]
+runner = 'molly'
+name = 'int128_2::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-2-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_2::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_2::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-2-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_2::read_native_endian"]
+runner = 'sally'
+name = 'int128_2::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-2-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_3::read_big_endian"]
+runner = 'sally'
+name = 'int128_3::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-3-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_3::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_3::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-3-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_3::read_native_endian"]
+runner = 'molly'
+name = 'int128_3::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-3-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_4::read_big_endian"]
+runner = 'sally'
+name = 'int128_4::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-4-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_4::read_little_endian"]
+runner = 'sally'
+name = 'int128_4::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-4-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_4::read_native_endian"]
+runner = 'wilhelm'
+name = 'int128_4::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-4-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_5::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_5::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-5-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_5::read_little_endian"]
+runner = 'molly'
+name = 'int128_5::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-5-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_5::read_native_endian"]
+runner = 'wilhelm'
+name = 'int128_5::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-5-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_6::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_6::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-6-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_6::read_little_endian"]
+runner = 'molly'
+name = 'int128_6::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-6-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_6::read_native_endian"]
+runner = 'sally'
+name = 'int128_6::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-6-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_7::read_big_endian"]
+runner = 'wilhelm'
+name = 'int128_7::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-7-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_7::read_little_endian"]
+runner = 'sally'
+name = 'int128_7::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-7-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_7::read_native_endian"]
+runner = 'sally'
+name = 'int128_7::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-7-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_8::read_big_endian"]
+runner = 'molly'
+name = 'int128_8::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-8-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_8::read_little_endian"]
+runner = 'wilhelm'
+name = 'int128_8::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-8-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_8::read_native_endian"]
+runner = 'molly'
+name = 'int128_8::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-8-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_9::read_big_endian"]
+runner = 'sally'
+name = 'int128_9::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-9-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_9::read_little_endian"]
+runner = 'molly'
+name = 'int128_9::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-9-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int128_9::read_native_endian"]
+runner = 'sally'
+name = 'int128_9::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int128-9-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_1::read_big_endian"]
+runner = 'molly'
+name = 'int_1::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-1-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_1::read_little_endian"]
+runner = 'molly'
+name = 'int_1::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-1-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_1::read_native_endian"]
+runner = 'sally'
+name = 'int_1::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-1-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_2::read_big_endian"]
+runner = 'molly'
+name = 'int_2::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-2-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_2::read_little_endian"]
+runner = 'wilhelm'
+name = 'int_2::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-2-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_2::read_native_endian"]
+runner = 'sally'
+name = 'int_2::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-2-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_3::read_big_endian"]
+runner = 'wilhelm'
+name = 'int_3::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-3-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_3::read_little_endian"]
+runner = 'sally'
+name = 'int_3::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-3-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_3::read_native_endian"]
+runner = 'sally'
+name = 'int_3::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-3-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_4::read_big_endian"]
+runner = 'wilhelm'
+name = 'int_4::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-4-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_4::read_little_endian"]
+runner = 'wilhelm'
+name = 'int_4::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-4-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_4::read_native_endian"]
+runner = 'molly'
+name = 'int_4::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-4-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_5::read_big_endian"]
+runner = 'sally'
+name = 'int_5::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-5-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_5::read_little_endian"]
+runner = 'molly'
+name = 'int_5::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-5-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_5::read_native_endian"]
+runner = 'sally'
+name = 'int_5::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-5-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_6::read_big_endian"]
+runner = 'wilhelm'
+name = 'int_6::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-6-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_6::read_little_endian"]
+runner = 'sally'
+name = 'int_6::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-6-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_6::read_native_endian"]
+runner = 'molly'
+name = 'int_6::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-6-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_7::read_big_endian"]
+runner = 'wilhelm'
+name = 'int_7::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-7-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_7::read_little_endian"]
+runner = 'molly'
+name = 'int_7::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-7-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_7::read_native_endian"]
+runner = 'molly'
+name = 'int_7::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-7-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_8::read_big_endian"]
+runner = 'sally'
+name = 'int_8::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-8-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_8::read_little_endian"]
+runner = 'wilhelm'
+name = 'int_8::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-8-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::int_8::read_native_endian"]
+runner = 'sally'
+name = 'int_8::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/int-8-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::slice_u64::read_big_endian"]
+runner = 'wilhelm'
+name = 'slice_u64::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/slice-u64-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::slice_u64::read_little_endian"]
+runner = 'molly'
+name = 'slice_u64::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/slice-u64-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::slice_u64::write_big_endian"]
+runner = 'wilhelm'
+name = 'slice_u64::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/slice-u64-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::slice_u64::write_little_endian"]
+runner = 'molly'
+name = 'slice_u64::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/slice-u64-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u128::read_big_endian"]
+runner = 'wilhelm'
+name = 'u128::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u128-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u128::read_little_endian"]
+runner = 'sally'
+name = 'u128::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u128-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u128::read_native_endian"]
+runner = 'wilhelm'
+name = 'u128::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u128-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u128::write_big_endian"]
+name = 'u128::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u128-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u128::write_little_endian"]
+name = 'u128::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u128-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u128::write_native_endian"]
+name = 'u128::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u128-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u16::read_big_endian"]
+runner = 'wilhelm'
+name = 'u16::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u16-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u16::read_little_endian"]
+runner = 'molly'
+name = 'u16::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u16-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u16::read_native_endian"]
+runner = 'sally'
+name = 'u16::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u16-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u16::write_big_endian"]
+name = 'u16::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u16-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u16::write_little_endian"]
+name = 'u16::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u16-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u16::write_native_endian"]
+name = 'u16::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u16-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u32::read_big_endian"]
+runner = 'wilhelm'
+name = 'u32::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u32-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u32::read_little_endian"]
+runner = 'sally'
+name = 'u32::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u32-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u32::read_native_endian"]
+runner = 'wilhelm'
+name = 'u32::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u32-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u32::write_big_endian"]
+name = 'u32::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u32-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u32::write_little_endian"]
+name = 'u32::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u32-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u32::write_native_endian"]
+name = 'u32::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u32-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u64::read_big_endian"]
+runner = 'molly'
+name = 'u64::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u64-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u64::read_little_endian"]
+runner = 'wilhelm'
+name = 'u64::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u64-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u64::read_native_endian"]
+runner = 'sally'
+name = 'u64::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u64-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u64::write_big_endian"]
+name = 'u64::write_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u64-write-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u64::write_little_endian"]
+name = 'u64::write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u64-write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::u64::write_native_endian"]
+name = 'u64::write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/u64-write-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_10::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint128_10::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-10-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_10::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint128_10::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-10-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_10::read_native_endian"]
+runner = 'molly'
+name = 'uint128_10::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-10-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_11::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint128_11::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-11-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_11::read_little_endian"]
+runner = 'molly'
+name = 'uint128_11::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-11-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_11::read_native_endian"]
+runner = 'molly'
+name = 'uint128_11::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-11-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_12::read_big_endian"]
+runner = 'sally'
+name = 'uint128_12::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-12-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_12::read_little_endian"]
+runner = 'molly'
+name = 'uint128_12::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-12-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_12::read_native_endian"]
+runner = 'sally'
+name = 'uint128_12::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-12-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_13::read_big_endian"]
+runner = 'sally'
+name = 'uint128_13::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-13-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_13::read_little_endian"]
+runner = 'sally'
+name = 'uint128_13::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-13-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_13::read_native_endian"]
+runner = 'molly'
+name = 'uint128_13::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-13-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_14::read_big_endian"]
+runner = 'molly'
+name = 'uint128_14::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-14-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_14::read_little_endian"]
+runner = 'molly'
+name = 'uint128_14::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-14-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_14::read_native_endian"]
+runner = 'molly'
+name = 'uint128_14::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-14-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_15::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint128_15::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-15-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_15::read_little_endian"]
+runner = 'molly'
+name = 'uint128_15::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-15-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_15::read_native_endian"]
+runner = 'sally'
+name = 'uint128_15::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-15-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_16::read_big_endian"]
+runner = 'sally'
+name = 'uint128_16::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-16-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_16::read_little_endian"]
+runner = 'sally'
+name = 'uint128_16::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-16-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_16::read_native_endian"]
+runner = 'molly'
+name = 'uint128_16::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-16-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_1::read_big_endian"]
+runner = 'molly'
+name = 'uint128_1::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-1-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_1::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint128_1::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-1-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_1::read_native_endian"]
+runner = 'molly'
+name = 'uint128_1::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-1-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_2::read_big_endian"]
+runner = 'molly'
+name = 'uint128_2::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-2-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_2::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint128_2::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-2-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_2::read_native_endian"]
+runner = 'molly'
+name = 'uint128_2::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-2-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_3::read_big_endian"]
+runner = 'sally'
+name = 'uint128_3::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-3-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_3::read_little_endian"]
+runner = 'sally'
+name = 'uint128_3::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-3-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_3::read_native_endian"]
+runner = 'wilhelm'
+name = 'uint128_3::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-3-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_4::read_big_endian"]
+runner = 'molly'
+name = 'uint128_4::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-4-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_4::read_little_endian"]
+runner = 'molly'
+name = 'uint128_4::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-4-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_4::read_native_endian"]
+runner = 'sally'
+name = 'uint128_4::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-4-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_5::read_big_endian"]
+runner = 'molly'
+name = 'uint128_5::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-5-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_5::read_little_endian"]
+runner = 'sally'
+name = 'uint128_5::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-5-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_5::read_native_endian"]
+runner = 'wilhelm'
+name = 'uint128_5::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-5-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_6::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint128_6::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-6-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_6::read_little_endian"]
+runner = 'molly'
+name = 'uint128_6::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-6-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_6::read_native_endian"]
+runner = 'molly'
+name = 'uint128_6::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-6-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_7::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint128_7::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-7-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_7::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint128_7::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-7-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_7::read_native_endian"]
+runner = 'molly'
+name = 'uint128_7::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-7-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_8::read_big_endian"]
+runner = 'molly'
+name = 'uint128_8::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-8-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_8::read_little_endian"]
+runner = 'sally'
+name = 'uint128_8::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-8-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_8::read_native_endian"]
+runner = 'wilhelm'
+name = 'uint128_8::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-8-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_9::read_big_endian"]
+runner = 'sally'
+name = 'uint128_9::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-9-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_9::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint128_9::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-9-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint128_9::read_native_endian"]
+runner = 'molly'
+name = 'uint128_9::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint128-9-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_1::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint_1::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-1-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_1::read_little_endian"]
+runner = 'molly'
+name = 'uint_1::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-1-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_1::read_native_endian"]
+runner = 'sally'
+name = 'uint_1::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-1-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_2::read_big_endian"]
+runner = 'molly'
+name = 'uint_2::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-2-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_2::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint_2::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-2-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_2::read_native_endian"]
+runner = 'wilhelm'
+name = 'uint_2::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-2-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_3::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint_3::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-3-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_3::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint_3::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-3-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_3::read_native_endian"]
+runner = 'molly'
+name = 'uint_3::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-3-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_4::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint_4::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-4-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_4::read_little_endian"]
+runner = 'sally'
+name = 'uint_4::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-4-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_4::read_native_endian"]
+runner = 'molly'
+name = 'uint_4::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-4-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_5::read_big_endian"]
+runner = 'molly'
+name = 'uint_5::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-5-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_5::read_little_endian"]
+runner = 'molly'
+name = 'uint_5::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-5-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_5::read_native_endian"]
+runner = 'molly'
+name = 'uint_5::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-5-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_6::read_big_endian"]
+runner = 'sally'
+name = 'uint_6::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-6-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_6::read_little_endian"]
+runner = 'sally'
+name = 'uint_6::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-6-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_6::read_native_endian"]
+runner = 'wilhelm'
+name = 'uint_6::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-6-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_7::read_big_endian"]
+runner = 'sally'
+name = 'uint_7::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-7-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_7::read_little_endian"]
+runner = 'molly'
+name = 'uint_7::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-7-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_7::read_native_endian"]
+runner = 'sally'
+name = 'uint_7::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-7-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_8::read_big_endian"]
+runner = 'wilhelm'
+name = 'uint_8::read_big_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-8-read-big-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_8::read_little_endian"]
+runner = 'wilhelm'
+name = 'uint_8::read_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-8-read-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::uint_8::read_native_endian"]
+runner = 'wilhelm'
+name = 'uint_8::read_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/uint-8-read-native-endian.rs'
+
+[benchmarks."byteorder_1_2_6::write_little_endian"]
+name = 'write_little_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/write-little-endian.rs'
+
+[benchmarks."byteorder_1_2_6::write_native_endian"]
+name = 'write_native_endian'
+crate = 'byteorder_1_2_6'
+entrypoint_path = 'benches/byteorder_1_2_6/src/bin/write-native-endian.rs'
+
+[benchmarks."clap_2_31_2::_01_default::build_app"]
+name = '_01_default::build_app'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/01-default-build-app.rs'
+
+[benchmarks."clap_2_31_2::_01_default::parse_clean"]
+name = '_01_default::parse_clean'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/01-default-parse-clean.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::add_flag"]
+name = '_02_simple::add_flag'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-add-flag.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::add_flag_ref"]
+name = '_02_simple::add_flag_ref'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-add-flag-ref.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::add_opt"]
+name = '_02_simple::add_opt'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-add-opt.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::add_opt_ref"]
+name = '_02_simple::add_opt_ref'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-add-opt-ref.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::add_pos"]
+name = '_02_simple::add_pos'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-add-pos.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::add_pos_ref"]
+name = '_02_simple::add_pos_ref'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-add-pos-ref.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::build_app"]
+name = '_02_simple::build_app'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-build-app.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::parse_clean"]
+name = '_02_simple::parse_clean'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-parse-clean.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::parse_complex"]
+name = '_02_simple::parse_complex'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-parse-complex.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::parse_flag"]
+name = '_02_simple::parse_flag'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-parse-flag.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::parse_option"]
+name = '_02_simple::parse_option'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-parse-option.rs'
+
+[benchmarks."clap_2_31_2::_02_simple::parse_positional"]
+name = '_02_simple::parse_positional'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/02-simple-parse-positional.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::create_app_builder"]
+name = '_03_complex::create_app_builder'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-create-app-builder.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::create_app_from_usage"]
+name = '_03_complex::create_app_from_usage'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-create-app-from-usage.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::create_app_macros"]
+name = '_03_complex::create_app_macros'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-create-app-macros.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_clean"]
+name = '_03_complex::parse_clean'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-clean.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_complex1"]
+name = '_03_complex::parse_complex1'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-complex1.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_complex2"]
+name = '_03_complex::parse_complex2'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-complex2.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_complex2_with_args_negate_scs"]
+name = '_03_complex::parse_complex2_with_args_negate_scs'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-complex2-with-args-negate-scs.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_flag"]
+name = '_03_complex::parse_flag'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-flag.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_option"]
+name = '_03_complex::parse_option'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-option.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_positional"]
+name = '_03_complex::parse_positional'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-positional.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_sc_clean"]
+name = '_03_complex::parse_sc_clean'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-sc-clean.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_sc_complex"]
+name = '_03_complex::parse_sc_complex'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-sc-complex.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_sc_flag"]
+name = '_03_complex::parse_sc_flag'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-sc-flag.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_sc_option"]
+name = '_03_complex::parse_sc_option'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-sc-option.rs'
+
+[benchmarks."clap_2_31_2::_03_complex::parse_sc_positional"]
+name = '_03_complex::parse_sc_positional'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/03-complex-parse-sc-positional.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example1"]
+name = '_04_new_help::example1'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example1.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example10"]
+name = '_04_new_help::example10'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example10.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example2"]
+name = '_04_new_help::example2'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example2.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example3"]
+name = '_04_new_help::example3'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example3.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example4"]
+name = '_04_new_help::example4'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example4.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example4_template"]
+name = '_04_new_help::example4_template'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example4-template.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example5"]
+name = '_04_new_help::example5'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example5.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example6"]
+name = '_04_new_help::example6'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example6.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example7"]
+name = '_04_new_help::example7'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example7.rs'
+
+[benchmarks."clap_2_31_2::_04_new_help::example8"]
+name = '_04_new_help::example8'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/04-new-help-example8.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::build_app_long"]
+name = '_05_ripgrep::build_app_long'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-build-app-long.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::build_app_short"]
+name = '_05_ripgrep::build_app_short'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-build-app-short.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::build_help_long"]
+name = '_05_ripgrep::build_help_long'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-build-help-long.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::build_help_short"]
+name = '_05_ripgrep::build_help_short'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-build-help-short.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::parse_clean"]
+name = '_05_ripgrep::parse_clean'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-parse-clean.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::parse_complex"]
+name = '_05_ripgrep::parse_complex'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-parse-complex.rs'
+
+[benchmarks."clap_2_31_2::_05_ripgrep::parse_lots"]
+name = '_05_ripgrep::parse_lots'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/05-ripgrep-parse-lots.rs'
+
+[benchmarks."clap_2_31_2::_06_rustup::build_app"]
+name = '_06_rustup::build_app'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/06-rustup-build-app.rs'
+
+[benchmarks."clap_2_31_2::_06_rustup::parse_clean"]
+name = '_06_rustup::parse_clean'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/06-rustup-parse-clean.rs'
+
+[benchmarks."clap_2_31_2::_06_rustup::parse_subcommands"]
+name = '_06_rustup::parse_subcommands'
+crate = 'clap_2_31_2'
+entrypoint_path = 'benches/clap_2_31_2/src/bin/06-rustup-parse-subcommands.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::defer::multi_alloc_defer_free"]
+runner = 'sally'
+name = 'defer::multi_alloc_defer_free'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/defer-multi-alloc-defer-free.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::defer::multi_defer"]
+runner = 'molly'
+name = 'defer::multi_defer'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/defer-multi-defer.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::defer::single_alloc_defer_free"]
+runner = 'molly'
+name = 'defer::single_alloc_defer_free'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/defer-single-alloc-defer-free.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::defer::single_defer"]
+runner = 'wilhelm'
+name = 'defer::single_defer'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/defer-single-defer.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::flush::multi_flush"]
+runner = 'molly'
+name = 'flush::multi_flush'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/flush-multi-flush.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::flush::single_flush"]
+runner = 'molly'
+name = 'flush::single_flush'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/flush-single-flush.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::pin::multi_pin"]
+runner = 'wilhelm'
+name = 'pin::multi_pin'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/pin-multi-pin.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::pin::single_default_handle_pin"]
+runner = 'molly'
+name = 'pin::single_default_handle_pin'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/pin-single-default-handle-pin.rs'
+
+[benchmarks."crossbeam_epoch_0_4_0::pin::single_pin"]
+runner = 'molly'
+name = 'pin::single_pin'
+crate = 'crossbeam_epoch_0_4_0'
+entrypoint_path = 'benches/crossbeam_epoch_0_4_0/src/bin/pin-single-pin.rs'
+
+[benchmarks."csv_1_0_2::count_game_deserialize_borrowed_bytes"]
+runner = 'wilhelm'
+name = 'count_game_deserialize_borrowed_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-deserialize-borrowed-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_game_deserialize_borrowed_str"]
+runner = 'wilhelm'
+name = 'count_game_deserialize_borrowed_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-deserialize-borrowed-str.rs'
+
+[benchmarks."csv_1_0_2::count_game_deserialize_owned_bytes"]
+runner = 'sally'
+name = 'count_game_deserialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-deserialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_game_deserialize_owned_str"]
+runner = 'molly'
+name = 'count_game_deserialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-deserialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_game_iter_bytes"]
+runner = 'wilhelm'
+name = 'count_game_iter_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-iter-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_game_iter_str"]
+runner = 'wilhelm'
+name = 'count_game_iter_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-iter-str.rs'
+
+[benchmarks."csv_1_0_2::count_game_read_bytes"]
+runner = 'molly'
+name = 'count_game_read_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-read-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_game_read_str"]
+runner = 'molly'
+name = 'count_game_read_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-read-str.rs'
+
+[benchmarks."csv_1_0_2::count_game_serialize_owned_bytes"]
+runner = 'wilhelm'
+name = 'count_game_serialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-serialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_game_serialize_owned_str"]
+runner = 'wilhelm'
+name = 'count_game_serialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-game-serialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_deserialize_borrowed_bytes"]
+runner = 'molly'
+name = 'count_mbta_deserialize_borrowed_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-deserialize-borrowed-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_deserialize_borrowed_str"]
+runner = 'wilhelm'
+name = 'count_mbta_deserialize_borrowed_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-deserialize-borrowed-str.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_deserialize_owned_bytes"]
+runner = 'molly'
+name = 'count_mbta_deserialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-deserialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_deserialize_owned_str"]
+runner = 'wilhelm'
+name = 'count_mbta_deserialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-deserialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_iter_bytes"]
+runner = 'wilhelm'
+name = 'count_mbta_iter_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-iter-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_iter_str"]
+runner = 'wilhelm'
+name = 'count_mbta_iter_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-iter-str.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_read_bytes"]
+runner = 'molly'
+name = 'count_mbta_read_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-read-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_read_str"]
+runner = 'sally'
+name = 'count_mbta_read_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-read-str.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_serialize_owned_bytes"]
+runner = 'sally'
+name = 'count_mbta_serialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-serialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_mbta_serialize_owned_str"]
+runner = 'wilhelm'
+name = 'count_mbta_serialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-mbta-serialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_deserialize_borrowed_bytes"]
+runner = 'wilhelm'
+name = 'count_nfl_deserialize_borrowed_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-deserialize-borrowed-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_deserialize_borrowed_str"]
+runner = 'molly'
+name = 'count_nfl_deserialize_borrowed_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-deserialize-borrowed-str.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_deserialize_owned_bytes"]
+runner = 'sally'
+name = 'count_nfl_deserialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-deserialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_deserialize_owned_str"]
+runner = 'wilhelm'
+name = 'count_nfl_deserialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-deserialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_iter_bytes"]
+runner = 'sally'
+name = 'count_nfl_iter_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-iter-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_iter_bytes_trimmed"]
+runner = 'wilhelm'
+name = 'count_nfl_iter_bytes_trimmed'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-iter-bytes-trimmed.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_iter_str"]
+runner = 'molly'
+name = 'count_nfl_iter_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-iter-str.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_iter_str_trimmed"]
+runner = 'sally'
+name = 'count_nfl_iter_str_trimmed'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-iter-str-trimmed.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_read_bytes"]
+runner = 'sally'
+name = 'count_nfl_read_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-read-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_read_str"]
+runner = 'sally'
+name = 'count_nfl_read_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-read-str.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_serialize_owned_bytes"]
+runner = 'molly'
+name = 'count_nfl_serialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-serialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_nfl_serialize_owned_str"]
+runner = 'sally'
+name = 'count_nfl_serialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-nfl-serialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_pop_deserialize_borrowed_bytes"]
+runner = 'sally'
+name = 'count_pop_deserialize_borrowed_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-deserialize-borrowed-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_pop_deserialize_borrowed_str"]
+runner = 'wilhelm'
+name = 'count_pop_deserialize_borrowed_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-deserialize-borrowed-str.rs'
+
+[benchmarks."csv_1_0_2::count_pop_deserialize_owned_bytes"]
+runner = 'molly'
+name = 'count_pop_deserialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-deserialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_pop_deserialize_owned_str"]
+runner = 'wilhelm'
+name = 'count_pop_deserialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-deserialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::count_pop_iter_bytes"]
+runner = 'wilhelm'
+name = 'count_pop_iter_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-iter-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_pop_iter_str"]
+runner = 'molly'
+name = 'count_pop_iter_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-iter-str.rs'
+
+[benchmarks."csv_1_0_2::count_pop_read_bytes"]
+runner = 'wilhelm'
+name = 'count_pop_read_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-read-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_pop_read_str"]
+runner = 'molly'
+name = 'count_pop_read_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-read-str.rs'
+
+[benchmarks."csv_1_0_2::count_pop_serialize_owned_bytes"]
+runner = 'wilhelm'
+name = 'count_pop_serialize_owned_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-serialize-owned-bytes.rs'
+
+[benchmarks."csv_1_0_2::count_pop_serialize_owned_str"]
+runner = 'wilhelm'
+name = 'count_pop_serialize_owned_str'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/count-pop-serialize-owned-str.rs'
+
+[benchmarks."csv_1_0_2::write_nfl_bytes"]
+runner = 'molly'
+name = 'write_nfl_bytes'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/write-nfl-bytes.rs'
+
+[benchmarks."csv_1_0_2::write_nfl_record"]
+runner = 'molly'
+name = 'write_nfl_record'
+crate = 'csv_1_0_2'
+entrypoint_path = 'benches/csv_1_0_2/src/bin/write-nfl-record.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting_10_000_rows"]
+runner = 'sally'
+name = 'bench_medium_complex_query_selecting_10_000_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-10-000-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting_10_000_rows_boxed"]
+runner = 'sally'
+name = 'bench_medium_complex_query_selecting_10_000_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-10-000-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting__1_000_rows"]
+runner = 'wilhelm'
+name = 'bench_medium_complex_query_selecting__1_000_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-1-000-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting__1_000_rows_boxed"]
+runner = 'molly'
+name = 'bench_medium_complex_query_selecting__1_000_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-1-000-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting____100_rows"]
+runner = 'wilhelm'
+name = 'bench_medium_complex_query_selecting____100_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-100-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting____100_rows_boxed"]
+runner = 'sally'
+name = 'bench_medium_complex_query_selecting____100_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-100-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting_____10_rows"]
+runner = 'molly'
+name = 'bench_medium_complex_query_selecting_____10_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-10-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting_____10_rows_boxed"]
+runner = 'molly'
+name = 'bench_medium_complex_query_selecting_____10_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-10-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting______1_row"]
+runner = 'sally'
+name = 'bench_medium_complex_query_selecting______1_row'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-1-row.rs'
+
+[benchmarks."diesel_1_1_1::bench_medium_complex_query_selecting______1_row_boxed"]
+runner = 'wilhelm'
+name = 'bench_medium_complex_query_selecting______1_row_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-medium-complex-query-selecting-1-row-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting_10_000_rows"]
+runner = 'wilhelm'
+name = 'bench_trivial_query_selecting_10_000_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-10-000-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting_10_000_rows_boxed"]
+runner = 'molly'
+name = 'bench_trivial_query_selecting_10_000_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-10-000-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting__1_000_rows"]
+runner = 'wilhelm'
+name = 'bench_trivial_query_selecting__1_000_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-1-000-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting__1_000_rows_boxed"]
+runner = 'wilhelm'
+name = 'bench_trivial_query_selecting__1_000_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-1-000-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting____100_rows"]
+runner = 'sally'
+name = 'bench_trivial_query_selecting____100_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-100-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting____100_rows_boxed"]
+runner = 'molly'
+name = 'bench_trivial_query_selecting____100_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-100-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting_____10_rows"]
+runner = 'sally'
+name = 'bench_trivial_query_selecting_____10_rows'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-10-rows.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting_____10_rows_boxed"]
+runner = 'molly'
+name = 'bench_trivial_query_selecting_____10_rows_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-10-rows-boxed.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting______1_row"]
+runner = 'wilhelm'
+name = 'bench_trivial_query_selecting______1_row'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-1-row.rs'
+
+[benchmarks."diesel_1_1_1::bench_trivial_query_selecting______1_row_boxed"]
+runner = 'wilhelm'
+name = 'bench_trivial_query_selecting______1_row_boxed'
+crate = 'diesel_1_1_1'
+entrypoint_path = 'benches/diesel_1_1_1/src/bin/bench-trivial-query-selecting-1-row-boxed.rs'
+
+[benchmarks."doom_9e197d7::freedoom1"]
+runner = 'wilhelm'
+name = 'freedoom1'
+crate = 'doom_9e197d7'
+entrypoint_path = 'benches/doom_9e197d7/src/bin/freedoom1.rs'
+
+[benchmarks."doom_9e197d7::freedoom2"]
+runner = 'molly'
+name = 'freedoom2'
+crate = 'doom_9e197d7'
+entrypoint_path = 'benches/doom_9e197d7/src/bin/freedoom2.rs'
+
+[benchmarks."inflate_0_3_4::decode"]
+runner = 'molly'
+name = 'decode'
+crate = 'inflate_0_3_4'
+entrypoint_path = 'benches/inflate_0_3_4/src/bin/decode.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serde_canada_dom"]
+runner = 'wilhelm'
+name = 'serde_canada_dom'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serde-canada-dom.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serde_canada_struct"]
+runner = 'sally'
+name = 'serde_canada_struct'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serde-canada-struct.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serde_citm_dom"]
+runner = 'wilhelm'
+name = 'serde_citm_dom'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serde-citm-dom.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serde_citm_struct"]
+runner = 'sally'
+name = 'serde_citm_struct'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serde-citm-struct.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serde_twitter_dom"]
+runner = 'wilhelm'
+name = 'serde_twitter_dom'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serde-twitter-dom.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serde_twitter_struct"]
+runner = 'molly'
+name = 'serde_twitter_struct'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serde-twitter-struct.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serialize_canada_dom"]
+runner = 'sally'
+name = 'serialize_canada_dom'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serialize-canada-dom.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serialize_canada_struct"]
+runner = 'molly'
+name = 'serialize_canada_struct'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serialize-canada-struct.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serialize_citm_dom"]
+runner = 'sally'
+name = 'serialize_citm_dom'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serialize-citm-dom.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serialize_citm_struct"]
+runner = 'molly'
+name = 'serialize_citm_struct'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serialize-citm-struct.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serialize_twitter_dom"]
+runner = 'wilhelm'
+name = 'serialize_twitter_dom'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serialize-twitter-dom.rs'
+
+[benchmarks."json_benchmark_c7d3d9b::serialize_twitter_struct"]
+runner = 'wilhelm'
+name = 'serialize_twitter_struct'
+crate = 'json_benchmark_c7d3d9b'
+entrypoint_path = 'benches/json_benchmark_c7d3d9b/src/bin/serialize-twitter-struct.rs'
+
+[benchmarks."nom_4_0_0::arithmetic::arithmetic"]
+runner = 'molly'
+name = 'arithmetic::arithmetic'
+crate = 'nom_4_0_0'
+entrypoint_path = 'benches/nom_4_0_0/src/bin/arithmetic-arithmetic.rs'
+
+[benchmarks."nom_4_0_0::http::one_test"]
+runner = 'wilhelm'
+name = 'http::one_test'
+crate = 'nom_4_0_0'
+entrypoint_path = 'benches/nom_4_0_0/src/bin/http-one-test.rs'
+
+[benchmarks."nom_4_0_0::ini::bench_ini_key_value"]
+runner = 'sally'
+name = 'ini::bench_ini_key_value'
+crate = 'nom_4_0_0'
+entrypoint_path = 'benches/nom_4_0_0/src/bin/ini-bench-ini-key-value.rs'
+
+[benchmarks."nom_4_0_0::ini::bench_ini_keys_and_values"]
+runner = 'wilhelm'
+name = 'ini::bench_ini_keys_and_values'
+crate = 'nom_4_0_0'
+entrypoint_path = 'benches/nom_4_0_0/src/bin/ini-bench-ini-keys-and-values.rs'
+
+[benchmarks."nom_4_0_0::ini_str::bench_ini_str"]
+runner = 'sally'
+name = 'ini_str::bench_ini_str'
+crate = 'nom_4_0_0'
+entrypoint_path = 'benches/nom_4_0_0/src/bin/ini-str-bench-ini-str.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_1_tuple"]
+runner = 'sally'
+name = 'shrink_f64_1_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-1-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_2_tuple"]
+runner = 'molly'
+name = 'shrink_f64_2_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-2-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_3_tuple"]
+runner = 'sally'
+name = 'shrink_f64_3_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-3-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_4_tuple"]
+runner = 'sally'
+name = 'shrink_f64_4_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-4-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_5_tuple"]
+runner = 'wilhelm'
+name = 'shrink_f64_5_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-5-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_6_tuple"]
+runner = 'wilhelm'
+name = 'shrink_f64_6_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-6-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_7_tuple"]
+runner = 'wilhelm'
+name = 'shrink_f64_7_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-7-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_f64_8_tuple"]
+runner = 'sally'
+name = 'shrink_f64_8_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-f64-8-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_1_tuple"]
+runner = 'sally'
+name = 'shrink_i64_1_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-1-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_2_tuple"]
+runner = 'sally'
+name = 'shrink_i64_2_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-2-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_3_tuple"]
+runner = 'wilhelm'
+name = 'shrink_i64_3_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-3-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_4_tuple"]
+runner = 'wilhelm'
+name = 'shrink_i64_4_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-4-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_5_tuple"]
+runner = 'wilhelm'
+name = 'shrink_i64_5_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-5-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_6_tuple"]
+runner = 'sally'
+name = 'shrink_i64_6_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-6-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_7_tuple"]
+runner = 'sally'
+name = 'shrink_i64_7_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-7-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_i64_8_tuple"]
+runner = 'molly'
+name = 'shrink_i64_8_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-i64-8-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_1_tuple"]
+runner = 'sally'
+name = 'shrink_string_1_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-1-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_2_tuple"]
+runner = 'molly'
+name = 'shrink_string_2_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-2-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_3_tuple"]
+runner = 'sally'
+name = 'shrink_string_3_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-3-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_4_tuple"]
+runner = 'wilhelm'
+name = 'shrink_string_4_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-4-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_5_tuple"]
+runner = 'molly'
+name = 'shrink_string_5_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-5-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_6_tuple"]
+runner = 'molly'
+name = 'shrink_string_6_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-6-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_7_tuple"]
+runner = 'molly'
+name = 'shrink_string_7_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-7-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_string_8_tuple"]
+runner = 'molly'
+name = 'shrink_string_8_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-string-8-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_1_tuple"]
+runner = 'molly'
+name = 'shrink_u64_1_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-1-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_2_tuple"]
+runner = 'molly'
+name = 'shrink_u64_2_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-2-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_3_tuple"]
+runner = 'wilhelm'
+name = 'shrink_u64_3_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-3-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_4_tuple"]
+runner = 'wilhelm'
+name = 'shrink_u64_4_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-4-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_5_tuple"]
+runner = 'molly'
+name = 'shrink_u64_5_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-5-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_6_tuple"]
+runner = 'molly'
+name = 'shrink_u64_6_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-6-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_7_tuple"]
+runner = 'sally'
+name = 'shrink_u64_7_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-7-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_u64_8_tuple"]
+runner = 'molly'
+name = 'shrink_u64_8_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-u64-8-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_1_tuple"]
+runner = 'sally'
+name = 'shrink_unit_1_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-1-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_2_tuple"]
+runner = 'sally'
+name = 'shrink_unit_2_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-2-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_3_tuple"]
+runner = 'wilhelm'
+name = 'shrink_unit_3_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-3-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_4_tuple"]
+runner = 'molly'
+name = 'shrink_unit_4_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-4-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_5_tuple"]
+runner = 'sally'
+name = 'shrink_unit_5_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-5-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_6_tuple"]
+runner = 'wilhelm'
+name = 'shrink_unit_6_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-6-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_7_tuple"]
+runner = 'molly'
+name = 'shrink_unit_7_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-7-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_unit_8_tuple"]
+runner = 'sally'
+name = 'shrink_unit_8_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-unit-8-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_1_tuple"]
+runner = 'wilhelm'
+name = 'shrink_vec_u8_1_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-1-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_2_tuple"]
+runner = 'wilhelm'
+name = 'shrink_vec_u8_2_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-2-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_3_tuple"]
+runner = 'sally'
+name = 'shrink_vec_u8_3_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-3-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_4_tuple"]
+runner = 'molly'
+name = 'shrink_vec_u8_4_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-4-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_5_tuple"]
+runner = 'wilhelm'
+name = 'shrink_vec_u8_5_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-5-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_6_tuple"]
+runner = 'wilhelm'
+name = 'shrink_vec_u8_6_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-6-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_7_tuple"]
+runner = 'wilhelm'
+name = 'shrink_vec_u8_7_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-7-tuple.rs'
+
+[benchmarks."quickcheck_0_6_1::shrink_vec_u8_8_tuple"]
+runner = 'wilhelm'
+name = 'shrink_vec_u8_8_tuple'
+crate = 'quickcheck_0_6_1'
+entrypoint_path = 'benches/quickcheck_0_6_1/src/bin/shrink-vec-u8-8-tuple.rs'
+
+[benchmarks."rayon_1_0_0::factorial::factorial_iterator"]
+runner = 'molly'
+name = 'factorial::factorial_iterator'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/factorial-factorial-iterator.rs'
+
+[benchmarks."rayon_1_0_0::factorial::factorial_join"]
+runner = 'wilhelm'
+name = 'factorial::factorial_join'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/factorial-factorial-join.rs'
+
+[benchmarks."rayon_1_0_0::factorial::factorial_par_iter"]
+runner = 'sally'
+name = 'factorial::factorial_par_iter'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/factorial-factorial-par-iter.rs'
+
+[benchmarks."rayon_1_0_0::factorial::factorial_recursion"]
+runner = 'molly'
+name = 'factorial::factorial_recursion'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/factorial-factorial-recursion.rs'
+
+[benchmarks."rayon_1_0_0::fibonacci::fibonacci_iterative"]
+runner = 'molly'
+name = 'fibonacci::fibonacci_iterative'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/fibonacci-fibonacci-iterative.rs'
+
+[benchmarks."rayon_1_0_0::fibonacci::fibonacci_join_1_2"]
+runner = 'wilhelm'
+name = 'fibonacci::fibonacci_join_1_2'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/fibonacci-fibonacci-join-1-2.rs'
+
+[benchmarks."rayon_1_0_0::fibonacci::fibonacci_join_2_1"]
+runner = 'wilhelm'
+name = 'fibonacci::fibonacci_join_2_1'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/fibonacci-fibonacci-join-2-1.rs'
+
+[benchmarks."rayon_1_0_0::fibonacci::fibonacci_recursive"]
+runner = 'molly'
+name = 'fibonacci::fibonacci_recursive'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/fibonacci-fibonacci-recursive.rs'
+
+[benchmarks."rayon_1_0_0::fibonacci::fibonacci_split_iterative"]
+runner = 'wilhelm'
+name = 'fibonacci::fibonacci_split_iterative'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/fibonacci-fibonacci-split-iterative.rs'
+
+[benchmarks."rayon_1_0_0::fibonacci::fibonacci_split_recursive"]
+runner = 'sally'
+name = 'fibonacci::fibonacci_split_recursive'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/fibonacci-fibonacci-split-recursive.rs'
+
+[benchmarks."rayon_1_0_0::find::parallel_find_common"]
+runner = 'wilhelm'
+name = 'find::parallel_find_common'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-parallel-find-common.rs'
+
+[benchmarks."rayon_1_0_0::find::parallel_find_first"]
+runner = 'sally'
+name = 'find::parallel_find_first'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-parallel-find-first.rs'
+
+[benchmarks."rayon_1_0_0::find::parallel_find_last"]
+runner = 'molly'
+name = 'find::parallel_find_last'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-parallel-find-last.rs'
+
+[benchmarks."rayon_1_0_0::find::parallel_find_middle"]
+runner = 'wilhelm'
+name = 'find::parallel_find_middle'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-parallel-find-middle.rs'
+
+[benchmarks."rayon_1_0_0::find::parallel_find_missing"]
+runner = 'wilhelm'
+name = 'find::parallel_find_missing'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-parallel-find-missing.rs'
+
+[benchmarks."rayon_1_0_0::find::serial_find_common"]
+runner = 'molly'
+name = 'find::serial_find_common'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-serial-find-common.rs'
+
+[benchmarks."rayon_1_0_0::find::serial_find_first"]
+runner = 'molly'
+name = 'find::serial_find_first'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-serial-find-first.rs'
+
+[benchmarks."rayon_1_0_0::find::serial_find_last"]
+runner = 'wilhelm'
+name = 'find::serial_find_last'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-serial-find-last.rs'
+
+[benchmarks."rayon_1_0_0::find::serial_find_middle"]
+runner = 'wilhelm'
+name = 'find::serial_find_middle'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-serial-find-middle.rs'
+
+[benchmarks."rayon_1_0_0::find::serial_find_missing"]
+runner = 'sally'
+name = 'find::serial_find_missing'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/find-serial-find-missing.rs'
+
+[benchmarks."rayon_1_0_0::join_microbench::increment_all"]
+runner = 'wilhelm'
+name = 'join_microbench::increment_all'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/join-microbench-increment-all.rs'
+
+[benchmarks."rayon_1_0_0::join_microbench::increment_all_atomized"]
+runner = 'sally'
+name = 'join_microbench::increment_all_atomized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/join-microbench-increment-all-atomized.rs'
+
+[benchmarks."rayon_1_0_0::join_microbench::increment_all_max"]
+runner = 'molly'
+name = 'join_microbench::increment_all_max'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/join-microbench-increment-all-max.rs'
+
+[benchmarks."rayon_1_0_0::join_microbench::increment_all_min"]
+runner = 'sally'
+name = 'join_microbench::increment_all_min'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/join-microbench-increment-all-min.rs'
+
+[benchmarks."rayon_1_0_0::join_microbench::increment_all_serialized"]
+runner = 'molly'
+name = 'join_microbench::increment_all_serialized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/join-microbench-increment-all-serialized.rs'
+
+[benchmarks."rayon_1_0_0::join_microbench::join_recursively"]
+runner = 'sally'
+name = 'join_microbench::join_recursively'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/join-microbench-join-recursively.rs'
+
+[benchmarks."rayon_1_0_0::life::bench::generations"]
+runner = 'molly'
+name = 'life::bench::generations'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/life-bench-generations.rs'
+
+[benchmarks."rayon_1_0_0::life::bench::parallel_generations"]
+runner = 'sally'
+name = 'life::bench::parallel_generations'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/life-bench-parallel-generations.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_collect"]
+runner = 'molly'
+name = 'map_collect::i_mod_10_to_i::with_collect'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-collect.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_fold"]
+runner = 'molly'
+name = 'map_collect::i_mod_10_to_i::with_fold'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-fold.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_fold_vec"]
+runner = 'wilhelm'
+name = 'map_collect::i_mod_10_to_i::with_fold_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-fold-vec.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_linked_list_collect"]
+runner = 'sally'
+name = 'map_collect::i_mod_10_to_i::with_linked_list_collect'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-linked-list-collect.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_linked_list_collect_vec"]
+runner = 'molly'
+name = 'map_collect::i_mod_10_to_i::with_linked_list_collect_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-linked-list-collect-vec.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_linked_list_collect_vec_sized"]
+runner = 'wilhelm'
+name = 'map_collect::i_mod_10_to_i::with_linked_list_collect_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-linked-list-collect-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_linked_list_map_reduce_vec_sized"]
+runner = 'wilhelm'
+name = 'map_collect::i_mod_10_to_i::with_linked_list_map_reduce_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-linked-list-map-reduce-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_mutex"]
+runner = 'molly'
+name = 'map_collect::i_mod_10_to_i::with_mutex'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-mutex.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_mutex_vec"]
+runner = 'molly'
+name = 'map_collect::i_mod_10_to_i::with_mutex_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-mutex-vec.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_mod_10_to_i::with_vec_vec_sized"]
+runner = 'molly'
+name = 'map_collect::i_mod_10_to_i::with_vec_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-mod-10-to-i-with-vec-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_collect"]
+runner = 'wilhelm'
+name = 'map_collect::i_to_i::with_collect'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-collect.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_fold"]
+runner = 'sally'
+name = 'map_collect::i_to_i::with_fold'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-fold.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_fold_vec"]
+runner = 'wilhelm'
+name = 'map_collect::i_to_i::with_fold_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-fold-vec.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_linked_list_collect"]
+runner = 'sally'
+name = 'map_collect::i_to_i::with_linked_list_collect'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-linked-list-collect.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_linked_list_collect_vec"]
+runner = 'molly'
+name = 'map_collect::i_to_i::with_linked_list_collect_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-linked-list-collect-vec.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_linked_list_collect_vec_sized"]
+runner = 'sally'
+name = 'map_collect::i_to_i::with_linked_list_collect_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-linked-list-collect-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_linked_list_map_reduce_vec_sized"]
+runner = 'wilhelm'
+name = 'map_collect::i_to_i::with_linked_list_map_reduce_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-linked-list-map-reduce-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_mutex"]
+runner = 'sally'
+name = 'map_collect::i_to_i::with_mutex'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-mutex.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_mutex_vec"]
+runner = 'wilhelm'
+name = 'map_collect::i_to_i::with_mutex_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-mutex-vec.rs'
+
+[benchmarks."rayon_1_0_0::map_collect::i_to_i::with_vec_vec_sized"]
+runner = 'sally'
+name = 'map_collect::i_to_i::with_vec_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/map-collect-i-to-i-with-vec-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::matmul::bench::bench_matmul_strassen"]
+runner = 'wilhelm'
+name = 'matmul::bench::bench_matmul_strassen'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/matmul-bench-bench-matmul-strassen.rs'
+
+[benchmarks."rayon_1_0_0::mergesort::bench::merge_sort_par_bench"]
+runner = 'sally'
+name = 'mergesort::bench::merge_sort_par_bench'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/mergesort-bench-merge-sort-par-bench.rs'
+
+[benchmarks."rayon_1_0_0::mergesort::bench::merge_sort_seq_bench"]
+runner = 'molly'
+name = 'mergesort::bench::merge_sort_seq_bench'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/mergesort-bench-merge-sort-seq-bench.rs'
+
+[benchmarks."rayon_1_0_0::nbody::bench::nbody_par"]
+runner = 'molly'
+name = 'nbody::bench::nbody_par'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/nbody-bench-nbody-par.rs'
+
+[benchmarks."rayon_1_0_0::nbody::bench::nbody_parreduce"]
+runner = 'molly'
+name = 'nbody::bench::nbody_parreduce'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/nbody-bench-nbody-parreduce.rs'
+
+[benchmarks."rayon_1_0_0::nbody::bench::nbody_seq"]
+runner = 'molly'
+name = 'nbody::bench::nbody_seq'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/nbody-bench-nbody-seq.rs'
+
+[benchmarks."rayon_1_0_0::pythagoras::euclid_faux_serial"]
+runner = 'molly'
+name = 'pythagoras::euclid_faux_serial'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/pythagoras-euclid-faux-serial.rs'
+
+[benchmarks."rayon_1_0_0::pythagoras::euclid_parallel_full"]
+runner = 'sally'
+name = 'pythagoras::euclid_parallel_full'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/pythagoras-euclid-parallel-full.rs'
+
+[benchmarks."rayon_1_0_0::pythagoras::euclid_parallel_one"]
+runner = 'sally'
+name = 'pythagoras::euclid_parallel_one'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/pythagoras-euclid-parallel-one.rs'
+
+[benchmarks."rayon_1_0_0::pythagoras::euclid_parallel_outer"]
+runner = 'molly'
+name = 'pythagoras::euclid_parallel_outer'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/pythagoras-euclid-parallel-outer.rs'
+
+[benchmarks."rayon_1_0_0::pythagoras::euclid_parallel_weightless"]
+runner = 'molly'
+name = 'pythagoras::euclid_parallel_weightless'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/pythagoras-euclid-parallel-weightless.rs'
+
+[benchmarks."rayon_1_0_0::pythagoras::euclid_serial"]
+runner = 'sally'
+name = 'pythagoras::euclid_serial'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/pythagoras-euclid-serial.rs'
+
+[benchmarks."rayon_1_0_0::quicksort::bench::quick_sort_par_bench"]
+runner = 'wilhelm'
+name = 'quicksort::bench::quick_sort_par_bench'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/quicksort-bench-quick-sort-par-bench.rs'
+
+[benchmarks."rayon_1_0_0::quicksort::bench::quick_sort_seq_bench"]
+runner = 'wilhelm'
+name = 'quicksort::bench::quick_sort_seq_bench'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/quicksort-bench-quick-sort-seq-bench.rs'
+
+[benchmarks."rayon_1_0_0::quicksort::bench::quick_sort_splitter"]
+runner = 'wilhelm'
+name = 'quicksort::bench::quick_sort_splitter'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/quicksort-bench-quick-sort-splitter.rs'
+
+[benchmarks."rayon_1_0_0::sieve::bench::sieve_chunks"]
+runner = 'molly'
+name = 'sieve::bench::sieve_chunks'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sieve-bench-sieve-chunks.rs'
+
+[benchmarks."rayon_1_0_0::sieve::bench::sieve_parallel"]
+runner = 'molly'
+name = 'sieve::bench::sieve_parallel'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sieve-bench-sieve-parallel.rs'
+
+[benchmarks."rayon_1_0_0::sieve::bench::sieve_serial"]
+runner = 'molly'
+name = 'sieve::bench::sieve_serial'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sieve-bench-sieve-serial.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_ascending"]
+runner = 'wilhelm'
+name = 'sort::demo_merge_sort_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_big"]
+runner = 'wilhelm'
+name = 'sort::demo_merge_sort_big'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-big.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_descending"]
+runner = 'sally'
+name = 'sort::demo_merge_sort_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_mostly_ascending"]
+runner = 'sally'
+name = 'sort::demo_merge_sort_mostly_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-mostly-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_mostly_descending"]
+runner = 'wilhelm'
+name = 'sort::demo_merge_sort_mostly_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-mostly-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_random"]
+runner = 'wilhelm'
+name = 'sort::demo_merge_sort_random'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-random.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_merge_sort_strings"]
+runner = 'sally'
+name = 'sort::demo_merge_sort_strings'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-merge-sort-strings.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_quick_sort_big"]
+runner = 'wilhelm'
+name = 'sort::demo_quick_sort_big'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-quick-sort-big.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_quick_sort_mostly_ascending"]
+runner = 'wilhelm'
+name = 'sort::demo_quick_sort_mostly_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-quick-sort-mostly-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_quick_sort_mostly_descending"]
+runner = 'molly'
+name = 'sort::demo_quick_sort_mostly_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-quick-sort-mostly-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_quick_sort_random"]
+runner = 'sally'
+name = 'sort::demo_quick_sort_random'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-quick-sort-random.rs'
+
+[benchmarks."rayon_1_0_0::sort::demo_quick_sort_strings"]
+runner = 'molly'
+name = 'sort::demo_quick_sort_strings'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-demo-quick-sort-strings.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_ascending"]
+runner = 'molly'
+name = 'sort::par_sort_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_big"]
+runner = 'sally'
+name = 'sort::par_sort_big'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-big.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_descending"]
+runner = 'sally'
+name = 'sort::par_sort_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_expensive"]
+runner = 'wilhelm'
+name = 'sort::par_sort_expensive'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-expensive.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_mostly_ascending"]
+runner = 'molly'
+name = 'sort::par_sort_mostly_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-mostly-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_mostly_descending"]
+runner = 'molly'
+name = 'sort::par_sort_mostly_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-mostly-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_random"]
+runner = 'molly'
+name = 'sort::par_sort_random'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-random.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_strings"]
+runner = 'molly'
+name = 'sort::par_sort_strings'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-strings.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_ascending"]
+runner = 'molly'
+name = 'sort::par_sort_unstable_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_big"]
+runner = 'wilhelm'
+name = 'sort::par_sort_unstable_big'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-big.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_descending"]
+runner = 'wilhelm'
+name = 'sort::par_sort_unstable_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_expensive"]
+runner = 'wilhelm'
+name = 'sort::par_sort_unstable_expensive'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-expensive.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_mostly_ascending"]
+runner = 'sally'
+name = 'sort::par_sort_unstable_mostly_ascending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-mostly-ascending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_mostly_descending"]
+runner = 'sally'
+name = 'sort::par_sort_unstable_mostly_descending'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-mostly-descending.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_random"]
+runner = 'sally'
+name = 'sort::par_sort_unstable_random'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-random.rs'
+
+[benchmarks."rayon_1_0_0::sort::par_sort_unstable_strings"]
+runner = 'wilhelm'
+name = 'sort::par_sort_unstable_strings'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/sort-par-sort-unstable-strings.rs'
+
+[benchmarks."rayon_1_0_0::str_split::parallel_space_char"]
+runner = 'molly'
+name = 'str_split::parallel_space_char'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/str-split-parallel-space-char.rs'
+
+[benchmarks."rayon_1_0_0::str_split::parallel_space_fn"]
+runner = 'molly'
+name = 'str_split::parallel_space_fn'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/str-split-parallel-space-fn.rs'
+
+[benchmarks."rayon_1_0_0::str_split::serial_space_char"]
+runner = 'molly'
+name = 'str_split::serial_space_char'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/str-split-serial-space-char.rs'
+
+[benchmarks."rayon_1_0_0::str_split::serial_space_fn"]
+runner = 'wilhelm'
+name = 'str_split::serial_space_fn'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/str-split-serial-space-fn.rs'
+
+[benchmarks."rayon_1_0_0::str_split::serial_space_str"]
+runner = 'sally'
+name = 'str_split::serial_space_str'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/str-split-serial-space-str.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_collect"]
+runner = 'sally'
+name = 'vec_collect::vec_i::with_collect'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-collect.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_collect_into_vec"]
+runner = 'molly'
+name = 'vec_collect::vec_i::with_collect_into_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-collect-into-vec.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_collect_into_vec_reused"]
+runner = 'molly'
+name = 'vec_collect::vec_i::with_collect_into_vec_reused'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-collect-into-vec-reused.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_fold"]
+runner = 'molly'
+name = 'vec_collect::vec_i::with_fold'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-fold.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_linked_list_collect_vec"]
+runner = 'sally'
+name = 'vec_collect::vec_i::with_linked_list_collect_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-linked-list-collect-vec.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_linked_list_collect_vec_sized"]
+runner = 'molly'
+name = 'vec_collect::vec_i::with_linked_list_collect_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-linked-list-collect-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_linked_list_map_reduce_vec_sized"]
+runner = 'sally'
+name = 'vec_collect::vec_i::with_linked_list_map_reduce_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-linked-list-map-reduce-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i::with_vec_vec_sized"]
+runner = 'molly'
+name = 'vec_collect::vec_i::with_vec_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-with-vec-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i_filtered::with_collect"]
+runner = 'sally'
+name = 'vec_collect::vec_i_filtered::with_collect'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-filtered-with-collect.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i_filtered::with_fold"]
+runner = 'sally'
+name = 'vec_collect::vec_i_filtered::with_fold'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-filtered-with-fold.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i_filtered::with_linked_list_collect_vec"]
+runner = 'wilhelm'
+name = 'vec_collect::vec_i_filtered::with_linked_list_collect_vec'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-filtered-with-linked-list-collect-vec.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i_filtered::with_linked_list_collect_vec_sized"]
+runner = 'sally'
+name = 'vec_collect::vec_i_filtered::with_linked_list_collect_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-filtered-with-linked-list-collect-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i_filtered::with_linked_list_map_reduce_vec_sized"]
+runner = 'wilhelm'
+name = 'vec_collect::vec_i_filtered::with_linked_list_map_reduce_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-filtered-with-linked-list-map-reduce-vec-sized.rs'
+
+[benchmarks."rayon_1_0_0::vec_collect::vec_i_filtered::with_vec_vec_sized"]
+runner = 'sally'
+name = 'vec_collect::vec_i_filtered::with_vec_vec_sized'
+crate = 'rayon_1_0_0'
+entrypoint_path = 'benches/rayon_1_0_0/src/bin/vec-collect-vec-i-filtered-with-vec-vec-sized.rs'
+
+[benchmarks."raytrace_8de9020::raytrace_random_scenes"]
+runner = 'sally'
+name = 'raytrace_random_scenes'
+crate = 'raytrace_8de9020'
+entrypoint_path = 'benches/raytrace_8de9020/src/bin/raytrace-random-scenes.rs'
+
+[benchmarks."regex_0_2_6::misc::anchored_literal_long_match"]
+runner = 'molly'
+name = 'misc::anchored_literal_long_match'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-anchored-literal-long-match.rs'
+
+[benchmarks."regex_0_2_6::misc::anchored_literal_long_non_match"]
+runner = 'molly'
+name = 'misc::anchored_literal_long_non_match'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-anchored-literal-long-non-match.rs'
+
+[benchmarks."regex_0_2_6::misc::anchored_literal_short_match"]
+runner = 'molly'
+name = 'misc::anchored_literal_short_match'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-anchored-literal-short-match.rs'
+
+[benchmarks."regex_0_2_6::misc::anchored_literal_short_non_match"]
+runner = 'sally'
+name = 'misc::anchored_literal_short_non_match'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-anchored-literal-short-non-match.rs'
+
+[benchmarks."regex_0_2_6::misc::easy0_1K"]
+runner = 'wilhelm'
+name = 'misc::easy0_1K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy0-1k.rs'
+
+[benchmarks."regex_0_2_6::misc::easy0_1MB"]
+runner = 'wilhelm'
+name = 'misc::easy0_1MB'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy0-1mb.rs'
+
+[benchmarks."regex_0_2_6::misc::easy0_32"]
+runner = 'sally'
+name = 'misc::easy0_32'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy0-32.rs'
+
+[benchmarks."regex_0_2_6::misc::easy0_32K"]
+runner = 'molly'
+name = 'misc::easy0_32K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy0-32k.rs'
+
+[benchmarks."regex_0_2_6::misc::easy1_1K"]
+runner = 'molly'
+name = 'misc::easy1_1K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy1-1k.rs'
+
+[benchmarks."regex_0_2_6::misc::easy1_1MB"]
+runner = 'sally'
+name = 'misc::easy1_1MB'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy1-1mb.rs'
+
+[benchmarks."regex_0_2_6::misc::easy1_32"]
+runner = 'wilhelm'
+name = 'misc::easy1_32'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy1-32.rs'
+
+[benchmarks."regex_0_2_6::misc::easy1_32K"]
+runner = 'molly'
+name = 'misc::easy1_32K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-easy1-32k.rs'
+
+[benchmarks."regex_0_2_6::misc::hard_1K"]
+runner = 'wilhelm'
+name = 'misc::hard_1K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-hard-1k.rs'
+
+[benchmarks."regex_0_2_6::misc::hard_1MB"]
+runner = 'wilhelm'
+name = 'misc::hard_1MB'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-hard-1mb.rs'
+
+[benchmarks."regex_0_2_6::misc::hard_32"]
+runner = 'sally'
+name = 'misc::hard_32'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-hard-32.rs'
+
+[benchmarks."regex_0_2_6::misc::hard_32K"]
+runner = 'sally'
+name = 'misc::hard_32K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-hard-32k.rs'
+
+[benchmarks."regex_0_2_6::misc::literal"]
+runner = 'molly'
+name = 'misc::literal'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-literal.rs'
+
+[benchmarks."regex_0_2_6::misc::long_needle1"]
+runner = 'sally'
+name = 'misc::long_needle1'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-long-needle1.rs'
+
+[benchmarks."regex_0_2_6::misc::long_needle2"]
+runner = 'sally'
+name = 'misc::long_needle2'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-long-needle2.rs'
+
+[benchmarks."regex_0_2_6::misc::match_class"]
+runner = 'molly'
+name = 'misc::match_class'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-match-class.rs'
+
+[benchmarks."regex_0_2_6::misc::match_class_in_range"]
+runner = 'sally'
+name = 'misc::match_class_in_range'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-match-class-in-range.rs'
+
+[benchmarks."regex_0_2_6::misc::medium_1K"]
+runner = 'molly'
+name = 'misc::medium_1K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-medium-1k.rs'
+
+[benchmarks."regex_0_2_6::misc::medium_1MB"]
+runner = 'wilhelm'
+name = 'misc::medium_1MB'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-medium-1mb.rs'
+
+[benchmarks."regex_0_2_6::misc::medium_32"]
+runner = 'wilhelm'
+name = 'misc::medium_32'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-medium-32.rs'
+
+[benchmarks."regex_0_2_6::misc::medium_32K"]
+runner = 'sally'
+name = 'misc::medium_32K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-medium-32k.rs'
+
+[benchmarks."regex_0_2_6::misc::not_literal"]
+runner = 'sally'
+name = 'misc::not_literal'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-not-literal.rs'
+
+[benchmarks."regex_0_2_6::misc::one_pass_long_prefix"]
+runner = 'molly'
+name = 'misc::one_pass_long_prefix'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-one-pass-long-prefix.rs'
+
+[benchmarks."regex_0_2_6::misc::one_pass_long_prefix_not"]
+runner = 'wilhelm'
+name = 'misc::one_pass_long_prefix_not'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-one-pass-long-prefix-not.rs'
+
+[benchmarks."regex_0_2_6::misc::one_pass_short"]
+runner = 'sally'
+name = 'misc::one_pass_short'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-one-pass-short.rs'
+
+[benchmarks."regex_0_2_6::misc::one_pass_short_not"]
+runner = 'sally'
+name = 'misc::one_pass_short_not'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-one-pass-short-not.rs'
+
+[benchmarks."regex_0_2_6::misc::reallyhard2_1K"]
+runner = 'molly'
+name = 'misc::reallyhard2_1K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-reallyhard2-1k.rs'
+
+[benchmarks."regex_0_2_6::misc::reallyhard_1K"]
+runner = 'molly'
+name = 'misc::reallyhard_1K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-reallyhard-1k.rs'
+
+[benchmarks."regex_0_2_6::misc::reallyhard_1MB"]
+runner = 'molly'
+name = 'misc::reallyhard_1MB'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-reallyhard-1mb.rs'
+
+[benchmarks."regex_0_2_6::misc::reallyhard_32"]
+runner = 'wilhelm'
+name = 'misc::reallyhard_32'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-reallyhard-32.rs'
+
+[benchmarks."regex_0_2_6::misc::reallyhard_32K"]
+runner = 'wilhelm'
+name = 'misc::reallyhard_32K'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-reallyhard-32k.rs'
+
+[benchmarks."regex_0_2_6::misc::replace_all"]
+runner = 'wilhelm'
+name = 'misc::replace_all'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-replace-all.rs'
+
+[benchmarks."regex_0_2_6::misc::reverse_suffix_no_quadratic"]
+runner = 'wilhelm'
+name = 'misc::reverse_suffix_no_quadratic'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-reverse-suffix-no-quadratic.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_1000000x"]
+runner = 'sally'
+name = 'misc::short_haystack_1000000x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-1000000x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_100000x"]
+runner = 'sally'
+name = 'misc::short_haystack_100000x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-100000x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_10000x"]
+runner = 'molly'
+name = 'misc::short_haystack_10000x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-10000x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_1000x"]
+runner = 'sally'
+name = 'misc::short_haystack_1000x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-1000x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_100x"]
+runner = 'wilhelm'
+name = 'misc::short_haystack_100x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-100x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_10x"]
+runner = 'sally'
+name = 'misc::short_haystack_10x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-10x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_1x"]
+runner = 'molly'
+name = 'misc::short_haystack_1x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-1x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_2x"]
+runner = 'wilhelm'
+name = 'misc::short_haystack_2x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-2x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_3x"]
+runner = 'sally'
+name = 'misc::short_haystack_3x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-3x.rs'
+
+[benchmarks."regex_0_2_6::misc::short_haystack_4x"]
+runner = 'molly'
+name = 'misc::short_haystack_4x'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/misc-short-haystack-4x.rs'
+
+[benchmarks."regex_0_2_6::regexdna::find_new_lines"]
+runner = 'molly'
+name = 'regexdna::find_new_lines'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-find-new-lines.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst1"]
+runner = 'sally'
+name = 'regexdna::subst1'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst1.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst10"]
+runner = 'molly'
+name = 'regexdna::subst10'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst10.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst11"]
+runner = 'wilhelm'
+name = 'regexdna::subst11'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst11.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst2"]
+runner = 'sally'
+name = 'regexdna::subst2'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst2.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst3"]
+runner = 'wilhelm'
+name = 'regexdna::subst3'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst3.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst4"]
+runner = 'molly'
+name = 'regexdna::subst4'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst4.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst5"]
+runner = 'sally'
+name = 'regexdna::subst5'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst5.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst6"]
+runner = 'wilhelm'
+name = 'regexdna::subst6'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst6.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst7"]
+runner = 'molly'
+name = 'regexdna::subst7'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst7.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst8"]
+runner = 'sally'
+name = 'regexdna::subst8'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst8.rs'
+
+[benchmarks."regex_0_2_6::regexdna::subst9"]
+runner = 'molly'
+name = 'regexdna::subst9'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-subst9.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant1"]
+runner = 'molly'
+name = 'regexdna::variant1'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant1.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant2"]
+runner = 'molly'
+name = 'regexdna::variant2'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant2.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant3"]
+runner = 'sally'
+name = 'regexdna::variant3'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant3.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant4"]
+runner = 'sally'
+name = 'regexdna::variant4'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant4.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant5"]
+runner = 'wilhelm'
+name = 'regexdna::variant5'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant5.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant6"]
+runner = 'molly'
+name = 'regexdna::variant6'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant6.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant7"]
+runner = 'wilhelm'
+name = 'regexdna::variant7'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant7.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant8"]
+runner = 'sally'
+name = 'regexdna::variant8'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant8.rs'
+
+[benchmarks."regex_0_2_6::regexdna::variant9"]
+runner = 'sally'
+name = 'regexdna::variant9'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/regexdna-variant9.rs'
+
+[benchmarks."regex_0_2_6::rust_parse::parse_huge"]
+runner = 'molly'
+name = 'rust_parse::parse_huge'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/rust-parse-parse-huge.rs'
+
+[benchmarks."regex_0_2_6::rust_parse::parse_simple"]
+runner = 'wilhelm'
+name = 'rust_parse::parse_simple'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/rust-parse-parse-simple.rs'
+
+[benchmarks."regex_0_2_6::rust_parse::parse_simple2"]
+runner = 'sally'
+name = 'rust_parse::parse_simple2'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/rust-parse-parse-simple2.rs'
+
+[benchmarks."regex_0_2_6::rust_parse::parse_small"]
+runner = 'molly'
+name = 'rust_parse::parse_small'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/rust-parse-parse-small.rs'
+
+[benchmarks."regex_0_2_6::sherlock::before_after_holmes"]
+runner = 'sally'
+name = 'sherlock::before_after_holmes'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-before-after-holmes.rs'
+
+[benchmarks."regex_0_2_6::sherlock::before_holmes"]
+runner = 'molly'
+name = 'sherlock::before_holmes'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-before-holmes.rs'
+
+[benchmarks."regex_0_2_6::sherlock::everything_greedy"]
+runner = 'wilhelm'
+name = 'sherlock::everything_greedy'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-everything-greedy.rs'
+
+[benchmarks."regex_0_2_6::sherlock::everything_greedy_nl"]
+runner = 'sally'
+name = 'sherlock::everything_greedy_nl'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-everything-greedy-nl.rs'
+
+[benchmarks."regex_0_2_6::sherlock::holmes_cochar_watson"]
+runner = 'molly'
+name = 'sherlock::holmes_cochar_watson'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-holmes-cochar-watson.rs'
+
+[benchmarks."regex_0_2_6::sherlock::holmes_coword_watson"]
+runner = 'sally'
+name = 'sherlock::holmes_coword_watson'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-holmes-coword-watson.rs'
+
+[benchmarks."regex_0_2_6::sherlock::ing_suffix"]
+runner = 'sally'
+name = 'sherlock::ing_suffix'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-ing-suffix.rs'
+
+[benchmarks."regex_0_2_6::sherlock::ing_suffix_limited_space"]
+runner = 'wilhelm'
+name = 'sherlock::ing_suffix_limited_space'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-ing-suffix-limited-space.rs'
+
+[benchmarks."regex_0_2_6::sherlock::letters"]
+runner = 'wilhelm'
+name = 'sherlock::letters'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-letters.rs'
+
+[benchmarks."regex_0_2_6::sherlock::letters_lower"]
+runner = 'molly'
+name = 'sherlock::letters_lower'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-letters-lower.rs'
+
+[benchmarks."regex_0_2_6::sherlock::letters_upper"]
+runner = 'sally'
+name = 'sherlock::letters_upper'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-letters-upper.rs'
+
+[benchmarks."regex_0_2_6::sherlock::line_boundary_sherlock_holmes"]
+runner = 'molly'
+name = 'sherlock::line_boundary_sherlock_holmes'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-line-boundary-sherlock-holmes.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt1"]
+runner = 'wilhelm'
+name = 'sherlock::name_alt1'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt1.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt2"]
+runner = 'molly'
+name = 'sherlock::name_alt2'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt2.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt3"]
+runner = 'sally'
+name = 'sherlock::name_alt3'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt3.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt3_nocase"]
+runner = 'sally'
+name = 'sherlock::name_alt3_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt3-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt4"]
+runner = 'wilhelm'
+name = 'sherlock::name_alt4'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt4.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt4_nocase"]
+runner = 'wilhelm'
+name = 'sherlock::name_alt4_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt4-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt5"]
+runner = 'wilhelm'
+name = 'sherlock::name_alt5'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt5.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_alt5_nocase"]
+runner = 'wilhelm'
+name = 'sherlock::name_alt5_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-alt5-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_holmes"]
+runner = 'molly'
+name = 'sherlock::name_holmes'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-holmes.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_holmes_nocase"]
+runner = 'sally'
+name = 'sherlock::name_holmes_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-holmes-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_sherlock"]
+runner = 'molly'
+name = 'sherlock::name_sherlock'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-sherlock.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_sherlock_holmes"]
+runner = 'sally'
+name = 'sherlock::name_sherlock_holmes'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-sherlock-holmes.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_sherlock_holmes_nocase"]
+runner = 'molly'
+name = 'sherlock::name_sherlock_holmes_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-sherlock-holmes-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_sherlock_nocase"]
+runner = 'wilhelm'
+name = 'sherlock::name_sherlock_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-sherlock-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::name_whitespace"]
+runner = 'sally'
+name = 'sherlock::name_whitespace'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-name-whitespace.rs'
+
+[benchmarks."regex_0_2_6::sherlock::no_match_common"]
+runner = 'wilhelm'
+name = 'sherlock::no_match_common'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-no-match-common.rs'
+
+[benchmarks."regex_0_2_6::sherlock::no_match_really_common"]
+runner = 'molly'
+name = 'sherlock::no_match_really_common'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-no-match-really-common.rs'
+
+[benchmarks."regex_0_2_6::sherlock::no_match_uncommon"]
+runner = 'wilhelm'
+name = 'sherlock::no_match_uncommon'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-no-match-uncommon.rs'
+
+[benchmarks."regex_0_2_6::sherlock::quotes"]
+runner = 'sally'
+name = 'sherlock::quotes'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-quotes.rs'
+
+[benchmarks."regex_0_2_6::sherlock::repeated_class_negation"]
+runner = 'sally'
+name = 'sherlock::repeated_class_negation'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-repeated-class-negation.rs'
+
+[benchmarks."regex_0_2_6::sherlock::the_lower"]
+runner = 'wilhelm'
+name = 'sherlock::the_lower'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-the-lower.rs'
+
+[benchmarks."regex_0_2_6::sherlock::the_nocase"]
+runner = 'sally'
+name = 'sherlock::the_nocase'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-the-nocase.rs'
+
+[benchmarks."regex_0_2_6::sherlock::the_upper"]
+runner = 'wilhelm'
+name = 'sherlock::the_upper'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-the-upper.rs'
+
+[benchmarks."regex_0_2_6::sherlock::the_whitespace"]
+runner = 'sally'
+name = 'sherlock::the_whitespace'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-the-whitespace.rs'
+
+[benchmarks."regex_0_2_6::sherlock::word_ending_n"]
+runner = 'sally'
+name = 'sherlock::word_ending_n'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-word-ending-n.rs'
+
+[benchmarks."regex_0_2_6::sherlock::words"]
+runner = 'wilhelm'
+name = 'sherlock::words'
+crate = 'regex_0_2_6'
+entrypoint_path = 'benches/regex_0_2_6/src/bin/sherlock-words.rs'
+
+[benchmarks."sha2_0_8_0::sha256::bench1_10"]
+runner = 'wilhelm'
+name = 'sha256::bench1_10'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha256-bench1-10.rs'
+
+[benchmarks."sha2_0_8_0::sha256::bench2_100"]
+runner = 'wilhelm'
+name = 'sha256::bench2_100'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha256-bench2-100.rs'
+
+[benchmarks."sha2_0_8_0::sha256::bench3_1000"]
+runner = 'wilhelm'
+name = 'sha256::bench3_1000'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha256-bench3-1000.rs'
+
+[benchmarks."sha2_0_8_0::sha256::bench4_10000"]
+runner = 'molly'
+name = 'sha256::bench4_10000'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha256-bench4-10000.rs'
+
+[benchmarks."sha2_0_8_0::sha512::bench1_10"]
+runner = 'wilhelm'
+name = 'sha512::bench1_10'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha512-bench1-10.rs'
+
+[benchmarks."sha2_0_8_0::sha512::bench2_100"]
+runner = 'wilhelm'
+name = 'sha512::bench2_100'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha512-bench2-100.rs'
+
+[benchmarks."sha2_0_8_0::sha512::bench3_1000"]
+runner = 'wilhelm'
+name = 'sha512::bench3_1000'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha512-bench3-1000.rs'
+
+[benchmarks."sha2_0_8_0::sha512::bench4_10000"]
+runner = 'molly'
+name = 'sha512::bench4_10000'
+crate = 'sha2_0_8_0'
+entrypoint_path = 'benches/sha2_0_8_0/src/bin/sha512-bench4-10000.rs'
+
+[benchmarks."sha3_0_8_0::sha3_256::bench1_10"]
+runner = 'wilhelm'
+name = 'sha3_256::bench1_10'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-256-bench1-10.rs'
+
+[benchmarks."sha3_0_8_0::sha3_256::bench2_100"]
+runner = 'wilhelm'
+name = 'sha3_256::bench2_100'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-256-bench2-100.rs'
+
+[benchmarks."sha3_0_8_0::sha3_256::bench3_1000"]
+runner = 'sally'
+name = 'sha3_256::bench3_1000'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-256-bench3-1000.rs'
+
+[benchmarks."sha3_0_8_0::sha3_256::bench4_10000"]
+runner = 'sally'
+name = 'sha3_256::bench4_10000'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-256-bench4-10000.rs'
+
+[benchmarks."sha3_0_8_0::sha3_512::bench1_10"]
+runner = 'wilhelm'
+name = 'sha3_512::bench1_10'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-512-bench1-10.rs'
+
+[benchmarks."sha3_0_8_0::sha3_512::bench2_100"]
+runner = 'wilhelm'
+name = 'sha3_512::bench2_100'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-512-bench2-100.rs'
+
+[benchmarks."sha3_0_8_0::sha3_512::bench3_1000"]
+runner = 'sally'
+name = 'sha3_512::bench3_1000'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-512-bench3-1000.rs'
+
+[benchmarks."sha3_0_8_0::sha3_512::bench4_10000"]
+runner = 'wilhelm'
+name = 'sha3_512::bench4_10000'
+crate = 'sha3_0_8_0'
+entrypoint_path = 'benches/sha3_0_8_0/src/bin/sha3-512-bench4-10000.rs'
+
+[benchmarks."snap_0_2_4::uflat00_html"]
+runner = 'molly'
+name = 'uflat00_html'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat00-html.rs'
+
+[benchmarks."snap_0_2_4::uflat01_urls"]
+runner = 'wilhelm'
+name = 'uflat01_urls'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat01-urls.rs'
+
+[benchmarks."snap_0_2_4::uflat02_jpg"]
+runner = 'wilhelm'
+name = 'uflat02_jpg'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat02-jpg.rs'
+
+[benchmarks."snap_0_2_4::uflat03_jpg_200"]
+runner = 'wilhelm'
+name = 'uflat03_jpg_200'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat03-jpg-200.rs'
+
+[benchmarks."snap_0_2_4::uflat04_pdf"]
+runner = 'sally'
+name = 'uflat04_pdf'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat04-pdf.rs'
+
+[benchmarks."snap_0_2_4::uflat05_html4"]
+runner = 'molly'
+name = 'uflat05_html4'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat05-html4.rs'
+
+[benchmarks."snap_0_2_4::uflat06_txt1"]
+runner = 'wilhelm'
+name = 'uflat06_txt1'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat06-txt1.rs'
+
+[benchmarks."snap_0_2_4::uflat07_txt2"]
+runner = 'sally'
+name = 'uflat07_txt2'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat07-txt2.rs'
+
+[benchmarks."snap_0_2_4::uflat08_txt3"]
+runner = 'sally'
+name = 'uflat08_txt3'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat08-txt3.rs'
+
+[benchmarks."snap_0_2_4::uflat09_txt4"]
+runner = 'wilhelm'
+name = 'uflat09_txt4'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat09-txt4.rs'
+
+[benchmarks."snap_0_2_4::uflat10_pb"]
+runner = 'sally'
+name = 'uflat10_pb'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat10-pb.rs'
+
+[benchmarks."snap_0_2_4::uflat11_gaviota"]
+runner = 'molly'
+name = 'uflat11_gaviota'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/uflat11-gaviota.rs'
+
+[benchmarks."snap_0_2_4::zflat00_html"]
+runner = 'sally'
+name = 'zflat00_html'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat00-html.rs'
+
+[benchmarks."snap_0_2_4::zflat01_urls"]
+runner = 'molly'
+name = 'zflat01_urls'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat01-urls.rs'
+
+[benchmarks."snap_0_2_4::zflat02_jpg"]
+runner = 'molly'
+name = 'zflat02_jpg'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat02-jpg.rs'
+
+[benchmarks."snap_0_2_4::zflat03_jpg_200"]
+runner = 'sally'
+name = 'zflat03_jpg_200'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat03-jpg-200.rs'
+
+[benchmarks."snap_0_2_4::zflat04_pdf"]
+runner = 'wilhelm'
+name = 'zflat04_pdf'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat04-pdf.rs'
+
+[benchmarks."snap_0_2_4::zflat05_html4"]
+runner = 'molly'
+name = 'zflat05_html4'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat05-html4.rs'
+
+[benchmarks."snap_0_2_4::zflat06_txt1"]
+runner = 'wilhelm'
+name = 'zflat06_txt1'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat06-txt1.rs'
+
+[benchmarks."snap_0_2_4::zflat07_txt2"]
+runner = 'sally'
+name = 'zflat07_txt2'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat07-txt2.rs'
+
+[benchmarks."snap_0_2_4::zflat08_txt3"]
+runner = 'wilhelm'
+name = 'zflat08_txt3'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat08-txt3.rs'
+
+[benchmarks."snap_0_2_4::zflat09_txt4"]
+runner = 'sally'
+name = 'zflat09_txt4'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat09-txt4.rs'
+
+[benchmarks."snap_0_2_4::zflat10_pb"]
+runner = 'wilhelm'
+name = 'zflat10_pb'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat10-pb.rs'
+
+[benchmarks."snap_0_2_4::zflat11_gaviota"]
+runner = 'sally'
+name = 'zflat11_gaviota'
+crate = 'snap_0_2_4'
+entrypoint_path = 'benches/snap_0_2_4/src/bin/zflat11-gaviota.rs'

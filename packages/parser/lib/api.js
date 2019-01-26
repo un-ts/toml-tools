@@ -2,6 +2,7 @@ const { tokenize } = require("@toml-tools/lexer");
 const { TomlParser } = require("./parser");
 
 const parser = new TomlParser();
+const BaseTomlCstVisitor = parser.getBaseCstVisitorConstructor();
 
 function parse(inputText, entryPoint = "toml") {
   // Lex
@@ -40,5 +41,6 @@ function parse(inputText, entryPoint = "toml") {
 }
 
 module.exports = {
-  parse
+  parse,
+  BaseTomlCstVisitor
 };

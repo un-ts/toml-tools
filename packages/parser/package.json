@@ -12,6 +12,7 @@
   "scripts": {
     "test": "echo TBD"
   },
+  "typings": "./api.d.ts",
   "publishConfig": {
     "access": "public"
   },
