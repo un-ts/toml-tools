@@ -17,7 +17,7 @@ But that is just one scenario, lets consider some other potential scenarios:
 - **Validating Toml versus a given schema**.
 - **Providing content assist in a Toml file**.
 
-These scenarios could not be implemented well using
+These scenarios canno be implemented (well) using
 most existing Toml to Json compilers, for example:
 
 - **Lost comments information**.
@@ -26,10 +26,9 @@ most existing Toml to Json compilers, for example:
   - How could we syntax highlight(paint) parts of a Toml file if we do not know
     where every single Token starts and ends (Commas/Parenthesis/Literals/...)?
 - **Failing on the first error**
-  - How would we implement content assist on a currently being edited Toml file
+  - How would we implement content assist on a Toml file currently being edited
     if our parser fails on the first error?
 - **Lack of full position information**
-
   - How will we provide useful Schema validation errors if we lack full position information?
   - Full position information would also be needed for the content assist scenario.
 
@@ -39,8 +38,8 @@ This mono repo will contain two types of packages.
 
 - Low level **Infrastructure** (Toml Lexer & Parser) with advanced capabilities to support
   the complex scenarios described above.
-- Toml (end user) **Tooling** (Beautifier/Compiler/Schema Validator/...) that is implemented using
-  the advanced low level infrastructure packages.
+- Toml (end user) **Tooling** (Beautifier/Compiler/Schema Validator/...) that would be implemented using
+  the advanced low level infrastructure packages mentioned above.
 
 ## Status
 
