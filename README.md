@@ -9,7 +9,8 @@ This [mono-repo][mono-repo] contains a set of tools for working with the [Toml][
 ## Why
 
 The common Toml related tooling are Toml -> Json compilers.
-But that is just one scenario, lets consider some other potential scenarios:
+But the compile to Json is just a single scenario of many, 
+lets consider some other potential use cases:
 
 - **Building a Toml Syntax Highlighter**.
 - **Converting Toml to Yaml**.
