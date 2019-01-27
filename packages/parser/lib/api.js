@@ -3,6 +3,7 @@ const { TomlParser } = require("./parser");
 
 const parser = new TomlParser();
 const BaseTomlCstVisitor = parser.getBaseCstVisitorConstructor();
+const BaseTomlCstVisitorWithDefaults = parser.getBaseCstVisitorConstructorWithDefaults();
 
 function parse(inputText, entryPoint = "toml") {
   // Lex
@@ -42,5 +43,6 @@ function parse(inputText, entryPoint = "toml") {
 
 module.exports = {
   parse,
-  BaseTomlCstVisitor
+  BaseTomlCstVisitor,
+  BaseTomlCstVisitorWithDefaults
 };

@@ -1,7 +1,25 @@
-const { parse } = require("../");
+const { parse, BaseTomlCstVisitorWithDefaults } = require("../");
+const { expect } = require("chai");
 
 describe("The Toml Tools Parser", () => {
   it("can parse a sample Toml", () => {
+    class KeyNamesCollector extends BaseTomlCstVisitorWithDefaults {
+      constructor() {
+        super();
+        this.tableKeyNames = [];
+      }
+
+      stdTable(ctx) {
+        this.tableKeyNames.push(this.visit(ctx.key));
+      }
+
+      key(ctx) {
+        const keyImages = ctx.IKey.map(keyTok => keyTok.image);
+        const newKey = keyImages.join(".");
+        return newKey;
+      }
+    }
+
     const input = `
 # This is a TOML document.
 
@@ -38,6 +56,18 @@ hosts = [
 ]
 `;
 
-    parse(input);
+    const cst = parse(input);
+
+    const myVisitor = new KeyNamesCollector();
+    myVisitor.visit(cst);
+
+    expect(myVisitor.tableKeyNames).to.have.members([
+      "owner",
+      "database",
+      "servers",
+      "servers.alpha",
+      "servers.beta",
+      "clients"
+    ]);
   });
 });
