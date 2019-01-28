@@ -59,8 +59,8 @@ function bench(parseFunc) {
 //
 // So it is hard to compare...
 // Normally building an AST from a Chevrotain CST is a minor thing performance wise
-// So I estimate a full TOML Compiler using TOML-Tools(with Chevrotain) would provide 80-90% of the
-// performance Measured here.
+// So I estimate a full TOML Compiler (To JSON) using TOML-Tools(with Chevrotain) would provide 80-90% of the
+// performance Measured here of the Toml-Tools parser .
 //
 // Higher performance numbers could be gained with toml-tools if we avoid CST
 // creation +60-70%, but that would reduce the potential for code re-use.
