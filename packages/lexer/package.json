@@ -3,13 +3,13 @@
   "version": "0.1.1",
   "description": "TOML Lexer Implemented in JavaScript",
   "main": "lib/api.js",
-  "repository": "https://github.com/bd82/toml-tools/packages/lexer",
+  "repository": "https://github.com/bd82/toml-tools/tree/master/packages/lexer",
   "license": "MIT",
   "dependencies": {
     "chevrotain": "4.1.1"
   },
   "scripts": {
-    "test": "echo TBD"
+    "test": "mocha ./test/*spec.js"
   },
   "typings": "./api.d.ts",
   "publishConfig": {

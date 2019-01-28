@@ -9,7 +9,7 @@ This [mono-repo][mono-repo] contains a set of tools for working with the [Toml][
 ## Why
 
 The common Toml related tooling are Toml -> Json compilers.
-But the compile to Json is just a single scenario of many, 
+But the compile to Json is just a single scenario of many,
 lets consider some other potential use cases:
 
 - **Building a Toml Syntax Highlighter**.
@@ -18,7 +18,7 @@ lets consider some other potential use cases:
 - **Validating Toml versus a given schema**.
 - **Providing content assist in a Toml file**.
 
-These scenarios canno be implemented (well) using
+These scenarios cannot be implemented (well) using
 most existing Toml to Json compilers, for example:
 
 - **Lost comments information**.
@@ -37,8 +37,8 @@ most existing Toml to Json compilers, for example:
 
 This mono repo will contain two types of packages.
 
-- Low level **Infrastructure** (Toml Lexer & Parser) with advanced capabilities to support
-  the complex scenarios described above.
+- Low level **Infrastructure** (Toml Lexer & Parser implemented using [Chevrotain][chevrotain])
+  with advanced capabilities to support the complex scenarios described above.
 - Toml (end user) **Tooling** (Beautifier/Compiler/Schema Validator/...) that would be implemented using
   the advanced low level infrastructure packages mentioned above.
 
@@ -53,3 +53,4 @@ Prototyping an end user tooling package will begin soon.
 
 [toml]: https://github.com/toml-lang/toml
 [mono-repo]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md
+[chevrotain]: https://github.com/SAP/chevrotain
