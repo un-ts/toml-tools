@@ -1,0 +1,7 @@
+[owner]
+name = "John"
+age = 666
+
+# I am a comment!
+[apartment]
+bedrooms = 3
