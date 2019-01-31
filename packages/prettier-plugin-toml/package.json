@@ -10,7 +10,7 @@
     "prettier": "^1.10.0"
   },
   "scripts": {
-    "test": "mocha ./test/*spec.js"
+    "test": "mocha ./test/**/*spec.js"
   },
   "typings": "./api.d.ts",
   "publishConfig": {
