@@ -1,5 +1,5 @@
 const { locStart, locEnd } = require("./loc");
-const { parse } = require("./parser");
+const { parse } = require("@toml-tools/parser");
 const { print } = require("./printer");
 
 // https://prettier.io/docs/en/plugins.html#languages
@@ -15,7 +15,7 @@ const languages = [
 const parsers = {
   toml: {
     astFormat: "toml-cst",
-    parse,
+    parse: (text, parsers, options) => parse(text),
     locStart,
     locEnd
   }
