@@ -22,7 +22,7 @@ These scenarios cannot be implemented (well) using
 most existing Toml to Json compilers, for example:
 
 - **Lost comments information**.
-  - How can we beautify or convert Toml to Yaml if we don't posses the comments information?
+  - How can we beautify or convert Toml to Yaml if we don't possess the comments information?
 - **Lack of Token type & positioning information.**
   - How could we syntax highlight(paint) parts of a Toml file if we do not know
     where every single Token starts and ends (Commas/Parenthesis/Literals/...)?
