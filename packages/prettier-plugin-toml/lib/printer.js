@@ -121,12 +121,20 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
 
   expression(ctx) {
     if (ctx.keyval) {
-      const keyValDoc = this.visit(ctx.keyval);
-      // TODO: handle suffix comment on same line.
+      let keyValDoc = this.visit(ctx.keyval);
+      if (ctx.Comment) {
+        // TODO: we should trim comment ending whitespace.
+        const commentText = ctx.Comment[0].image;
+        keyValDoc = concat([keyValDoc, " " + commentText]);
+      }
       return keyValDoc;
     } else if (ctx.table) {
-      const tableDoc = this.visit(ctx.table);
-      // TODO: handle suffix comment on same line.
+      let tableDoc = this.visit(ctx.table);
+      if (ctx.Comment) {
+        // TODO: we should trim comment ending whitespace.
+        const commentText = ctx.Comment[0].image;
+        tableDoc = concat([tableDoc, " " + commentText]);
+      }
       return tableDoc;
     } else {
       // TODO: we should trim comment ending whitespace.
