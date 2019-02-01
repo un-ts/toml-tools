@@ -1,6 +1,14 @@
 const { BaseTomlCstVisitor } = require("@toml-tools/parser");
 const { trimComment } = require("./printer-utils");
-const { concat, join, line, ifBreak, group } = require("prettier").doc.builders;
+const {
+  concat,
+  join,
+  line,
+  softline,
+  indent,
+  ifBreak,
+  group
+} = require("prettier").doc.builders;
 
 class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   constructor() {
@@ -102,6 +110,11 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
         currCstGroup = [];
       }
     }
+    if (currCstGroup.length > 0) {
+      currCstGroup.reverse();
+      cstGroups.push(currCstGroup);
+    }
+
     // once again adjust to scanning in reverse.
     cstGroups.reverse();
     const docGroups = cstGroups.map(currGroup => this.mapVisit(currGroup));
@@ -124,7 +137,6 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     if (ctx.keyval) {
       let keyValDoc = this.visit(ctx.keyval);
       if (ctx.Comment) {
-        // TODO: we should trim comment ending whitespace.
         const commentText = trimComment(ctx.Comment[0].image);
         keyValDoc = concat([keyValDoc, " " + commentText]);
       }
@@ -132,13 +144,11 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     } else if (ctx.table) {
       let tableDoc = this.visit(ctx.table);
       if (ctx.Comment) {
-        // TODO: we should trim comment ending whitespace.
         const commentText = trimComment(ctx.Comment[0].image);
         tableDoc = concat([tableDoc, " " + commentText]);
       }
       return tableDoc;
     } else {
-      // TODO: we should trim comment ending whitespace.
       return trimComment(ctx.Comment[0].image);
     }
   }
@@ -158,8 +168,6 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
 
   val(ctx) {
     const actualValueNode = this.getSingle(ctx);
-    // TODO: evaluate inserting this logic into
-    //       "visitSingle"
     if (actualValueNode.image !== undefined) {
       // A Terminal
       return actualValueNode.image;
@@ -168,9 +176,19 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     }
   }
 
-  array(ctx) {}
+  array(ctx) {
+    // TODO: handle comments
+    let arrayValuesCst = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
 
-  arrayValues(ctx) {}
+    return group(concat(["[", indent(arrayValuesCst), softline, "]"]));
+  }
+
+  arrayValues(ctx) {
+    // TODO: handle comments
+    // TODO: respect dangling comma
+    const valsDocs = this.mapVisit(ctx.val);
+    return indent(concat([softline, join(concat([",", line]), valsDocs)]));
+  }
 
   inlineTable(ctx) {}
 
