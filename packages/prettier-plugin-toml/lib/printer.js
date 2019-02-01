@@ -1,4 +1,5 @@
 const { BaseTomlCstVisitor } = require("@toml-tools/parser");
+const { trimComment } = require("./printer-utils");
 const { concat, join, line, ifBreak, group } = require("prettier").doc.builders;
 
 class TomlBeautifierVisitor extends BaseTomlCstVisitor {
@@ -124,7 +125,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
       let keyValDoc = this.visit(ctx.keyval);
       if (ctx.Comment) {
         // TODO: we should trim comment ending whitespace.
-        const commentText = ctx.Comment[0].image;
+        const commentText = trimComment(ctx.Comment[0].image);
         keyValDoc = concat([keyValDoc, " " + commentText]);
       }
       return keyValDoc;
@@ -132,13 +133,13 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
       let tableDoc = this.visit(ctx.table);
       if (ctx.Comment) {
         // TODO: we should trim comment ending whitespace.
-        const commentText = ctx.Comment[0].image;
+        const commentText = trimComment(ctx.Comment[0].image);
         tableDoc = concat([tableDoc, " " + commentText]);
       }
       return tableDoc;
     } else {
       // TODO: we should trim comment ending whitespace.
-      return ctx.Comment[0].image;
+      return trimComment(ctx.Comment[0].image);
     }
   }
 

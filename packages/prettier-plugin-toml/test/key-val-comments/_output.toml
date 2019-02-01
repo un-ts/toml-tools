@@ -3,6 +3,6 @@ key1 = 1
 key2 = 2
 
 # preceding comment
-[table2] # same line comment
+[table2] # same line comment with extra ws
 key3 = 3 # another same line comment
 key4 = 4
