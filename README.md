@@ -49,7 +49,9 @@ Initial versions of Infrastructure packages ready:
 - [@toml-tools/lexer](./packages/lexer)
 - [@toml-tools/parser](./packages/parser)
 
-Prototyping an end user tooling package will begin soon.
+Tooling Packages (WIP)
+
+- [prettier-plugin-toml](./packages/prettier-plugin-toml)
 
 [toml]: https://github.com/toml-lang/toml
 [mono-repo]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md
