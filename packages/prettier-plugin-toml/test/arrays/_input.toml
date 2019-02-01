@@ -1,3 +1,13 @@
 singleLine = [1,2 ,3]
 
 longLine = [1 ,2, 3, 4, 5, 6, 7, 6666666666666666666666666666666666666666666666666666666666666666, 8]
+
+
+withComments = [
+1,
+2, # after comma comment
+3,
+# preValComment
+4, # post dangling same line comment
+# post dangling newline comment
+]

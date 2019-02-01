@@ -1,5 +1,5 @@
 const { BaseTomlCstVisitor } = require("@toml-tools/parser");
-const { trimComment } = require("./printer-utils");
+const { trimComment, collectComments } = require("./printer-utils");
 const {
   concat,
   join,
@@ -186,6 +186,10 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   arrayValues(ctx) {
     // TODO: handle comments
     // TODO: respect dangling comma
+
+    const values = ctx.val;
+    const comments = collectComments(ctx.commentNewline);
+
     const valsDocs = this.mapVisit(ctx.val);
     return indent(concat([softline, join(concat([",", line]), valsDocs)]));
   }
