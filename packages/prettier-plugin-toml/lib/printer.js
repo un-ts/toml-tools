@@ -1,12 +1,21 @@
 const { BaseTomlCstVisitor } = require("@toml-tools/parser");
-const { trimComment } = require("./printer-utils");
+const { tokensDictionary: t } = require("@toml-tools/lexer");
+
+const {
+  trimComment,
+  collectComments,
+  arrItemOffset,
+  arrItemProp,
+  getSingle
+} = require("./printer-utils");
 const {
   concat,
   join,
   line,
+  hardline,
   softline,
-  indent,
   ifBreak,
+  indent,
   group
 } = require("prettier").doc.builders;
 
@@ -27,29 +36,8 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
       return elements.map(this.visit, this);
     };
 
-    this.getSingle = function(ctx) {
-      const ctxKeys = Object.keys(ctx);
-      if (ctxKeys.length !== 1) {
-        throw Error(
-          `Expecting single key CST ctx but found: <${ctxKeys.length}> keys`
-        );
-      }
-      const singleElementKey = ctxKeys[0];
-      const singleElementValues = ctx[singleElementKey];
-
-      if (singleElementValues.length !== 1) {
-        throw Error(
-          `Expecting single item in CST ctx key but found: <${
-            singleElementValues.length
-          }> items`
-        );
-      }
-
-      return singleElementValues[0];
-    };
-
     this.visitSingle = function(ctx) {
-      const singleElement = this.getSingle(ctx);
+      const singleElement = getSingle(ctx);
       return this.visit(singleElement);
     };
 
@@ -167,7 +155,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   }
 
   val(ctx) {
-    const actualValueNode = this.getSingle(ctx);
+    const actualValueNode = getSingle(ctx);
     if (actualValueNode.image !== undefined) {
       // A Terminal
       return actualValueNode.image;
@@ -177,17 +165,88 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   }
 
   array(ctx) {
-    // TODO: handle comments
-    let arrayValuesCst = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
-
-    return group(concat(["[", indent(arrayValuesCst), softline, "]"]));
+    const arrayValuesCst = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
+    const postComments = collectComments(ctx.commentNewline);
+    const commentsDocs = concat(
+      postComments.map(commentTok => {
+        const trimmedCommentText = trimComment(commentTok.image);
+        return concat([hardline, trimmedCommentText]);
+      })
+    );
+    return group(
+      concat([
+        "[",
+        indent(concat([arrayValuesCst, commentsDocs])),
+        softline,
+        "]"
+      ])
+    );
   }
 
   arrayValues(ctx) {
-    // TODO: handle comments
-    // TODO: respect dangling comma
-    const valsDocs = this.mapVisit(ctx.val);
-    return indent(concat([softline, join(concat([",", line]), valsDocs)]));
+    const values = ctx.val ? ctx.val : [];
+    const commas = ctx.Comma ? ctx.Comma : [];
+    const comments = collectComments(ctx.commentNewline);
+
+    const itemsCst = values.concat(commas, comments);
+    itemsCst.sort((a, b) => {
+      return arrItemOffset(a) - arrItemOffset(b);
+    });
+
+    const itemsDoc = [];
+    for (let i = 0; i < itemsCst.length; i++) {
+      const cstItem = itemsCst[i];
+      if (cstItem.name === "val") {
+        const valDoc = this.visit(cstItem);
+        const valEndLine = arrItemProp(cstItem, "endLine");
+        let potentialComma = "";
+
+        // Another Item means either a comma or a Comma followed by a Comment
+        if (itemsCst[i + 1] !== undefined) {
+          let nextPossibleComment = itemsCst[i + 1];
+          // skip Commas
+          if (nextPossibleComment.tokenType === t.Comma) {
+            potentialComma = ",";
+            i++;
+            nextPossibleComment = itemsCst[i + 1];
+          }
+          // Comment on **same line** as the value
+          if (
+            nextPossibleComment !== undefined &&
+            nextPossibleComment.tokenType === t.Comment &&
+            nextPossibleComment.startLine === valEndLine
+          ) {
+            i++;
+            const trimmedComment = trimComment(nextPossibleComment.image);
+            // adding a single space between the comma and the comment
+            const comment = " " + trimmedComment;
+            // a hardline is used to ensure a lineBreak after the comment
+            itemsDoc.push(concat([valDoc, potentialComma, comment, hardline]));
+          }
+          // no comment on the same line
+          else {
+            const isTrailingComma = i === itemsCst.length - 1;
+            const optionalCommaLineBreak = isTrailingComma
+              ? // only print trailing comma if this is a multiline array.
+                ifBreak(",", "")
+              : concat([potentialComma, line]);
+            itemsDoc.push(concat([valDoc, optionalCommaLineBreak]));
+          }
+        }
+        // last item without any followup
+        else {
+          itemsDoc.push(concat([valDoc]));
+        }
+      }
+      // separate line comment
+      else if (cstItem.tokenType === t.Comment) {
+        const trimmedComment = trimComment(cstItem.image);
+        itemsDoc.push(concat([trimmedComment, hardline]));
+      } else {
+        throw Error("non exhaustive match");
+      }
+    }
+    return concat([softline, concat(itemsDoc)]);
   }
 
   inlineTable(ctx) {}
