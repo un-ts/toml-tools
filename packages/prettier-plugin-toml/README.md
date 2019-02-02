@@ -2,13 +2,32 @@
 
 # Prettier Toml Plugin
 
-## Try it out
+## WORK IN PROGRESS
 
-TBD
+This plugin is in **alpha state**.
+please try it out and provide feedback.
 
 ## Installation
 
-TBD
+yarn:
+
+```bash
+yarn add --dev prettier  --dev --exact
+```
+
+npm:
+
+```bash
+npm install prettier prettier-plugin-toml --save-dev --save-exact
+```
+
+## Usage
+
+This plugin will be loaded automatically (if installed) by prettier to format files
+ending with .toml suffix. Using it is exactly the same as using prettier
+
+- Prettier [CLI usage docs](https://prettier.io/docs/en/cli.html).
+- Prettier [API usage docs](https://prettier.io/docs/en/api.html).
 
 ## How it works
 
@@ -19,9 +38,11 @@ and then print out that data structure in a "pretty" style.
 Prettier-Toml uses a [Toml Parser](../parser) implemented in JavaScript using the
 [Chevrotain Parser Building Toolkit for JavaScript](https://github.com/SAP/chevrotain).
 What this means is that unlike many other prettier plugins,
-prettier-java has **no additional runtime pre-requisites** (e.g: Python executable).
+prettier-toml has **no additional runtime pre-requisites** (e.g: Python executable).
 It could even be used inside a browser.
 
 ## Contributing
 
-TBD
+Contributions are very welcome!
+
+- [ ] Create contribution guide.
