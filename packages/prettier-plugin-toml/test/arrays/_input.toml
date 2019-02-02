@@ -1,13 +1,33 @@
-singleLine = [1,2 ,3]
-
-longLine = [1 ,2, 3, 4, 5, 6, 7, 6666666666666666666666666666666666666666666666666666666666666666, 8]
-
-
-withComments = [
+singleLine = [
 1,
-2, # after comma comment
-3,
-# preValComment
-4, # post dangling same line comment
-# post dangling newline comment
+2,
+3
 ]
+
+multiLine = [
+     1    ,
+    2,  3,
+     4,
+    5,
+     6,
+    7,
+       6666666666666666666666666666666666666666666666666666666666666666,
+    8
+]
+
+withComment  =  [
+   1,    # same line comment
+  2   ,
+     # separate line comment
+  3
+  # last line comment
+]
+
+respectDanglingComma = [1,2,3,]
+
+respectDanglingCommaMultiLine = [1,2,
+## oops
+3,]
+
+
+

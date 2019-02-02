@@ -18,8 +18,65 @@ function collectComments(commentsNL) {
   return comments;
 }
 
+function getSingle(ctx) {
+  const ctxKeys = Object.keys(ctx);
+  if (ctxKeys.length !== 1) {
+    throw Error(
+      `Expecting single key CST ctx but found: <${ctxKeys.length}> keys`
+    );
+  }
+  const singleElementKey = ctxKeys[0];
+  const singleElementValues = ctx[singleElementKey];
+
+  if (singleElementValues.length !== 1) {
+    throw Error(
+      `Expecting single item in CST ctx key but found: <${
+        singleElementValues.length
+      }> items`
+    );
+  }
+
+  return singleElementValues[0];
+}
+
+// TODO: replace with arrItemProp
+function arrItemOffset(item) {
+  if (item.name === "val") {
+    item = getSingle(item.children);
+  }
+
+  if (item.startOffset) {
+    return item.startOffset;
+  } else if (item.LSquare) {
+    item.LSquare[0].startOffset;
+  } else if (item.LCurly) {
+    item.LCurly[0].startOffset;
+  } else {
+    throw Error("non exhaustive match");
+  }
+}
+
+function arrItemProp(item, propName) {
+  if (item.name === "val") {
+    item = getSingle(item.children);
+  }
+
+  if (item[propName]) {
+    return item[propName];
+  } else if (item.LSquare) {
+    item.LSquare[0][propName];
+  } else if (item.LCurly) {
+    item.LCurly[0][propName];
+  } else {
+    throw Error("non exhaustive match");
+  }
+}
+
 module.exports = {
   trimComment,
   canUnquote,
-  collectComments
+  collectComments,
+  arrItemOffset,
+  arrItemProp,
+  getSingle
 };
