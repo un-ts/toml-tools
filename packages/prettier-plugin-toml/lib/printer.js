@@ -165,7 +165,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   }
 
   array(ctx) {
-    const arrayValuesCst = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
+    const arrayValuesDocs = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
     const postComments = collectComments(ctx.commentNewline);
     const commentsDocs = concat(
       postComments.map(commentTok => {
@@ -176,7 +176,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     return group(
       concat([
         "[",
-        indent(concat([arrayValuesCst, commentsDocs])),
+        indent(concat([arrayValuesDocs, commentsDocs])),
         softline,
         "]"
       ])
@@ -249,9 +249,17 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     return concat([softline, concat(itemsDoc)]);
   }
 
-  inlineTable(ctx) {}
+  inlineTable(ctx) {
+    const inlineTableKeyValsDocs = ctx.inlineTableKeyVals
+      ? this.visit(ctx.inlineTableKeyVals)
+      : "";
+    return group(concat(["{ ", inlineTableKeyValsDocs, " }"]));
+  }
 
-  inlineTableKeyVals(ctx) {}
+  inlineTableKeyVals(ctx) {
+    const keyValDocs = this.mapVisit(ctx.keyval);
+    return join(", ", keyValDocs);
+  }
 
   table(ctx) {
     return this.visitSingle(ctx);

@@ -24,7 +24,9 @@ function testSample(testFolder, exclusive) {
       plugins: [pluginPath]
     });
 
-    expect(actual).to.equal(expectedContents);
+    expect(normalizeNewlines(actual)).to.equal(
+      normalizeNewlines(expectedContents)
+    );
   });
 
   it(`Performs a stable formatting for <${relativeInputPath}>`, () => {
@@ -39,6 +41,13 @@ function testSample(testFolder, exclusive) {
     });
     expect(onePass).to.equal(secondPass);
   });
+}
+
+/**
+ * To avoid OS related line terminator
+ */
+function normalizeNewlines(text) {
+  return text.replace(/\r\n/g, "\n");
 }
 
 module.exports = {
