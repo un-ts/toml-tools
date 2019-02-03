@@ -4,12 +4,12 @@
 
 ## Introduction
 
-This [mono-repo][mono-repo] contains a set of tools for working with the [Toml][toml] configuration file format.
+This [mono-repo][mono-repo] contains a **_set of tools for working with the [Toml][toml] configuration file format_**.
 
 ## Why
 
 The common Toml related tooling are Toml -> Json compilers.
-But the compile to Json is just a single scenario of many,
+But compiling to Json is just one scenario of many,
 lets consider some other potential use cases:
 
 - **Building a Toml Syntax Highlighter**.

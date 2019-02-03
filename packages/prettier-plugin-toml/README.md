@@ -29,6 +29,11 @@ ending with .toml suffix. Using it is exactly the same as using prettier
 - Prettier [CLI usage docs](https://prettier.io/docs/en/cli.html).
 - Prettier [API usage docs](https://prettier.io/docs/en/api.html).
 
+## Try it out
+
+See [example package](../../test-packages/test-prettier-plugin-toml)
+which use prettier-plugin-toml.
+
 ## How it works
 
 A Prettier plugin must first parse the source code of the target language
@@ -45,4 +50,4 @@ It could even be used inside a browser.
 
 Contributions are very welcome!
 
-- [ ] Create contribution guide.
+- [ ] TODO: Create contribution guide.
