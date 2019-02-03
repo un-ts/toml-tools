@@ -7,7 +7,14 @@ const languages = [
   {
     extensions: [".toml"],
     name: "Toml",
-    parsers: ["toml"]
+    parsers: ["toml"],
+    type: "data",
+    filenames: ["Cargo.lock", "Gopkg.lock"],
+    tmScope: "source.toml",
+    aceMode: "toml",
+    codemirrorMode: "toml",
+    codemirrorMimeType: "text/x-toml",
+    language_id: 365
   }
 ];
 
