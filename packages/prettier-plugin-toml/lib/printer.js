@@ -65,8 +65,11 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
       return node.children.table !== undefined;
     }
 
-    function isComment(node) {
-      return node.children.Comment !== undefined;
+    function isOnlyComment(node) {
+      return (
+        node.children.Comment !== undefined &&
+        Object.keys(node.children).length === 1
+      );
     }
 
     const expsCsts = ctx.expression;
@@ -84,7 +87,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
         // add leading comments to the current group
         while (j >= 0 && stillInComments === true) {
           const priorCstNode = expsCsts[j];
-          if (isComment(priorCstNode)) {
+          if (isOnlyComment(priorCstNode)) {
             currCstGroup.push(priorCstNode);
             j--;
             i--;
@@ -190,7 +193,9 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
 
     const itemsCst = values.concat(commas, comments);
     itemsCst.sort((a, b) => {
-      return arrItemOffset(a) - arrItemOffset(b);
+      const aOffset = arrItemOffset(a);
+      const bOffset = arrItemOffset(b);
+      return aOffset - bOffset;
     });
 
     const itemsDoc = [];

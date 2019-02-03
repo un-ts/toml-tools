@@ -1,9 +1,15 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "test-packages/*"
+    ],
+    "nohoist": [
+      "**/prettier-plugin-toml"
+    ]
+  },
   "scripts": {
     "lerna:version": "lerna version",
     "lerna:publish": "lerna publish from-git --yes",

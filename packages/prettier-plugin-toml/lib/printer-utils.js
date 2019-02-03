@@ -47,10 +47,10 @@ function arrItemOffset(item) {
 
   if (item.startOffset) {
     return item.startOffset;
-  } else if (item.LSquare) {
-    item.LSquare[0].startOffset;
-  } else if (item.LCurly) {
-    item.LCurly[0].startOffset;
+  } else if (item.children.LSquare) {
+    return item.children.LSquare[0].startOffset;
+  } else if (item.children.LCurly) {
+    return item.children.LCurly[0].startOffset;
   } else {
     throw Error("non exhaustive match");
   }
@@ -63,10 +63,10 @@ function arrItemProp(item, propName) {
 
   if (item[propName]) {
     return item[propName];
-  } else if (item.LSquare) {
-    item.LSquare[0][propName];
-  } else if (item.LCurly) {
-    item.LCurly[0][propName];
+  } else if (item.children.LSquare) {
+    return item.children.LSquare[0][propName];
+  } else if (item.children.LCurly) {
+    return item.children.LCurly[0][propName];
   } else {
     throw Error("non exhaustive match");
   }
