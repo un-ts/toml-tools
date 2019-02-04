@@ -5,7 +5,7 @@
 ## WORK IN PROGRESS
 
 This plugin is in **alpha state**.
-please try it out and provide feedback.
+Please try it out and provide feedback.
 
 ## Installation
 
@@ -31,8 +31,8 @@ ending with .toml suffix. Using it is exactly the same as using prettier
 
 ## Try it out
 
-See [example package](../../test-packages/test-prettier-plugin-toml)
-which use prettier-plugin-toml.
+See an [example npm package](../../test-packages/test-prettier-plugin-toml)
+which uses prettier-plugin-toml.
 
 ## How it works
 
@@ -43,11 +43,10 @@ and then print out that data structure in a "pretty" style.
 Prettier-Toml uses a [Toml Parser](../parser) implemented in JavaScript using the
 [Chevrotain Parser Building Toolkit for JavaScript](https://github.com/SAP/chevrotain).
 What this means is that unlike many other prettier plugins,
-prettier-toml has **no additional runtime pre-requisites** (e.g: Python executable).
+prettier-toml has **_no additional runtime pre-requisites_** (e.g: Python executable).
 It could even be used inside a browser.
 
 ## Contributing
 
 Contributions are very welcome!
-
-- [ ] TODO: Create contribution guide.
+See the [top level contribution](../../CONTRIBUTING.md) guide for this mono-repo.

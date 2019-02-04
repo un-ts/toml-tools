@@ -42,14 +42,14 @@ This mono repo will contain two types of packages.
 - Toml (end user) **Tooling** (Beautifier/Compiler/Schema Validator/...) that would be implemented using
   the advanced low level infrastructure packages mentioned above.
 
-## Status
+## Status (Alpha)
 
-Initial versions of Infrastructure packages ready:
+Infrastructure packages:
 
 - [@toml-tools/lexer](./packages/lexer)
 - [@toml-tools/parser](./packages/parser)
 
-Tooling Packages (WIP)
+Tooling Packages:
 
 - [prettier-plugin-toml](./packages/prettier-plugin-toml)
 
