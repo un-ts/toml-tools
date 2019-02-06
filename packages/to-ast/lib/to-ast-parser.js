@@ -1,5 +1,9 @@
 const { Parser: ToAstParser } = require("chevrotain");
 const { tokensDictionary: t } = require("@toml-tools/lexer");
+const { keyTokToKeyText, addKeyVal } = require("./ast-builder");
+const {} = require("./vaildaions");
+
+const INVALID_KEY = null;
 
 class TomlToAstParser extends ToAstParser {
   constructor() {
@@ -18,8 +22,15 @@ class TomlToAstParser extends ToAstParser {
     $.C1 = null;
     $.C2 = null;
 
+    // TODO: wrap in an init
+    let ast = {};
+    let currRoot = ast;
+    let validationErrors = [];
+
     $.RULE("toml", () => {
-      const ast = {};
+      ast = {};
+      currRoot = ast;
+      validationErrors = [];
 
       $.OPTION(() => {
         $.SUBRULE($.nl);
@@ -33,6 +44,8 @@ class TomlToAstParser extends ToAstParser {
           $.SUBRULE2($.expression);
         });
       });
+
+      return ast;
     });
 
     $.RULE("expression", () => {
@@ -51,17 +64,33 @@ class TomlToAstParser extends ToAstParser {
     });
 
     $.RULE("keyval", () => {
-      $.SUBRULE($.key);
+      const key = $.SUBRULE($.key);
       $.CONSUME(t.KeyValSep);
-      $.SUBRULE($.val);
+      const val = $.SUBRULE($.val);
+
+      if (key !== INVALID_KEY) {
+        addKeyVal(key, val, ast);
+      }
     });
 
     $.RULE("key", () => {
-      $.CONSUME(t.IKey);
+      const keyToks = [];
+      let keyTarget = currRoot;
+
+      keyToks.push($.CONSUME(t.IKey));
       $.MANY(() => {
         $.CONSUME(t.Dot);
-        $.CONSUME2(t.IKey);
+        keyToks.push($.CONSUME2(t.IKey));
       });
+
+      // TODO: regular for loop for performance and easy breaking?
+      keyToks.forEach(currKeyTok => {
+        const currKeyString = keyTokToKeyText(currKeyTok);
+        // 1, inspect key is valid, break loop and return INVALID_KEY if not
+        keyTarget = keyTarget[currKeyString];
+      });
+
+      return keyTarget;
     });
 
     $.RULE("val", () => {
