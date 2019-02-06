@@ -19,13 +19,17 @@ class TomlToAstParser extends ToAstParser {
     $.C2 = null;
 
     $.RULE("toml", () => {
+      const ast = {};
+
       $.OPTION(() => {
         $.SUBRULE($.nl);
       });
-      $.SUBRULE($.expression);
+      $.OPTION2(() => {
+        $.SUBRULE($.expression);
+      });
       $.MANY(() => {
         $.SUBRULE2($.nl);
-        $.OPTION2(() => {
+        $.OPTION3(() => {
           $.SUBRULE2($.expression);
         });
       });
