@@ -2,6 +2,10 @@
   "name": "@toml-tools/parser",
   "version": "0.3.0",
   "description": "TOML Parser Implemented in JavaScript",
+  "keywords": [
+    "toml",
+    "parser"
+  ],
   "main": "lib/api.js",
   "repository": "https://github.com/bd82/toml-tools/tree/master/packages/parser",
   "license": "MIT",

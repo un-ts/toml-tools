@@ -2,6 +2,12 @@
   "name": "prettier-plugin-toml",
   "version": "0.3.0",
   "description": "TOML Prettier Plugin",
+  "keywords": [
+    "toml",
+    "prettier",
+    "beautifier",
+    "prettier-plugin"
+  ],
   "main": "lib/api.js",
   "repository": "https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml",
   "license": "MIT",

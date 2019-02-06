@@ -2,6 +2,10 @@
   "name": "@toml-tools/lexer",
   "version": "0.3.0",
   "description": "TOML Lexer Implemented in JavaScript",
+  "keywords": [
+    "toml",
+    "lexer"
+  ],
   "main": "lib/api.js",
   "repository": "https://github.com/bd82/toml-tools/tree/master/packages/lexer",
   "license": "MIT",

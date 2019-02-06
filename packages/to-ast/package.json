@@ -2,6 +2,11 @@
   "name": "@toml-tools/to-ast",
   "version": "0.3.0",
   "description": "TOML To Ast Parser Implemented in JavaScript",
+  "keywords": [
+    "toml",
+    "parser",
+    "ast"
+  ],
   "main": "lib/api.js",
   "repository": "https://github.com/bd82/toml-tools/tree/master/packages/to-ast",
   "license": "MIT",
