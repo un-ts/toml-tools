@@ -12,7 +12,7 @@ Please try it out and provide feedback.
 yarn:
 
 ```bash
-yarn add --dev prettier  --dev --exact
+yarn add --dev prettier prettier-plugin-toml --dev --exact
 ```
 
 npm:
