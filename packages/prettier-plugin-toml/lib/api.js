@@ -14,7 +14,8 @@ const languages = [
     aceMode: "toml",
     codemirrorMode: "toml",
     codemirrorMimeType: "text/x-toml",
-    language_id: 365
+    language_id: 365,
+    vscodeLanguageIds: ["toml"]
   }
 ];
 
