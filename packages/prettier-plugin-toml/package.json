@@ -1,6 +1,6 @@
 {
   "name": "prettier-plugin-toml",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "TOML Prettier Plugin",
   "keywords": [
     "toml",
