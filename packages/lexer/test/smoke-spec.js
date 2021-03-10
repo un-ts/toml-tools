@@ -5,10 +5,15 @@ describe("The Toml Tools Lexer", () => {
   it("can tokenize a sample Toml", () => {
     const input = `# This is a TOML document.
 title = "TOML Example"
+description = """
+Some
+multiline
+description
+"""
 `;
     const lexingResult = tokenize(input);
     expect(lexingResult.errors).to.be.empty;
-    expect(lexingResult.tokens).to.have.lengthOf(6);
+    expect(lexingResult.tokens).to.have.lengthOf(10);
     const tokenImages = lexingResult.tokens.map(tok => tok.image);
     expect(tokenImages).to.deep.equal([
       "# This is a TOML document.",
@@ -16,6 +21,10 @@ title = "TOML Example"
       "title",
       "=",
       '"TOML Example"',
+      "\n",
+      "description",
+      "=",
+      '"""\nSome\nmultiline\ndescription\n"""',
       "\n"
     ]);
   });

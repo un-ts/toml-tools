@@ -100,7 +100,7 @@ FRAGMENT(
 FRAGMENT("ML_LITERAL_CHAR", /[\u0009]|[\u0020-\u007E]|[\u0080-\uFFFF]/);
 createToken({
   name: "LiteralMultiLineString",
-  pattern: makePattern`'''(?:${f.ML_LITERAL_CHAR}|${Newline})*'''`,
+  pattern: makePattern`('''|""")(?:${f.ML_LITERAL_CHAR}|${Newline})*('''|""")`,
   categories: [IString]
 });
 createToken({
