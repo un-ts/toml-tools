@@ -4,6 +4,10 @@
 
 # TOML-Tools
 
+** This project is currently un-maintained and looking for a new maintainer **
+- See: relevant [issue](https://github.com/bd82/toml-tools/issues/43)
+
+
 ## Introduction
 
 This [mono-repo][mono-repo] contains a **_set of tools for working with the [Toml][toml] configuration file format_**.
