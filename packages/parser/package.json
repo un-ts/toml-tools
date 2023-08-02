@@ -1,6 +1,6 @@
 {
   "name": "@toml-tools/parser",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "TOML Parser Implemented in JavaScript",
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/parser",
@@ -23,7 +23,7 @@
     "test": "mocha ./test/*spec.js"
   },
   "dependencies": {
-    "@toml-tools/lexer": "^0.4.0",
+    "@toml-tools/lexer": "^1.0.0",
     "chevrotain": "^11.0.1"
   },
   "devDependencies": {

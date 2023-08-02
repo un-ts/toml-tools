@@ -1,5 +1,16 @@
 # @toml-tools/parser
 
+## 1.0.0
+
+### Major Changes
+
+- [#67](https://github.com/un-ts/toml-tools/pull/67) [`8daff91`](https://github.com/un-ts/toml-tools/commit/8daff91c3cce09e3c8bb3501be8b9be39e796f63) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate to pure ESM and prettier v3
+
+### Patch Changes
+
+- Updated dependencies [[`8daff91`](https://github.com/un-ts/toml-tools/commit/8daff91c3cce09e3c8bb3501be8b9be39e796f63)]:
+  - @toml-tools/lexer@1.0.0
+
 ## 0.4.0
 
 ### Minor Changes

@@ -443,7 +443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@toml-tools/lexer@^0.4.0, @toml-tools/lexer@workspace:packages/lexer":
+"@toml-tools/lexer@^1.0.0, @toml-tools/lexer@workspace:packages/lexer":
   version: 0.0.0-use.local
   resolution: "@toml-tools/lexer@workspace:packages/lexer"
   dependencies:
@@ -451,13 +451,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@toml-tools/parser@^0.4.0, @toml-tools/parser@workspace:packages/parser":
+"@toml-tools/parser@^1.0.0, @toml-tools/parser@workspace:packages/parser":
   version: 0.0.0-use.local
   resolution: "@toml-tools/parser@workspace:packages/parser"
   dependencies:
     "@iarna/toml": ^2.2.5
     "@sgarciac/bombadil": ^2.3.0
-    "@toml-tools/lexer": ^0.4.0
+    "@toml-tools/lexer": ^1.0.0
     chevrotain: ^11.0.1
     toml: ^3.0.0
     toml-j0.4: ^1.1.1
@@ -470,8 +470,8 @@ __metadata:
   dependencies:
     "@iarna/toml": ^2.2.5
     "@sgarciac/bombadil": ^2.3.0
-    "@toml-tools/lexer": ^0.4.0
-    "@toml-tools/parser": ^0.4.0
+    "@toml-tools/lexer": ^1.0.0
+    "@toml-tools/parser": ^1.0.0
     chevrotain: ^11.0.1
     toml: ^3.0.0
     toml-j0.4: ^1.1.1
@@ -3385,12 +3385,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-toml@^0.4.0, prettier-plugin-toml@workspace:packages/prettier-plugin-toml":
+"prettier-plugin-toml@^1.0.0, prettier-plugin-toml@workspace:packages/prettier-plugin-toml":
   version: 0.0.0-use.local
   resolution: "prettier-plugin-toml@workspace:packages/prettier-plugin-toml"
   dependencies:
-    "@toml-tools/lexer": ^0.4.0
-    "@toml-tools/parser": ^0.4.0
+    "@toml-tools/lexer": ^1.0.0
+    "@toml-tools/parser": ^1.0.0
   peerDependencies:
     prettier: ^3.0.0
   languageName: unknown
@@ -4170,7 +4170,7 @@ __metadata:
   resolution: "test-prettier-plugin-toml@workspace:test-packages/test-prettier-plugin-toml"
   dependencies:
     prettier: ^3.0.0
-    prettier-plugin-toml: ^0.4.0
+    prettier-plugin-toml: ^1.0.0
   languageName: unknown
   linkType: soft
 
