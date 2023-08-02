@@ -1,6 +1,6 @@
 {
   "name": "@toml-tools/to-ast",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "TOML To Ast Parser Implemented in JavaScript",
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/to-ast",
@@ -23,13 +23,13 @@
     "test": "mocha ./test/*spec.js"
   },
   "dependencies": {
-    "@toml-tools/lexer": "^0.4.0",
+    "@toml-tools/lexer": "^1.0.0",
     "chevrotain": "^11.0.1"
   },
   "devDependencies": {
     "@iarna/toml": "^2.2.5",
     "@sgarciac/bombadil": "^2.3.0",
-    "@toml-tools/parser": "^0.4.0",
+    "@toml-tools/parser": "^1.0.0",
     "toml": "^3.0.0",
     "toml-j0.4": "^1.1.1"
   },
