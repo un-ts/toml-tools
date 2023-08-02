@@ -8,7 +8,7 @@ function canUnquote(quotedText) {
 
 function collectComments(commentsNL) {
   const comments = [];
-  commentsNL.forEach(commentNLNode => {
+  commentsNL.forEach((commentNLNode) => {
     const commentsTok = commentNLNode.children.Comment;
     if (commentsTok !== undefined) {
       Array.prototype.push.apply(comments, commentsTok);
@@ -30,9 +30,7 @@ function getSingle(ctx) {
 
   if (singleElementValues.length !== 1) {
     throw Error(
-      `Expecting single item in CST ctx key but found: <${
-        singleElementValues.length
-      }> items`
+      `Expecting single item in CST ctx key but found: <${singleElementValues.length}> items`
     );
   }
 
@@ -78,5 +76,5 @@ module.exports = {
   collectComments,
   arrItemOffset,
   arrItemProp,
-  getSingle
+  getSingle,
 };

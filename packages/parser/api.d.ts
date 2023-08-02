@@ -36,7 +36,8 @@ interface TomlCstVisitorConstructor<IN, OUT> {
 }
 
 export abstract class TomlCstVisitorWithDefaults<IN, OUT>
-  implements ICstVisitor<IN, OUT> {
+  implements ICstVisitor<IN, OUT>
+{
   // No need to implement these two methods
   // Generic Visit method implemented by the Chevrotain Library
   visit(cstNode: CstNode | CstNode[], param?: IN): OUT;

@@ -6,18 +6,10 @@ const {
   collectComments,
   arrItemOffset,
   arrItemProp,
-  getSingle
+  getSingle,
 } = require("./printer-utils");
-const {
-  concat,
-  join,
-  line,
-  hardline,
-  softline,
-  ifBreak,
-  indent,
-  group
-} = require("prettier").doc.builders;
+const { concat, join, line, hardline, softline, ifBreak, indent, group } =
+  require("prettier").doc.builders;
 
 class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   constructor() {
@@ -27,7 +19,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     // TODO: this methods should be defined on the prototype
     // defining as instance members **after** the validations to avoid
     // false positive errors on redundant methods
-    this.mapVisit = elements => {
+    this.mapVisit = (elements) => {
       if (elements === undefined) {
         // TODO: can optimize this by returning an immutable empty array singleton.
         return [];
@@ -36,7 +28,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
       return elements.map(this.visit, this);
     };
 
-    this.visitSingle = function(ctx) {
+    this.visitSingle = function (ctx) {
       const singleElement = getSingle(ctx);
       return this.visit(singleElement);
     };
@@ -45,7 +37,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     // the prototype because we cannot user "super.visit" inside the function
     // below
     const orgVisit = this.visit;
-    this.visit = function(ctx, inParam) {
+    this.visit = function (ctx, inParam) {
       if (ctx === undefined) {
         // empty Doc
         return "";
@@ -108,9 +100,9 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
 
     // once again adjust to scanning in reverse.
     cstGroups.reverse();
-    const docGroups = cstGroups.map(currGroup => this.mapVisit(currGroup));
+    const docGroups = cstGroups.map((currGroup) => this.mapVisit(currGroup));
     // newlines between each group's elements
-    const docGroupsInnerNewlines = docGroups.map(currGroup =>
+    const docGroupsInnerNewlines = docGroups.map((currGroup) =>
       join(line, currGroup)
     );
     const docGroupsOuterNewlines = join(
@@ -120,7 +112,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     return concat([
       docGroupsOuterNewlines,
       // Terminating newline
-      line
+      line,
     ]);
   }
 
@@ -151,7 +143,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   }
 
   key(ctx) {
-    const keyTexts = ctx.IKey.map(tok => tok.image);
+    const keyTexts = ctx.IKey.map((tok) => tok.image);
     // TODO: inspect if the use of a quoted key was really needed
     //       and remove quotes if not.
     return join(".", keyTexts);
@@ -171,7 +163,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     const arrayValuesDocs = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
     const postComments = collectComments(ctx.commentNewline);
     const commentsDocs = concat(
-      postComments.map(commentTok => {
+      postComments.map((commentTok) => {
         const trimmedCommentText = trimComment(commentTok.image);
         return concat([hardline, trimmedCommentText]);
       })
@@ -181,7 +173,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
         "[",
         indent(concat([arrayValuesDocs, commentsDocs])),
         softline,
-        "]"
+        "]",
       ])
     );
   }
@@ -298,5 +290,5 @@ function print(path, options, print) {
 }
 
 module.exports = {
-  print
+  print,
 };

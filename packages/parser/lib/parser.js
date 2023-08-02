@@ -7,8 +7,8 @@ class TomlParser extends Parser {
       maxLookahead: 1,
       ignoredIssues: {
         table: {
-          OR: true
-        }
+          OR: true,
+        },
       },
       // Performance: Disabling the CST creation
       //              Leads to a 60-70% performance boost.
@@ -18,7 +18,7 @@ class TomlParser extends Parser {
       //              Although I am uncertain if it matters for most scenarios
       //              If we are running at 750K lines per second or 1.2M lines per second,
       //              Meaning the parsing is very fast either way.
-      outputCst: true
+      outputCst: true,
     });
 
     const $ = this;
@@ -48,7 +48,7 @@ class TomlParser extends Parser {
           ($.C2 = [
             { ALT: () => $.SUBRULE($.keyval) },
             { ALT: () => $.SUBRULE($.table) },
-            { ALT: () => $.CONSUME(t.Comment) }
+            { ALT: () => $.CONSUME(t.Comment) },
           ])
       );
       $.OPTION(() => {
@@ -81,7 +81,7 @@ class TomlParser extends Parser {
             { ALT: () => $.SUBRULE($.inlineTable) },
             { ALT: () => $.CONSUME(t.IDateTime) },
             { ALT: () => $.CONSUME(t.IFloat) },
-            { ALT: () => $.CONSUME(t.IInteger) }
+            { ALT: () => $.CONSUME(t.IInteger) },
           ])
       );
     });
@@ -111,7 +111,7 @@ class TomlParser extends Parser {
           if (foundVal === false) {
             notDangling = false;
           }
-        }
+        },
       });
     });
 
@@ -136,9 +136,9 @@ class TomlParser extends Parser {
       $.OR([
         {
           GATE: () => $.LA(2).tokenType !== t.LSquare,
-          ALT: () => $.SUBRULE($.stdTable)
+          ALT: () => $.SUBRULE($.stdTable),
         },
-        { ALT: () => $.SUBRULE($.arrayTable) }
+        { ALT: () => $.SUBRULE($.arrayTable) },
       ]);
     });
 
@@ -177,5 +177,5 @@ class TomlParser extends Parser {
 }
 
 module.exports = {
-  TomlParser
+  TomlParser,
 };

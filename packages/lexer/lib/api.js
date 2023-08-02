@@ -12,7 +12,7 @@ const tomlLexer = new Lexer(tokensArray, {
   // The "lineTerminatorCharacters" parameter is only used to flag patterns that **may**
   // contain line terminators, so this is still correct.
   lineTerminatorCharacters: ["\n"],
-  lineTerminatorsPattern: /\n|\r\n/g
+  lineTerminatorsPattern: /\n|\r\n/g,
 });
 
 function tokenize(text) {
@@ -21,5 +21,5 @@ function tokenize(text) {
 
 module.exports = {
   tokenize,
-  tokensDictionary
+  tokensDictionary,
 };

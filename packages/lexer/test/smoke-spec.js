@@ -19,7 +19,7 @@ description
     const lexingResult = tokenize(input);
     expect(lexingResult.errors).to.be.empty;
     expect(lexingResult.tokens).to.have.lengthOf(14);
-    const tokenImages = lexingResult.tokens.map(tok => tok.image);
+    const tokenImages = lexingResult.tokens.map((tok) => tok.image);
     expect(tokenImages).to.deep.equal([
       "# This is a TOML document.",
       "\n",
@@ -34,7 +34,7 @@ description
       "description2",
       "=",
       '"""\nSome\nmultiline\ndescription\n"""',
-      "\n"
+      "\n",
     ]);
   });
 });

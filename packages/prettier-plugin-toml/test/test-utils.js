@@ -21,7 +21,7 @@ function testSample(testFolder, exclusive) {
   itOrItOnly(`can format <${relativeInputPath}>`, () => {
     const actual = prettier.format(inputContents, {
       parser: "toml",
-      plugins: [pluginPath]
+      plugins: [pluginPath],
     });
 
     expect(normalizeNewlines(actual)).to.equal(
@@ -32,12 +32,12 @@ function testSample(testFolder, exclusive) {
   it(`Performs a stable formatting for <${relativeInputPath}>`, () => {
     const onePass = prettier.format(inputContents, {
       parser: "toml",
-      plugins: [pluginPath]
+      plugins: [pluginPath],
     });
 
     const secondPass = prettier.format(onePass, {
       parser: "toml",
-      plugins: [pluginPath]
+      plugins: [pluginPath],
     });
     expect(onePass).to.equal(secondPass);
   });
@@ -51,5 +51,5 @@ function normalizeNewlines(text) {
 }
 
 module.exports = {
-  testSample
+  testSample,
 };

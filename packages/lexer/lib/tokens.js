@@ -44,11 +44,11 @@ const Newline = createToken({ name: "Newline", pattern: /\n|\r\n/ });
 const Whitespace = createToken({
   name: "Whitespace",
   pattern: /[ \t]+/,
-  group: Lexer.SKIPPED
+  group: Lexer.SKIPPED,
 });
 createToken({
   name: "Comment",
-  pattern: /#(?:[^\n\r]|\r(?!\n))*/
+  pattern: /#(?:[^\n\r]|\r(?!\n))*/,
 });
 createToken({ name: "KeyValSep", pattern: "=" });
 createToken({ name: "Dot", pattern: "." });
@@ -56,12 +56,12 @@ const IKey = createToken({ name: "IKey", pattern: Lexer.NA });
 const IQuotedKey = createToken({
   name: "IQuotedKey",
   pattern: Lexer.NA,
-  categories: [IKey]
+  categories: [IKey],
 });
 const IUnquotedKey = createToken({
   name: "IUnquotedKey",
   pattern: Lexer.NA,
-  categories: [IKey]
+  categories: [IKey],
 });
 const IString = createToken({ name: "IString", pattern: Lexer.NA });
 // TODO: comment on unicode complements and \uFFFF range
@@ -86,12 +86,12 @@ FRAGMENT(
 createToken({
   name: "BasicMultiLineString",
   pattern: makePattern`"""${f.ML_BASIC_BODY}"""`,
-  categories: [IString]
+  categories: [IString],
 });
 createToken({
   name: "BasicString",
   pattern: makePattern`"${f.basic_char}*"`,
-  categories: [IString, IQuotedKey]
+  categories: [IString, IQuotedKey],
 });
 FRAGMENT(
   "LITERAL_CHAR",
@@ -101,31 +101,31 @@ FRAGMENT("ML_LITERAL_CHAR", /[\u0009]|[\u0020-\u007E]|[\u0080-\uFFFF]/);
 createToken({
   name: "LiteralMultiLineString",
   pattern: makePattern`('''|""")(?:${f.ML_LITERAL_CHAR}|${Newline})*\\1`,
-  categories: [IString]
+  categories: [IString],
 });
 createToken({
   name: "LiteralString",
   pattern: makePattern`'${f.LITERAL_CHAR}*'`,
-  categories: [IString, IQuotedKey]
+  categories: [IString, IQuotedKey],
 });
 const IBoolean = createToken({
   name: "IBoolean",
   pattern: Lexer.NA,
-  categories: [IUnquotedKey]
+  categories: [IUnquotedKey],
 });
 const True = createToken({
   name: "True",
   pattern: /true/,
-  categories: [IBoolean]
+  categories: [IBoolean],
 });
 const False = createToken({
   name: "False",
   pattern: /false/,
-  categories: [IBoolean]
+  categories: [IBoolean],
 });
 const IDateTime = createToken({
   name: "IDateTime",
-  pattern: Lexer.NA
+  pattern: Lexer.NA,
 });
 FRAGMENT("date_fullyear", /\d{4}/);
 FRAGMENT("date_month", /\d{2}/);
@@ -139,9 +139,7 @@ FRAGMENT("time_numoffset", makePattern`[+-]${f.time_hour}:${f.time_minute}`);
 FRAGMENT("time_offset", makePattern`[zZ]|${f.time_numoffset}`);
 FRAGMENT(
   "partial_time",
-  makePattern`${f.time_hour}:${f.time_minute}:${f.time_second}${
-    f.time_secfrac
-  }?`
+  makePattern`${f.time_hour}:${f.time_minute}:${f.time_second}${f.time_secfrac}?`
 );
 FRAGMENT(
   "full_date",
@@ -151,26 +149,26 @@ FRAGMENT("full_time", makePattern`${f.partial_time}${f.time_offset}`);
 createToken({
   name: "OffsetDateTime",
   pattern: makePattern`${f.full_date}${f.time_delim}${f.full_time}`,
-  categories: [IDateTime]
+  categories: [IDateTime],
 });
 createToken({
   name: "LocalDateTime",
   pattern: makePattern`${f.full_date}${f.time_delim}${f.partial_time}`,
-  categories: [IDateTime]
+  categories: [IDateTime],
 });
 createToken({
   name: "LocalDate",
   pattern: makePattern`${f.full_date}`,
-  categories: [IDateTime]
+  categories: [IDateTime],
 });
 createToken({
   name: "LocalTime",
   pattern: makePattern`${f.partial_time}`,
-  categories: [IDateTime]
+  categories: [IDateTime],
 });
 const IFloat = createToken({
   name: "IFloat",
-  pattern: Lexer.NA
+  pattern: Lexer.NA,
 });
 
 const decimalIntPatern = /[+-]?(?:0|[1-9](?:_?\d)*)/;
@@ -182,70 +180,70 @@ FRAGMENT("frac", makePattern`${f.decimal_point}${f.zero_prefixable_int}`);
 createToken({
   name: "Float",
   pattern: makePattern`${f.float_int_part}(?:${f.exp}|${f.frac}${f.exp}?)`,
-  categories: [IFloat]
+  categories: [IFloat],
 });
 createToken({
   name: "SpecialFloat",
   pattern: /[+-](?:inf|nan)/,
-  categories: [IFloat]
+  categories: [IFloat],
 });
 const IInteger = createToken({
   name: "IInteger",
-  pattern: Lexer.NA
+  pattern: Lexer.NA,
 });
 const DecimalInt = createToken({
   name: "DecimalInt",
   pattern: decimalIntPatern,
   // Not that DecimalInt is both an IInteger **and** an IUnquotedKey
-  categories: [IInteger, IUnquotedKey]
+  categories: [IInteger, IUnquotedKey],
 });
 createToken({
   name: "HexInt",
   pattern: /0x[0-9A-F](?:_?[0-9A-F])*/,
-  categories: [IInteger]
+  categories: [IInteger],
 });
 createToken({
   name: "OctInt",
   pattern: /0o[0-7](?:_?[0-7])*/,
-  categories: [IInteger]
+  categories: [IInteger],
 });
 createToken({
   name: "BinInt",
   pattern: /0b[0-1](?:_?[0-1])*/,
-  categories: [IInteger]
+  categories: [IInteger],
 });
 createToken({
   name: "LSquare",
-  pattern: "["
+  pattern: "[",
 });
 createToken({
   name: "RSquare",
-  pattern: "]"
+  pattern: "]",
 });
 createToken({
   name: "Comma",
-  pattern: ","
+  pattern: ",",
 });
 createToken({
   name: "LCurly",
-  pattern: "{"
+  pattern: "{",
 });
 createToken({
   name: "RCurly",
-  pattern: "}"
+  pattern: "}",
 });
 
 const UnquotedKey = createToken({
   name: "UnquotedKey",
   pattern: /[A-Za-z0-9_-]+/,
-  categories: [IUnquotedKey]
+  categories: [IUnquotedKey],
 });
 const possibleUnquotedKeysPrefixes = [True, False, DecimalInt];
-possibleUnquotedKeysPrefixes.forEach(tokType => {
+possibleUnquotedKeysPrefixes.forEach((tokType) => {
   tokType.LONGER_ALT = UnquotedKey;
 });
 
 module.exports = {
   tokensArray,
-  tokensDictionary
+  tokensDictionary,
 };

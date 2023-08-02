@@ -14,7 +14,7 @@ describe("The Toml Tools Parser", () => {
       }
 
       key(ctx) {
-        const keyImages = ctx.IKey.map(keyTok => keyTok.image);
+        const keyImages = ctx.IKey.map((keyTok) => keyTok.image);
         const newKey = keyImages.join(".");
         return newKey;
       }
@@ -67,7 +67,7 @@ hosts = [
       "servers",
       "servers.alpha",
       "servers.beta",
-      "clients"
+      "clients",
     ]);
   });
 });

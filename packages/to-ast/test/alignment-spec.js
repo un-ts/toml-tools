@@ -20,9 +20,7 @@ describe("The Toml Tools to-ast parser", () => {
 
     toAstParserGrammar.forEach((toAstRule, idx) => {
       const toCstRule = toCstParserGrammar[idx];
-      expect(toAstRule)
-        .excludingEvery(["orgText"])
-        .to.deep.equal(toCstRule);
+      expect(toAstRule).excludingEvery(["orgText"]).to.deep.equal(toCstRule);
     });
   });
 });

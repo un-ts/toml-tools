@@ -41,5 +41,5 @@ function parse(inputText) {
 }
 
 module.exports = {
-  parse
+  parse,
 };
