@@ -1,5 +1,15 @@
 # prettier-plugin-toml
 
+## 0.3.5
+
+### Patch Changes
+
+- [`c1a2d57`](https://github.com/un-ts/toml-tools/commit/c1a2d573552cfa88e4b2321d313f9dd36a5ce5c5) Thanks [@JounQin](https://github.com/JounQin)! - fix: mark @toml-tools/lexer ad dependency - close #55
+
+- Updated dependencies []:
+  - @toml-tools/lexer@0.3.5
+  - @toml-tools/parser@0.3.5
+
 ## 0.3.4
 
 ### Patch Changes

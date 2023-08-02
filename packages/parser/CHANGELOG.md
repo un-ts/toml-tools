@@ -1,5 +1,12 @@
 # @toml-tools/parser
 
+## 0.3.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @toml-tools/lexer@0.3.5
+
 ## 0.3.2
 
 ### Patch Changes

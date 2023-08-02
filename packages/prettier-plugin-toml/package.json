@@ -1,6 +1,6 @@
 {
   "name": "prettier-plugin-toml",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "TOML Prettier Plugin",
   "keywords": [
     "toml",
@@ -12,8 +12,8 @@
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/prettier-plugin-toml",
   "license": "MIT",
   "dependencies": {
-    "@toml-tools/lexer": "^0.3.2",
-    "@toml-tools/parser": "^0.3.2",
+    "@toml-tools/lexer": "^0.3.5",
+    "@toml-tools/parser": "^0.3.5",
     "prettier": "^1.16.0 || ^2.0.0"
   },
   "scripts": {
