@@ -7,10 +7,10 @@
     }
   ],
   "commit": false,
-  "fixed": [["@toml-tools/*"]],
+  "fixed": [["@toml-tools/*", "prettier-plugin-toml"]],
   "linked": [],
   "access": "restricted",
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": ["test-prettier-plugin-toml"]
 }

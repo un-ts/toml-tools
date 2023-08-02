@@ -12,6 +12,7 @@
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/prettier-plugin-toml",
   "license": "MIT",
   "dependencies": {
+    "@toml-tools/lexer": "^0.3.2",
     "@toml-tools/parser": "^0.3.2",
     "prettier": "^1.16.0 || ^2.0.0"
   },
