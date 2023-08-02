@@ -1,15 +1,10 @@
-const { Parser: ToAstParser } = require("chevrotain");
+const { CstParser } = require("chevrotain");
 const { tokensDictionary: t } = require("@toml-tools/lexer");
 
-class TomlToAstParser extends ToAstParser {
+class TomlToAstParser extends CstParser {
   constructor() {
     super(t, {
       maxLookahead: 1,
-      ignoredIssues: {
-        table: {
-          OR: true,
-        },
-      },
       outputCst: false,
     });
 
@@ -127,13 +122,16 @@ class TomlToAstParser extends ToAstParser {
 
     $.RULE("table", () => {
       // TODO: GATE to assert arrayTable tokens have no WS
-      $.OR([
-        {
-          GATE: () => $.LA(2).tokenType !== t.LSquare,
-          ALT: () => $.SUBRULE($.stdTable),
-        },
-        { ALT: () => $.SUBRULE($.arrayTable) },
-      ]);
+      $.OR({
+        IGNORE_AMBIGUITIES: true,
+        DEF: [
+          {
+            GATE: () => $.LA(2).tokenType !== t.LSquare,
+            ALT: () => $.SUBRULE($.stdTable),
+          },
+          { ALT: () => $.SUBRULE($.arrayTable) },
+        ],
+      });
     });
 
     $.RULE("stdTable", () => {

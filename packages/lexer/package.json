@@ -10,7 +10,7 @@
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/lexer",
   "license": "MIT",
   "dependencies": {
-    "chevrotain": "^4.8.1"
+    "chevrotain": "^10.4.2"
   },
   "scripts": {
     "test": "mocha ./test/*spec.js"
