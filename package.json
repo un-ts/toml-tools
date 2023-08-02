@@ -12,7 +12,8 @@
     "format:fix": "prettier --write \"**/*.@(ts|js|json|md)\"",
     "format:validate": "prettier --list-different \"**/*.@(ts|js|json|md)\"",
     "prepare": "simple-git-hooks",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "version": "changeset version && yarn --no-immutable"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
