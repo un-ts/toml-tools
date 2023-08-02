@@ -5,8 +5,8 @@
 # TOML-Tools
 
 ** This project is currently un-maintained and looking for a new maintainer **
-- See: relevant [issue](https://github.com/bd82/toml-tools/issues/43)
 
+- See: relevant [issue](https://github.com/bd82/toml-tools/issues/43)
 
 ## Introduction
 
