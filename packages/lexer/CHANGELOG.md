@@ -1,5 +1,7 @@
 # @toml-tools/lexer
 
+## 0.3.5
+
 ## 0.3.2
 
 ### Patch Changes
