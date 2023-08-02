@@ -9,7 +9,7 @@
     "prettier-plugin"
   ],
   "main": "lib/api.js",
-  "repository": "https://github.com/bd82/toml-tools/tree/master/packages/prettier-plugin-toml",
+  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/prettier-plugin-toml",
   "license": "MIT",
   "dependencies": {
     "@toml-tools/parser": "^0.3.2",

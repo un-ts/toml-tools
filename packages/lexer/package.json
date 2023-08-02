@@ -7,7 +7,7 @@
     "lexer"
   ],
   "main": "lib/api.js",
-  "repository": "https://github.com/bd82/toml-tools/tree/master/packages/lexer",
+  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/lexer",
   "license": "MIT",
   "dependencies": {
     "chevrotain": "4.1.1"

@@ -1,5 +1,5 @@
 [![Release](https://github.com/un-ts/toml-tools/actions/workflows/release.yml/badge.svg)](https://github.com/un-ts/toml-tools/actions/workflows/release.yml)
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bd82/toml-tools/master/LICENSE)
+[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/un-ts/toml-tools/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # TOML-Tools
@@ -57,4 +57,4 @@ Tooling Packages:
 
 [toml]: https://github.com/toml-lang/toml
 [mono-repo]: https://github.com/babel/babel/blob/master/doc/design/monorepo.md
-[chevrotain]: https://github.com/SAP/chevrotain
+[chevrotain]: https://github.com/Chevrotain/chevrotain

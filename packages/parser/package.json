@@ -7,7 +7,7 @@
     "parser"
   ],
   "main": "lib/api.js",
-  "repository": "https://github.com/bd82/toml-tools/tree/master/packages/parser",
+  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/parser",
   "license": "MIT",
   "dependencies": {
     "@toml-tools/lexer": "^0.3.2",

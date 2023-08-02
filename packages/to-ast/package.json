@@ -8,7 +8,7 @@
     "ast"
   ],
   "main": "lib/api.js",
-  "repository": "https://github.com/bd82/toml-tools/tree/master/packages/to-ast",
+  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/to-ast",
   "license": "MIT",
   "dependencies": {
     "@toml-tools/lexer": "^0.3.2",

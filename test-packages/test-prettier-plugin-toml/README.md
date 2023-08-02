@@ -10,7 +10,7 @@ via npm scripts.
 
 ### Using GitPod WebIDE
 
-1. Open [this package in Gitpod](https://gitpod.io/#https://github.com/bd82/toml-tools/tree/master/test-packages/test-prettier-plugin-toml).
+1. Open [this package in Gitpod](https://gitpod.io/#https://github.com/un-ts/toml-tools/tree/master/test-packages/test-prettier-plugin-toml).
 2. ```bash
       # Only Once
       cd test-packages/test-prettier-plugin-toml/
@@ -25,7 +25,7 @@ via npm scripts.
 ### From your local machine
 
 ```bash
-git clone https://github.com/bd82/toml-tools.git
+git clone https://github.com/un-ts/toml-tools.git
 cd toml-tools/test-packages/test-prettier-plugin-toml
 npm install
 # Add or modify .toml files in this folder.

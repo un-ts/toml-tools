@@ -31,9 +31,9 @@ ending with .toml suffix. Using it is exactly the same as using prettier
 
 ## Try it out
 
-[In Gitpod](https://gitpod.io/#https://github.com/bd82/toml-tools/tree/master/test-packages/test-prettier-plugin-toml)
+[In Gitpod](https://gitpod.io/#https://github.com/un-ts/toml-tools/tree/master/test-packages/test-prettier-plugin-toml)
 
-Or clone an [example npm package](../../test-packages/test-prettier-plugin-toml)
+Or clone an [example npm package](https://github.com/un-ts/toml-tools/tree/master/test-packages/test-prettier-plugin-toml)
 which uses prettier-plugin-toml.
 
 ## How it works
