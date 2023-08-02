@@ -1,10 +1,10 @@
 import prettier from "prettier";
 import { expect } from "chai";
 import { readFileSync } from "fs";
-import { resolve, relative } from "path";
+import { dirname, resolve, relative } from "path";
 import { fileURLToPath } from "url";
 
-const _dirname = fileURLToPath(new URL(".", import.meta.url));
+const _dirname = dirname(fileURLToPath(import.meta.url));
 
 const pluginPath = "prettier-plugin-toml";
 
