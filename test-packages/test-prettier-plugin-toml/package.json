@@ -1,7 +1,7 @@
 {
   "name": "test-prettier-plugin-toml",
   "private": true,
-  "version": "0.3.2",
+  "version": "0.0.0",
   "license": "MIT",
   "devDependencies": {
     "prettier": "1.16.4",
