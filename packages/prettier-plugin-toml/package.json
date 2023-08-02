@@ -11,10 +11,12 @@
   "main": "lib/api.js",
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/prettier-plugin-toml",
   "license": "MIT",
+  "peerDependencies": {
+    "prettier": "^1.16.0 || ^2.0.0"
+  },
   "dependencies": {
     "@toml-tools/lexer": "^0.3.5",
-    "@toml-tools/parser": "^0.3.5",
-    "prettier": "^1.16.0 || ^2.0.0"
+    "@toml-tools/parser": "^0.3.5"
   },
   "scripts": {
     "test": "mocha ./test/**/*spec.js"

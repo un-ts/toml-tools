@@ -1,15 +1,10 @@
-const { Parser } = require("chevrotain");
+const { CstParser } = require("chevrotain");
 const { tokensDictionary: t } = require("@toml-tools/lexer");
 
-class TomlParser extends Parser {
+class TomlParser extends CstParser {
   constructor() {
     super(t, {
       maxLookahead: 1,
-      ignoredIssues: {
-        table: {
-          OR: true,
-        },
-      },
       // Performance: Disabling the CST creation
       //              Leads to a 60-70% performance boost.
       //              This could be relevant to implement a faster
@@ -133,13 +128,16 @@ class TomlParser extends Parser {
 
     $.RULE("table", () => {
       // TODO: GATE to assert arrayTable tokens have no WS
-      $.OR([
-        {
-          GATE: () => $.LA(2).tokenType !== t.LSquare,
-          ALT: () => $.SUBRULE($.stdTable),
-        },
-        { ALT: () => $.SUBRULE($.arrayTable) },
-      ]);
+      $.OR({
+        IGNORE_AMBIGUITIES: true,
+        DEF: [
+          {
+            GATE: () => $.LA(2).tokenType !== t.LSquare,
+            ALT: () => $.SUBRULE($.stdTable),
+          },
+          { ALT: () => $.SUBRULE($.arrayTable) },
+        ],
+      });
     });
 
     $.RULE("stdTable", () => {
