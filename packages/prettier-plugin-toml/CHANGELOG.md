@@ -1,5 +1,19 @@
 # prettier-plugin-toml
 
+## 0.4.0
+
+### Minor Changes
+
+- [#64](https://github.com/un-ts/toml-tools/pull/64) [`1da2ff1`](https://github.com/un-ts/toml-tools/commit/1da2ff14f2333008f312534a3016114c94600e06) Thanks [@JounQin](https://github.com/JounQin)! - feat: mark prettier as peer dependency instead
+
+- [#64](https://github.com/un-ts/toml-tools/pull/64) [`1da2ff1`](https://github.com/un-ts/toml-tools/commit/1da2ff14f2333008f312534a3016114c94600e06) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade chevrotain to v10
+
+### Patch Changes
+
+- Updated dependencies [[`1da2ff1`](https://github.com/un-ts/toml-tools/commit/1da2ff14f2333008f312534a3016114c94600e06)]:
+  - @toml-tools/lexer@0.4.0
+  - @toml-tools/parser@0.4.0
+
 ## 0.3.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@toml-tools/parser",
-  "version": "0.3.5",
+  "version": "0.4.0",
   "description": "TOML Parser Implemented in JavaScript",
   "keywords": [
     "toml",
@@ -10,7 +10,7 @@
   "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/parser",
   "license": "MIT",
   "dependencies": {
-    "@toml-tools/lexer": "^0.3.5",
+    "@toml-tools/lexer": "^0.4.0",
     "chevrotain": "^10.4.2"
   },
   "scripts": {
