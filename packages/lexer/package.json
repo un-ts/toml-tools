@@ -1,6 +1,6 @@
 {
   "name": "@toml-tools/lexer",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "TOML Lexer Implemented in JavaScript",
   "keywords": [
     "toml",
