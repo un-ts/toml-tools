@@ -1,12 +1,8 @@
-[![Build Status](https://travis-ci.org/bd82/toml-tools.svg?branch=master)](https://travis-ci.org/bd82/toml-tools)
+[![Release](https://github.com/un-ts/toml-tools/actions/workflows/release.yml/badge.svg)](https://github.com/un-ts/toml-tools/actions/workflows/release.yml)
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bd82/toml-tools/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 # TOML-Tools
-
-** This project is currently un-maintained and looking for a new maintainer **
-
-- See: relevant [issue](https://github.com/bd82/toml-tools/issues/43)
 
 ## Introduction
 
