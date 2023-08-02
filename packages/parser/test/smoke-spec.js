@@ -1,5 +1,5 @@
-const { parse, BaseTomlCstVisitorWithDefaults } = require("../");
-const { expect } = require("chai");
+import { parse, BaseTomlCstVisitorWithDefaults } from "@toml-tools/parser";
+import { expect } from "chai";
 
 describe("The Toml Tools Parser", () => {
   it("can parse a sample Toml", () => {

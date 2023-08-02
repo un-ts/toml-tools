@@ -1,16 +1,16 @@
 {
   "name": "test-prettier-plugin-toml",
-  "private": true,
   "version": "0.0.0",
   "license": "MIT",
-  "devDependencies": {
-    "prettier": "^2.8.8",
-    "prettier-plugin-toml": "^0.4.0"
-  },
+  "private": true,
   "scripts": {
-    "test": "yarn run format:validate",
+    "format:fix": "prettier --write \"**/*.@(json|md|toml)\"",
     "format:validate": "prettier --list-different \"**/*.@(json|md|toml)\"",
-    "format:fix": "prettier --write \"**/*.@(json|md|toml)\""
+    "test": "yarn run format:validate"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "prettier-plugin-toml": "^0.4.0"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"

@@ -1,3 +1,5 @@
+import { testSample } from "../test-utils.js";
+
 describe("prettier-toml", () => {
-  require("../test-utils").testSample(__dirname);
+  testSample(import.meta);
 });

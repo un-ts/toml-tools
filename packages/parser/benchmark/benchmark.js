@@ -19,17 +19,17 @@ function parseBombadil(input) {
 const samplesDir = path.join(__dirname, "./samples/");
 const allSampleFiles = klawSync(samplesDir);
 const tomlSampleFiles = _.filter(allSampleFiles, (fileDesc) =>
-  fileDesc.path.endsWith(".toml")
+  fileDesc.path.endsWith(".toml"),
 );
 const relTomlFilesPaths = _.map(tomlSampleFiles, (fileDesc) =>
-  path.relative(__dirname, fileDesc.path)
+  path.relative(__dirname, fileDesc.path),
 );
 const tomlFilesContents = _.map(tomlSampleFiles, (fileDesc) =>
-  fs.readFileSync(fileDesc.path, "utf8")
+  fs.readFileSync(fileDesc.path, "utf8"),
 );
 const samplesRelPathToContent = _.zipObject(
   relTomlFilesPaths,
-  tomlFilesContents
+  tomlFilesContents,
 );
 
 function newSuite(name) {

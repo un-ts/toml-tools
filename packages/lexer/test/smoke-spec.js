@@ -1,5 +1,5 @@
-const { tokenize } = require("../");
-const { expect } = require("chai");
+import { tokenize } from "@toml-tools/lexer";
+import { expect } from "chai";
 
 describe("The Toml Tools Lexer", () => {
   it("can tokenize a sample Toml", () => {

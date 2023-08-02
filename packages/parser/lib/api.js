@@ -1,5 +1,5 @@
-const { tokenize } = require("@toml-tools/lexer");
-const { TomlParser } = require("./parser");
+import { tokenize } from "@toml-tools/lexer";
+import { TomlParser } from "./parser.js";
 
 const parser = new TomlParser();
 const BaseTomlCstVisitor = parser.getBaseCstVisitorConstructor();
@@ -19,7 +19,7 @@ function parse(inputText, entryPoint = "toml") {
         ", column: " +
         firstError.column +
         "!\n" +
-        firstError.message
+        firstError.message,
     );
   }
 
@@ -35,15 +35,16 @@ function parse(inputText, entryPoint = "toml") {
         error.message +
         "!\n\t->" +
         // TODO: should the stack always appear on errors msg?
-        error.context.ruleStack.join("\n\t->")
+        error.context.ruleStack.join("\n\t->"),
     );
   }
 
   return cst;
 }
 
-module.exports = {
+export {
   parse,
   BaseTomlCstVisitor,
   BaseTomlCstVisitorWithDefaults,
+  TomlParser,
 };

@@ -1,9 +1,10 @@
-const { TomlToAstParser } = require("../lib/to-ast-parser");
-const { TomlParser } = require("@toml-tools/parser/lib/parser");
-const chai = require("chai");
-const { default: chaiExclude } = require("chai-exclude");
+import { TomlToAstParser } from "../lib/to-ast-parser.js";
+import { TomlParser } from "@toml-tools/parser";
+import chai from "chai";
+import chaiExclude from "chai-exclude";
 
 const { expect } = chai;
+
 chai.use(chaiExclude);
 
 describe("The Toml Tools to-ast parser", () => {
@@ -14,10 +15,10 @@ describe("The Toml Tools to-ast parser", () => {
    */
   it("exactly matches the grammar of the regular(to-cst) parser", () => {
     const toCstParserGrammar = Object.values(
-      new TomlParser().getGAstProductions()
+      new TomlParser().getGAstProductions(),
     );
     const toAstParserGrammar = Object.values(
-      new TomlToAstParser().getGAstProductions()
+      new TomlToAstParser().getGAstProductions(),
     );
 
     toAstParserGrammar.forEach((toAstRule, idx) => {

@@ -1,15 +1,15 @@
-const { BaseTomlCstVisitor } = require("@toml-tools/parser");
-const { tokensDictionary: t } = require("@toml-tools/lexer");
-
-const {
+import { BaseTomlCstVisitor } from "@toml-tools/parser";
+import { tokensDictionary as t } from "@toml-tools/lexer";
+import { doc, version } from "prettier";
+import {
   trimComment,
   collectComments,
   arrItemOffset,
   arrItemProp,
   getSingle,
-} = require("./printer-utils");
-const { concat, join, line, hardline, softline, ifBreak, indent, group } =
-  require("prettier").doc.builders;
+} from "./printer-utils.js";
+
+const { join, line, hardline, softline, ifBreak, indent, group } = doc.builders;
 
 class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   constructor() {
@@ -50,7 +50,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   toml(ctx) {
     // empty toml document
     if (ctx.expression === undefined) {
-      return concat([line]);
+      return [line];
     }
 
     function isTable(node) {
@@ -103,17 +103,14 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
     const docGroups = cstGroups.map((currGroup) => this.mapVisit(currGroup));
     // newlines between each group's elements
     const docGroupsInnerNewlines = docGroups.map((currGroup) =>
-      join(line, currGroup)
+      join(line, currGroup),
     );
-    const docGroupsOuterNewlines = join(
-      concat([line, line]),
-      docGroupsInnerNewlines
-    );
-    return concat([
+    const docGroupsOuterNewlines = join([line, line], docGroupsInnerNewlines);
+    return [
       docGroupsOuterNewlines,
       // Terminating newline
       line,
-    ]);
+    ];
   }
 
   expression(ctx) {
@@ -121,14 +118,14 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
       let keyValDoc = this.visit(ctx.keyval);
       if (ctx.Comment) {
         const commentText = trimComment(ctx.Comment[0].image);
-        keyValDoc = concat([keyValDoc, " " + commentText]);
+        keyValDoc = [keyValDoc, " " + commentText];
       }
       return keyValDoc;
     } else if (ctx.table) {
       let tableDoc = this.visit(ctx.table);
       if (ctx.Comment) {
         const commentText = trimComment(ctx.Comment[0].image);
-        tableDoc = concat([tableDoc, " " + commentText]);
+        tableDoc = [tableDoc, " " + commentText];
       }
       return tableDoc;
     } else {
@@ -139,7 +136,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   keyval(ctx) {
     const keyDoc = this.visit(ctx.key);
     const valueDoc = this.visit(ctx.val);
-    return concat([keyDoc, " = ", valueDoc]);
+    return [keyDoc, " = ", valueDoc];
   }
 
   key(ctx) {
@@ -162,20 +159,11 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
   array(ctx) {
     const arrayValuesDocs = ctx.arrayValues ? this.visit(ctx.arrayValues) : "";
     const postComments = collectComments(ctx.commentNewline);
-    const commentsDocs = concat(
-      postComments.map((commentTok) => {
-        const trimmedCommentText = trimComment(commentTok.image);
-        return concat([hardline, trimmedCommentText]);
-      })
-    );
-    return group(
-      concat([
-        "[",
-        indent(concat([arrayValuesDocs, commentsDocs])),
-        softline,
-        "]",
-      ])
-    );
+    const commentsDocs = postComments.map((commentTok) => {
+      const trimmedCommentText = trimComment(commentTok.image);
+      return [hardline, trimmedCommentText];
+    });
+    return group(["[", indent([arrayValuesDocs, commentsDocs]), softline, "]"]);
   }
 
   arrayValues(ctx) {
@@ -218,7 +206,7 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
             // adding a single space between the comma and the comment
             const comment = " " + trimmedComment;
             // a hardline is used to ensure a lineBreak after the comment
-            itemsDoc.push(concat([valDoc, potentialComma, comment, hardline]));
+            itemsDoc.push([valDoc, potentialComma, comment, hardline]);
           }
           // no comment on the same line
           else {
@@ -226,31 +214,31 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
             const optionalCommaLineBreak = isTrailingComma
               ? // only print trailing comma if this is a multiline array.
                 ifBreak(",", "")
-              : concat([potentialComma, line]);
-            itemsDoc.push(concat([valDoc, optionalCommaLineBreak]));
+              : [potentialComma, line];
+            itemsDoc.push([valDoc, optionalCommaLineBreak]);
           }
         }
         // last item without any followup
         else {
-          itemsDoc.push(concat([valDoc]));
+          itemsDoc.push([valDoc]);
         }
       }
       // separate line comment
       else if (cstItem.tokenType === t.Comment) {
         const trimmedComment = trimComment(cstItem.image);
-        itemsDoc.push(concat([trimmedComment, hardline]));
+        itemsDoc.push([trimmedComment, hardline]);
       } else {
         throw Error("non exhaustive match");
       }
     }
-    return concat([softline, concat(itemsDoc)]);
+    return [softline, itemsDoc];
   }
 
   inlineTable(ctx) {
     const inlineTableKeyValsDocs = ctx.inlineTableKeyVals
       ? this.visit(ctx.inlineTableKeyVals)
       : "";
-    return group(concat(["{ ", inlineTableKeyValsDocs, " }"]));
+    return group(["{ ", inlineTableKeyValsDocs, " }"]);
   }
 
   inlineTableKeyVals(ctx) {
@@ -264,12 +252,12 @@ class TomlBeautifierVisitor extends BaseTomlCstVisitor {
 
   stdTable(ctx) {
     const keyDoc = this.visit(ctx.key);
-    return concat(["[", keyDoc, "]"], line);
+    return ["[", keyDoc, "]"];
   }
 
   arrayTable(ctx) {
     const keyDoc = this.visit(ctx.key);
-    return concat(["[[", keyDoc, "]]"], line);
+    return ["[[", keyDoc, "]]"];
   }
 
   nl(ctx) {
@@ -289,6 +277,4 @@ function print(path, options, print) {
   return doc;
 }
 
-module.exports = {
-  print,
-};
+export { print };

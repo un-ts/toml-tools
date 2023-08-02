@@ -1,14 +1,19 @@
-const prettier = require("prettier");
-const { expect } = require("chai");
-const { readFileSync } = require("fs");
-const { resolve, relative } = require("path");
+import prettier from "prettier";
+import { expect } from "chai";
+import { readFileSync } from "fs";
+import { resolve, relative } from "path";
+import { fileURLToPath } from "url";
 
-const pluginPath = resolve(__dirname, "../");
-function testSample(testFolder, exclusive) {
+const _dirname = fileURLToPath(new URL(".", import.meta.url));
+
+const pluginPath = "prettier-plugin-toml";
+
+function testSample(importMeta, exclusive) {
+  const testFolder = resolve(fileURLToPath(importMeta.url), "..");
   const itOrItOnly = exclusive ? it.only : it;
   const inputPath = resolve(testFolder, "_input.toml");
   const expectedPath = resolve(testFolder, "_output.toml");
-  const relativeInputPath = relative(__dirname, inputPath);
+  const relativeInputPath = relative(_dirname, inputPath);
 
   let inputContents;
   let expectedContents;
@@ -18,24 +23,24 @@ function testSample(testFolder, exclusive) {
     expectedContents = readFileSync(expectedPath, "utf8");
   });
 
-  itOrItOnly(`can format <${relativeInputPath}>`, () => {
-    const actual = prettier.format(inputContents, {
+  itOrItOnly(`can format <${relativeInputPath}>`, async () => {
+    const actual = await prettier.format(inputContents, {
       parser: "toml",
       plugins: [pluginPath],
     });
 
     expect(normalizeNewlines(actual)).to.equal(
-      normalizeNewlines(expectedContents)
+      normalizeNewlines(expectedContents),
     );
   });
 
-  it(`Performs a stable formatting for <${relativeInputPath}>`, () => {
-    const onePass = prettier.format(inputContents, {
+  it(`Performs a stable formatting for <${relativeInputPath}>`, async () => {
+    const onePass = await prettier.format(inputContents, {
       parser: "toml",
       plugins: [pluginPath],
     });
 
-    const secondPass = prettier.format(onePass, {
+    const secondPass = await prettier.format(onePass, {
       parser: "toml",
       plugins: [pluginPath],
     });
@@ -50,6 +55,4 @@ function normalizeNewlines(text) {
   return text.replace(/\r\n/g, "\n");
 }
 
-module.exports = {
-  testSample,
-};
+export { testSample };

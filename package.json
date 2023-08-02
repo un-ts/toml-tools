@@ -5,14 +5,15 @@
     "packages/*",
     "test-packages/*"
   ],
+  "packageManager": "yarn@3.6.1",
   "scripts": {
     "benchmark": "yarn workspace @toml-tools/parser run benchmark",
     "ci": "npm-run-all format:validate test",
-    "test": "yarn workspaces foreach run test",
     "format:fix": "prettier --write \"**/*.@(ts|js|json|md)\"",
     "format:validate": "prettier --list-different \"**/*.@(ts|js|json|md)\"",
     "prepare": "simple-git-hooks",
     "release": "changeset publish",
+    "test": "yarn workspaces foreach run test",
     "version": "changeset version && yarn --no-immutable"
   },
   "devDependencies": {
@@ -26,16 +27,16 @@
     "lodash": "^4.17.21",
     "mocha": "^10.2.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
+    "prettier-plugin-pkg": "^0.18.0",
     "simple-git-hooks": "^2.9.0"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "yarn lint-staged"
   },
   "lint-staged": {
     "*.{ts,js,md,json}": [
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@3.6.1"
+  "simple-git-hooks": {
+    "pre-commit": "yarn lint-staged"
+  }
 }

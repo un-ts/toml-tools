@@ -6,7 +6,4 @@ function locEnd(cstNode) {
   // TODO: TBD
 }
 
-module.exports = {
-  locStart,
-  locEnd,
-};
+export { locStart, locEnd };
