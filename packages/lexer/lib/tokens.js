@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-"use strict";
-const { createToken: createTokenOrg, Lexer } = require("chevrotain");
+import { createToken as createTokenOrg, Lexer } from "chevrotain";
 
 // A little mini DSL for easier lexer definition.
 const fragments = {};
@@ -39,6 +37,7 @@ function createToken(options) {
   tokensDictionary[options.name] = newTokenType;
   return newTokenType;
 }
+
 // TODO: would there be perf benefits to add repetition (+) to newline def?
 const Newline = createToken({ name: "Newline", pattern: /\n|\r\n/ });
 const Whitespace = createToken({
@@ -67,7 +66,7 @@ const IString = createToken({ name: "IString", pattern: Lexer.NA });
 // TODO: comment on unicode complements and \uFFFF range
 FRAGMENT(
   "basic_unescaped",
-  /[\u0020-\u0021]|[\u0023-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/
+  /[\u0020-\u0021]|[\u0023-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/,
 );
 FRAGMENT("escaped", /\\(?:[btnfr"\\]|u[0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})?)/);
 FRAGMENT("basic_char", makePattern`${f.basic_unescaped}|${f.escaped}`);
@@ -76,12 +75,12 @@ FRAGMENT(
   // TODO: comment on unicode complements and \uFFFF range
   // SPEC Deviation: included backslash (5C)
   //      See: https://github.com/toml-lang/toml/pull/590
-  /[\u0020-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/
+  /[\u0020-\u005B]|[\u005D-\u007E]|[\u0080-\uFFFF]/,
 );
 FRAGMENT("ML_BASIC_CHAR", makePattern`${f.ML_BASIC_UNESCAPED}|${f.escaped}`);
 FRAGMENT(
   "ML_BASIC_BODY",
-  makePattern`(?:${f.ML_BASIC_CHAR}|${Newline}|\\\\${Whitespace}?${Newline})*`
+  makePattern`(?:${f.ML_BASIC_CHAR}|${Newline}|\\\\${Whitespace}?${Newline})*`,
 );
 createToken({
   name: "BasicMultiLineString",
@@ -95,7 +94,7 @@ createToken({
 });
 FRAGMENT(
   "LITERAL_CHAR",
-  /[\u0009]|[\u0020-\u0026]|[\u0028-\u007E]|[\u0080-\uFFFF]/
+  /[\u0009]|[\u0020-\u0026]|[\u0028-\u007E]|[\u0080-\uFFFF]/,
 );
 FRAGMENT("ML_LITERAL_CHAR", /[\u0009]|[\u0020-\u007E]|[\u0080-\uFFFF]/);
 createToken({
@@ -139,11 +138,11 @@ FRAGMENT("time_numoffset", makePattern`[+-]${f.time_hour}:${f.time_minute}`);
 FRAGMENT("time_offset", makePattern`[zZ]|${f.time_numoffset}`);
 FRAGMENT(
   "partial_time",
-  makePattern`${f.time_hour}:${f.time_minute}:${f.time_second}${f.time_secfrac}?`
+  makePattern`${f.time_hour}:${f.time_minute}:${f.time_second}${f.time_secfrac}?`,
 );
 FRAGMENT(
   "full_date",
-  makePattern`${f.date_fullyear}-${f.date_month}-${f.date_mday}`
+  makePattern`${f.date_fullyear}-${f.date_month}-${f.date_mday}`,
 );
 FRAGMENT("full_time", makePattern`${f.partial_time}${f.time_offset}`);
 createToken({
@@ -243,7 +242,4 @@ possibleUnquotedKeysPrefixes.forEach((tokType) => {
   tokType.LONGER_ALT = UnquotedKey;
 });
 
-module.exports = {
-  tokensArray,
-  tokensDictionary,
-};
+export { tokensArray, tokensDictionary };

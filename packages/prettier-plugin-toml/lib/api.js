@@ -1,6 +1,6 @@
-const { locStart, locEnd } = require("./loc");
-const { parse } = require("@toml-tools/parser");
-const { print } = require("./printer");
+import { locStart, locEnd } from "./loc.js";
+import { parse } from "@toml-tools/parser";
+import { print } from "./printer.js";
 
 // https://prettier.io/docs/en/plugins.html#languages
 const languages = [
@@ -36,7 +36,7 @@ const printers = {
   },
 };
 
-module.exports = {
+export {
   languages,
   parsers,
   printers,

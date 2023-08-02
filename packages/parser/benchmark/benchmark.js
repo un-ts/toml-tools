@@ -1,35 +1,39 @@
-const Benchmark = require("benchmark");
-const _ = require("lodash");
-const fs = require("fs");
-const path = require("path");
-const klawSync = require("klaw-sync");
-const tomlToolsParse = require("../").parse;
-const iarnaTomlParse = require("@iarna/toml").parse;
-const tomlNode = require("toml").parse;
-const tomlj4Parse = require("toml-j0.4").parse;
+import Benchmark from "benchmark";
+import _ from "lodash-es";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import klawSync from "klaw-sync";
+import { parse as tomlToolsParse } from "@toml-tools/parser";
+import { parse as iarnaTomlParse } from "@iarna/toml";
+import { parse as tomlNode } from "toml";
+import tomlj4 from "toml-j0.4";
+import bombadil from "@sgarciac/bombadil";
 
-const bombadil = require("@sgarciac/bombadil");
+const tomlj4Parse = tomlj4.parse;
 
 function parseBombadil(input) {
   var reader = new bombadil.TomlReader();
   return reader.readToml(input);
 }
 
+const _dirname = path.dirname(fileURLToPath(import.meta.url));
+
 // Processing the input samples **before** the benchmark
-const samplesDir = path.join(__dirname, "./samples/");
+const samplesDir = path.join(_dirname, "./samples/");
 const allSampleFiles = klawSync(samplesDir);
 const tomlSampleFiles = _.filter(allSampleFiles, (fileDesc) =>
-  fileDesc.path.endsWith(".toml")
+  fileDesc.path.endsWith(".toml"),
 );
 const relTomlFilesPaths = _.map(tomlSampleFiles, (fileDesc) =>
-  path.relative(__dirname, fileDesc.path)
+  path.relative(_dirname, fileDesc.path),
 );
 const tomlFilesContents = _.map(tomlSampleFiles, (fileDesc) =>
-  fs.readFileSync(fileDesc.path, "utf8")
+  fs.readFileSync(fileDesc.path, "utf8"),
 );
 const samplesRelPathToContent = _.zipObject(
   relTomlFilesPaths,
-  tomlFilesContents
+  tomlFilesContents,
 );
 
 function newSuite(name) {

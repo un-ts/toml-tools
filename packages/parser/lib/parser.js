@@ -1,5 +1,5 @@
-const { CstParser } = require("chevrotain");
-const { tokensDictionary: t } = require("@toml-tools/lexer");
+import { CstParser } from "chevrotain";
+import { tokensDictionary as t } from "@toml-tools/lexer";
 
 class TomlParser extends CstParser {
   constructor() {
@@ -44,7 +44,7 @@ class TomlParser extends CstParser {
             { ALT: () => $.SUBRULE($.keyval) },
             { ALT: () => $.SUBRULE($.table) },
             { ALT: () => $.CONSUME(t.Comment) },
-          ])
+          ]),
       );
       $.OPTION(() => {
         $.CONSUME2(t.Comment);
@@ -77,7 +77,7 @@ class TomlParser extends CstParser {
             { ALT: () => $.CONSUME(t.IDateTime) },
             { ALT: () => $.CONSUME(t.IFloat) },
             { ALT: () => $.CONSUME(t.IInteger) },
-          ])
+          ]),
       );
     });
 
@@ -174,6 +174,4 @@ class TomlParser extends CstParser {
   }
 }
 
-module.exports = {
-  TomlParser,
-};
+export { TomlParser };

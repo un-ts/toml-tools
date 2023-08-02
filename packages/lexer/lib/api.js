@@ -1,5 +1,5 @@
-const { Lexer } = require("chevrotain");
-const { tokensArray, tokensDictionary } = require("./tokens");
+import { Lexer } from "chevrotain";
+import { tokensArray, tokensDictionary } from "./tokens.js";
 
 const tomlLexer = new Lexer(tokensArray, {
   // Reducing the amount of position tracking can provide a small performance boost (<10%)
@@ -19,7 +19,4 @@ function tokenize(text) {
   return tomlLexer.tokenize(text);
 }
 
-module.exports = {
-  tokenize,
-  tokensDictionary,
-};
+export { tokenize, tokensDictionary };

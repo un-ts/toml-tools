@@ -1,21 +1,29 @@
 {
   "name": "@toml-tools/lexer",
   "version": "0.4.0",
+  "type": "module",
   "description": "TOML Lexer Implemented in JavaScript",
+  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/lexer",
+  "license": "MIT",
+  "main": "lib/api.js",
+  "exports": {
+    ".": {
+      "types": "./api.d.ts",
+      "default": "./lib/api.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./api.d.ts",
   "keywords": [
     "toml",
     "lexer"
   ],
-  "main": "lib/api.js",
-  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/lexer",
-  "license": "MIT",
-  "dependencies": {
-    "chevrotain": "^10.4.2"
-  },
   "scripts": {
     "test": "mocha ./test/*spec.js"
   },
-  "typings": "./api.d.ts",
+  "dependencies": {
+    "chevrotain": "^11.0.1"
+  },
   "publishConfig": {
     "access": "public"
   }

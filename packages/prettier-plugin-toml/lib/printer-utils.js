@@ -22,7 +22,7 @@ function getSingle(ctx) {
   const ctxKeys = Object.keys(ctx);
   if (ctxKeys.length !== 1) {
     throw Error(
-      `Expecting single key CST ctx but found: <${ctxKeys.length}> keys`
+      `Expecting single key CST ctx but found: <${ctxKeys.length}> keys`,
     );
   }
   const singleElementKey = ctxKeys[0];
@@ -30,7 +30,7 @@ function getSingle(ctx) {
 
   if (singleElementValues.length !== 1) {
     throw Error(
-      `Expecting single item in CST ctx key but found: <${singleElementValues.length}> items`
+      `Expecting single item in CST ctx key but found: <${singleElementValues.length}> items`,
     );
   }
 
@@ -70,7 +70,7 @@ function arrItemProp(item, propName) {
   }
 }
 
-module.exports = {
+export {
   trimComment,
   canUnquote,
   collectComments,

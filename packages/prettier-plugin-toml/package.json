@@ -1,25 +1,30 @@
 {
   "name": "prettier-plugin-toml",
   "version": "0.4.0",
+  "type": "module",
   "description": "TOML Prettier Plugin",
+  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/prettier-plugin-toml",
+  "license": "MIT",
+  "main": "lib/api.js",
+  "exports": {
+    ".": "./lib/api.js",
+    "./package.json": "./package.json"
+  },
   "keywords": [
     "toml",
     "prettier",
     "beautifier",
     "prettier-plugin"
   ],
-  "main": "lib/api.js",
-  "repository": "https://github.com/un-ts/toml-tools/tree/master/packages/prettier-plugin-toml",
-  "license": "MIT",
+  "scripts": {
+    "test": "mocha ./test/**/*spec.js"
+  },
   "peerDependencies": {
-    "prettier": "^1.16.0 || ^2.0.0"
+    "prettier": "^3.0.0"
   },
   "dependencies": {
     "@toml-tools/lexer": "^0.4.0",
     "@toml-tools/parser": "^0.4.0"
-  },
-  "scripts": {
-    "test": "mocha ./test/**/*spec.js"
   },
   "publishConfig": {
     "access": "public"
