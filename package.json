@@ -1,22 +1,17 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "test-packages/*"
-    ],
-    "nohoist": [
-      "**/prettier-plugin-toml"
-    ]
-  },
+  "workspaces": [
+    "packages/*",
+    "test-packages/*"
+  ],
   "scripts": {
+    "benchmark": "yarn workspace @toml-tools/parser run benchmark",
     "ci": "npm-run-all format:validate test",
-    "test": "yarn workspaces run test",
+    "test": "yarn workspaces foreach run test",
     "format:fix": "prettier --write \"**/*.@(ts|js|json|md)\"",
     "format:validate": "prettier --list-different \"**/*.@(ts|js|json|md)\"",
-    "release": "changeset publish",
-    "prepare": "yarn-deduplicate -s fewer"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
@@ -30,8 +25,7 @@
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "yarn-deduplicate": "^6.0.2"
+    "prettier": "^2.8.8"
   },
   "husky": {
     "hooks": {
@@ -42,5 +36,6 @@
     "*.{ts,js,md,json}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }

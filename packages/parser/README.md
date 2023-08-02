@@ -38,7 +38,7 @@ This package's [APIs](./api.d.ts) are exported as a TypeScript definition file.
 const {
   parse,
   BaseTomCstVisitor,
-  BaseTomlCstVisitorWithDefaults
+  BaseTomlCstVisitorWithDefaults,
 } = require("@toml-tools/parser");
 
 const input = `
@@ -63,7 +63,7 @@ class KeyNamesCollector extends BaseTomlCstVisitorWithDefaults {
   }
 
   key(ctx) {
-    const keyImages = ctx.IKey.map(keyTok => keyTok.image);
+    const keyImages = ctx.IKey.map((keyTok) => keyTok.image);
     const newKey = keyImages.join(".");
     return newKey;
   }

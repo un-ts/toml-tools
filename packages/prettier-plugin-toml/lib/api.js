@@ -15,8 +15,8 @@ const languages = [
     codemirrorMode: "toml",
     codemirrorMimeType: "text/x-toml",
     language_id: 365,
-    vscodeLanguageIds: ["toml"]
-  }
+    vscodeLanguageIds: ["toml"],
+  },
 ];
 
 // https://prettier.io/docs/en/plugins.html#parsers
@@ -25,21 +25,21 @@ const parsers = {
     astFormat: "toml-cst",
     parse: (text, parsers, options) => parse(text),
     locStart,
-    locEnd
-  }
+    locEnd,
+  },
 };
 
 // https://prettier.io/docs/en/plugins.html#printers
 const printers = {
   "toml-cst": {
-    print
-  }
+    print,
+  },
 };
 
 module.exports = {
   languages,
   parsers,
-  printers
+  printers,
   // TODO: are any options/default options needed?
   //  - Prefer certain inline variants when possible?
   //  - Indent nested props?

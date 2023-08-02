@@ -8,5 +8,5 @@ function locEnd(cstNode) {
 
 module.exports = {
   locStart,
-  locEnd
+  locEnd,
 };

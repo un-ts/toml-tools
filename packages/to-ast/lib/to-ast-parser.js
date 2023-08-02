@@ -7,10 +7,10 @@ class TomlToAstParser extends ToAstParser {
       maxLookahead: 1,
       ignoredIssues: {
         table: {
-          OR: true
-        }
+          OR: true,
+        },
       },
-      outputCst: false
+      outputCst: false,
     });
 
     const $ = this;
@@ -42,7 +42,7 @@ class TomlToAstParser extends ToAstParser {
           ($.C2 = [
             { ALT: () => $.SUBRULE($.keyval) },
             { ALT: () => $.SUBRULE($.table) },
-            { ALT: () => $.CONSUME(t.Comment) }
+            { ALT: () => $.CONSUME(t.Comment) },
           ])
       );
       $.OPTION(() => {
@@ -75,7 +75,7 @@ class TomlToAstParser extends ToAstParser {
             { ALT: () => $.SUBRULE($.inlineTable) },
             { ALT: () => $.CONSUME(t.IDateTime) },
             { ALT: () => $.CONSUME(t.IFloat) },
-            { ALT: () => $.CONSUME(t.IInteger) }
+            { ALT: () => $.CONSUME(t.IInteger) },
           ])
       );
     });
@@ -105,7 +105,7 @@ class TomlToAstParser extends ToAstParser {
           if (foundVal === false) {
             notDangling = false;
           }
-        }
+        },
       });
     });
 
@@ -130,9 +130,9 @@ class TomlToAstParser extends ToAstParser {
       $.OR([
         {
           GATE: () => $.LA(2).tokenType !== t.LSquare,
-          ALT: () => $.SUBRULE($.stdTable)
+          ALT: () => $.SUBRULE($.stdTable),
         },
-        { ALT: () => $.SUBRULE($.arrayTable) }
+        { ALT: () => $.SUBRULE($.arrayTable) },
       ]);
     });
 
@@ -171,5 +171,5 @@ class TomlToAstParser extends ToAstParser {
 }
 
 module.exports = {
-  TomlToAstParser: TomlToAstParser
+  TomlToAstParser: TomlToAstParser,
 };

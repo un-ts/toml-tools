@@ -11,5 +11,8 @@
     "test": "yarn run format:validate",
     "format:validate": "prettier --list-different \"**/*.@(json|md|toml)\"",
     "format:fix": "prettier --write \"**/*.@(json|md|toml)\""
+  },
+  "installConfig": {
+    "hoistingLimits": "workspaces"
   }
 }
