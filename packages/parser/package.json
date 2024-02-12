@@ -13,7 +13,7 @@
     },
     "./package.json": "./package.json"
   },
-  "types": ".api.d.ts",
+  "types": "api.d.ts",
   "keywords": [
     "toml",
     "parser"
