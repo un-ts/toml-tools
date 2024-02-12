@@ -1,5 +1,13 @@
 # prettier-plugin-toml
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`01df331`](https://github.com/un-ts/toml-tools/commit/01df33126f8bbd16b1a146f452c3cbc05347fcc8)]:
+  - @toml-tools/parser@1.0.1
+  - @toml-tools/lexer@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

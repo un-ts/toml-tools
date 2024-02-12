@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "prettier": "^3.0.0",
-    "prettier-plugin-toml": "^1.0.0"
+    "prettier-plugin-toml": "^1.0.1"
   },
   "installConfig": {
     "hoistingLimits": "workspaces"
