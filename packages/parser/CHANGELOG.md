@@ -1,5 +1,14 @@
 # @toml-tools/parser
 
+## 1.0.1
+
+### Patch Changes
+
+- [#77](https://github.com/un-ts/toml-tools/pull/77) [`01df331`](https://github.com/un-ts/toml-tools/commit/01df33126f8bbd16b1a146f452c3cbc05347fcc8) Thanks [@JounQin](https://github.com/JounQin)! - fix: incorrect types path
+
+- Updated dependencies []:
+  - @toml-tools/lexer@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

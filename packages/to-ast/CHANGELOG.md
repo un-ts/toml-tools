@@ -1,5 +1,12 @@
 # @toml-tools/to-ast
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @toml-tools/lexer@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
